@@ -14,6 +14,13 @@ namespace Faker.Tests
         }
 
         [Test]
+        public void Should_Get_FullName_With_Standard_Format()
+        {
+            var name = Name.FullName(NameFormats.Standard);
+            Assert.IsTrue(Regex.IsMatch(name, @"^\w+\.? \w+\.?$"));
+        }
+
+        [Test]
         public void Should_Get_Prefix()
         {
             var prefix = Name.Prefix();

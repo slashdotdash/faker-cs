@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Faker.Extensions;
 
 namespace Faker
@@ -13,41 +14,19 @@ namespace Faker
 
     public static class Name
     {
-        private static readonly Random _rnd = new Random();
-        private readonly static IList<NameFormats> _formats;
-        private readonly static IDictionary<NameFormats, Func<string[]>> _formatMap;
-
-        static Name()
+        /// <summary>
+        /// Create a name using a random format.
+        /// </summary>     
+        public static string FullName()
         {
-            // Standard format return 8/10 times.
-            _formats = new List<NameFormats>
-            {
-                NameFormats.WithPrefix,
-                NameFormats.WithSuffix,
-                NameFormats.Standard,
-                NameFormats.Standard,
-                NameFormats.Standard,
-                NameFormats.Standard,
-                NameFormats.Standard,
-                NameFormats.Standard,
-                NameFormats.Standard
-            };
-
-            _formatMap = new Dictionary<NameFormats, Func<string[]>>
-            {
-                { NameFormats.Standard,     () => new [] { First(), Last() } },
-                { NameFormats.WithPrefix,   () => new [] { Prefix(), First(), Last() } },
-                { NameFormats.WithSuffix,   () => new [] { First(), Last(), Suffix() } }
-            };
+            return FullName(_formats.ElementAt(RandomNumber.Next(_formats.Count() - 1)));
         }
 
         /// <summary>
-        /// Create a name using a random format.
-        /// </summary>
-        /// <returns>Random name</returns>
-        public static string FullName()
+        /// Create a name using a specified format.
+        /// </summary>        
+        public static string FullName(NameFormats format)
         {
-            var format = _formats[_rnd.Next(_formats.Count - 1)];
             return String.Join(" ", _formatMap[format].Invoke());
         }
 
@@ -72,5 +51,18 @@ namespace Faker
         {
             return "Jr. Sr. I II III IV V MD DDS PhD DVM".Split(' ').Random();
         }
+
+        #region Format Mappings
+        private static readonly IEnumerable<NameFormats> _formats = new List<NameFormats>
+        {
+            NameFormats.WithPrefix, NameFormats.WithSuffix, NameFormats.Standard, NameFormats.Standard, NameFormats.Standard, NameFormats.Standard, NameFormats.Standard, NameFormats.Standard, NameFormats.Standard
+        };
+        private static readonly IDictionary<NameFormats, Func<string[]>> _formatMap = new Dictionary<NameFormats, Func<string[]>>
+        {
+            { NameFormats.Standard,     () => new [] { First(), Last() } },
+            { NameFormats.WithPrefix,   () => new [] { Prefix(), First(), Last() } },
+            { NameFormats.WithSuffix,   () => new [] { First(), Last(), Suffix() } }
+        };
+        #endregion
     }
 }

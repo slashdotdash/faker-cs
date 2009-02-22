@@ -46,7 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddressFixture.cs" />
     <Compile Include="Extensions\ArrayExtensionsFixture.cs" />
+    <Compile Include="Extensions\StringExtensionsFixture.cs" />
     <Compile Include="NameFixture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
