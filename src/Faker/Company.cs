@@ -29,7 +29,7 @@ namespace Faker
         /// When a straight answer won't do, BS to the rescue!
         /// Wordlist from http://dack.com/web/bullshit.html
         /// </summary>
-        public static string BullShit()
+        public static string BS()
         {
             return String.Join(" ", new[] { _bs1.Random(), _bs2.Random(), _bs3.Random() });
         }

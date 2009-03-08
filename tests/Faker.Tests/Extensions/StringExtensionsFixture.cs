@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Linq;
 using Faker.Extensions;
 using NUnit.Framework;
 using System.Text.RegularExpressions;
@@ -51,6 +48,12 @@ namespace Faker.Tests.Extensions
             var word = "#?#?".Letterify().Numerify();
             Assert.IsTrue(Regex.IsMatch(word, "^[0-9][a-z][0-9][a-z]$"));
             Assert.AreEqual(4, word.Length);
+        }
+
+        [Test]
+        public void Should_Capitalise_First_Lowercase_Letter()
+        {
+            Assert.AreEqual("The quick brown fox", "the quick brown fox".Capitalise());
         }
     }
 }

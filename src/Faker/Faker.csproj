@@ -48,8 +48,12 @@
     <Compile Include="Address.cs" />
     <Compile Include="Company.cs" />
     <Compile Include="Extensions\ArrayExtensions.cs" />
+    <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Internet.cs" />
+    <Compile Include="Lorem.cs" />
     <Compile Include="Name.cs" />
+    <Compile Include="Phone.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RandomNumber.cs" />
   </ItemGroup>

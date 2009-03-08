@@ -21,5 +21,20 @@ namespace Faker.Extensions
         {
             return Regex.Replace(s, @"\?", new MatchEvaluator((m) => _alphabet.Random()), RegexOptions.Compiled);
         }
+
+        public static string AlphanumericOnly(this string s)
+        {
+            return Regex.Replace(s, @"\W", "");
+        }
+
+        /// <summary>
+        /// Capitalise the first letter of the given string.
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        public static string Capitalise(this string s)
+        {
+            return Regex.Replace(s, "^[a-z]", new MatchEvaluator(x => x.Value.ToUpperInvariant()));
+        }
     }
 }

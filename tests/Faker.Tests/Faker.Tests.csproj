@@ -49,8 +49,12 @@
     <Compile Include="AddressFixture.cs" />
     <Compile Include="CompanyFixture.cs" />
     <Compile Include="Extensions\ArrayExtensionsFixture.cs" />
+    <Compile Include="Extensions\EnumerableExtensionsFixture.cs" />
     <Compile Include="Extensions\StringExtensionsFixture.cs" />
+    <Compile Include="InternetFixture.cs" />
+    <Compile Include="LoremFixture.cs" />
     <Compile Include="NameFixture.cs" />
+    <Compile Include="PhoneFixture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

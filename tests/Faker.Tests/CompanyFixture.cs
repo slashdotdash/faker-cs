@@ -33,7 +33,7 @@ namespace Faker.Tests
         [Test]
         public void Should_Generate_Bs()
         {
-            var bs = Company.BullShit();
+            var bs = Company.BS();
             Assert.IsTrue(Regex.IsMatch(bs, @"[\w\-]+ [\w\-]+ [\w\-]+"));
         }
     }
