@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Faker.Extensions;
 
@@ -6,13 +7,27 @@ namespace Faker
 {
     public static class Lorem
     {
+        /// <summary>
+        /// Get a random collection of words.
+        /// </summary>
+        /// <param name="count">Number of words required</param>
+        /// <returns></returns>
         public static IEnumerable<string> Words(int count)
         {
+            if (count <= 0) throw new ArgumentException("Count must be greater than zero", "count");
+
             return count.Times(x => _words.Random());
         }
 
+        /// <summary>
+        /// Generates a capitalised sentence of random words.
+        /// </summary>
+        /// <param name="minWordCount">Minimum number of words required</param>
+        /// <returns></returns>
         public static string Sentence(int minWordCount)
         {
+            if (minWordCount <= 0) throw new ArgumentException("Count must be greater than zero", "minWordCount");
+
             return string.Join(" ", Words(minWordCount + RandomNumber.Next(6)).ToArray()).Capitalise() + ".";
         }
 
@@ -23,11 +38,15 @@ namespace Faker
 
         public static IEnumerable<string> Sentences(int sentenceCount)
         {
+            if (sentenceCount <= 0) throw new ArgumentException("Count must be greater than zero", "sentenceCount");
+
             return sentenceCount.Times(x => Sentence());
         }
 
         public static string Paragraph(int minSentenceCount)
         {
+            if (minSentenceCount <= 0) throw new ArgumentException("Count must be greater than zero", "minSentenceCount");
+
             return string.Join(" ", Sentences(minSentenceCount + RandomNumber.Next(3)).ToArray());
         }
 
@@ -38,6 +57,8 @@ namespace Faker
 
         public static IEnumerable<string> Paragraphs(int paragraphCount)
         {
+            if (paragraphCount <= 0) throw new ArgumentException("Count must be greater than zero", "paragraphCount");
+
             return paragraphCount.Times(x => Paragraph());
         }
 

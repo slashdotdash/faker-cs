@@ -10,7 +10,7 @@ namespace Faker
     {
         public static string Email()
         {
-            return Email(UserName());
+            return String.Format("{0}@{1}", UserName(), DomainName());
         }
 
         public static string Email(string name)
