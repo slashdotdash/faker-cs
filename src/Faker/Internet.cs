@@ -54,6 +54,6 @@ namespace Faker
             () => string.Format("{0}{1}{2}", Name.First().AlphanumericOnly(), 
                 new [] { ".", "_" }.Random(), Name.Last().AlphanumericOnly()).ToLowerInvariant()
         };
-        private static readonly string[] _domainSuffixes = new [] { "co.uk", "com", "us", "uk", "ca", "biz", "info", "name" };
+        private static readonly string[] _domainSuffixes = new [] { "co.uk", "com", "us", "uk", "ca", "biz", "info", "name", "de", "eu" };
     }
 }

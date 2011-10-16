@@ -3,7 +3,7 @@
 namespace Faker
 {
     /// <summary>
-    /// Provide access to random number geenrator.
+    /// Provide access to random number generator.
     /// </summary>
     public static class RandomNumber
     {
