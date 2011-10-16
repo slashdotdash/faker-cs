@@ -6,10 +6,24 @@ namespace Faker
     {
         public static string Number()
         {
-            return _formats.Random().Numerify();
+            return Number(Languages.en_US);
         }
 
-        private static readonly string[] _formats = new[]
+        public static string Number(Languages languages)
+        {
+            string result;
+            switch (languages) {
+                case Languages.de_DE:
+                    result = _formatsDeDe.Random().Numerify();
+                    break;
+                default:
+                    result = _formatsEnUs.Random().Numerify();
+                    break;
+            }
+            return result;
+        }
+
+        private static readonly string[] _formatsEnUs = new[]
         {
             "###-###-####",
             "(###)###-####",
@@ -31,6 +45,11 @@ namespace Faker
             "(###)###-#### x#####",
             "1-###-###-#### x#####",
             "###.###.#### x#####"
+        };
+    
+        private static readonly string[] _formatsDeDe = new[]
+        {
+            "(0###) #########'", "(0####) #######","+49-###-#######","+49-####-########"
         };
     }
 }

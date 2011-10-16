@@ -1,15 +1,49 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using Faker.Extensions;
 
 namespace Faker
 {
     public static class Address
     {
+        public static string Country()
+        {
+            return Country(Languages.en_US);
+        }
+
+        public static string Country(Languages languages)
+        {
+            string result;
+            switch (languages) {
+                case Languages.de_DE:
+                    result = "Ägypten Äquatorialguinea Äthiopien Österreich Afghanistan Albanien Algerien Amerikanisch-Samoa Amerikanische Jungferninseln Andorra Angola Anguilla Antarktis Antigua und Barbuda Argentinien Armenien Aruba Aserbaidschan Australien Bahamas Bahrain Bangladesch Barbados Belarus Belgien Belize Benin die Bermudas Bhutan Bolivien Bosnien und Herzegowina Botsuana Bouvetinsel Brasilien Britische Jungferninseln Britisches Territorium im Indischen Ozean Brunei Darussalam Bulgarien Burkina Faso Burundi Chile China Cookinseln Costa Rica Dänemark Demokratische Republik Kongo Demokratische Volksrepublik Korea Deutschland Dominica Dominikanische Republik Dschibuti Ecuador El Salvador Eritrea Estland Färöer Falklandinseln Fidschi Finnland Frankreich Französisch-Guayana Französisch-Polynesien Französische Gebiete im südlichen Indischen Ozean Gabun Gambia Georgien Ghana Gibraltar Grönland Grenada Griechenland Guadeloupe Guam Guatemala Guinea Guinea-Bissau Guyana Haiti Heard und McDonaldinseln Honduras Hongkong Indien Indonesien Irak Iran Irland Island Israel Italien Jamaika Japan Jemen Jordanien Jugoslawien Kaimaninseln Kambodscha Kamerun Kanada Kap Verde Kasachstan Katar Kenia Kirgisistan Kiribati Kleinere amerikanische Überseeinseln Kokosinseln Kolumbien Komoren Kongo Kroatien Kuba Kuwait Laos Lesotho Lettland Libanon Liberia LibyenÄgypten Äquatorialguinea Äthiopien Österreich Afghanistan Albanien Algerien Amerikanisch-Samoa Amerikanische Jungferninseln Andorra Angola Anguilla Antarktis Antigua und Barbuda Argentinien Armenien Aruba Aserbaidschan Australien Bahamas Bahrain Bangladesch Barbados Belarus Belgien Belize Benin die Bermudas Bhutan Bolivien Bosnien und Herzegowina Botsuana Bouvetinsel Brasilien Britische Jungferninseln Britisches Territorium im Indischen Ozean Brunei Darussalam Bulgarien Burkina Faso Burundi Chile China Cookinseln Costa Rica Dänemark Demokratische Republik Kongo Demokratische Volksrepublik Korea Deutschland Dominica Dominikanische Republik Dschibuti Ecuador El Salvador Eritrea Estland Färöer Falklandinseln Fidschi Finnland Frankreich Französisch-Guayana Französisch-Polynesien Französische Gebiete im südlichen Indischen Ozean Gabun Gambia Georgien Ghana Gibraltar Grönland Grenada Griechenland Guadeloupe Guam Guatemala Guinea Guinea-Bissau Guyana Haiti Heard und McDonaldinseln Honduras Hongkong Indien Indonesien Irak Iran Irland Island Israel Italien Jamaika Japan Jemen Jordanien Jugoslawien Kaimaninseln Kambodscha Kamerun Kanada Kap Verde Kasachstan Katar Kenia Kirgisistan Kiribati Kleinere amerikanische Überseeinseln Kokosinseln Kolumbien Komoren Kongo Kroatien Kuba Kuwait Laos Lesotho Lettland Libanon Liberia Libyen Liechtenstein Litauen Luxemburg Macau Madagaskar Malawi Malaysia Malediven Mali Malta ehemalige jugoslawische Republik Mazedonien Marokko Marshallinseln Martinique Mauretanien Mauritius Mayotte Mexiko Mikronesien Monaco Mongolei Montserrat Mosambik Myanmar Nördliche Marianen Namibia Nauru Nepal Neukaledonien Neuseeland Nicaragua Niederländische Antillen Niederlande Niger Nigeria Niue Norfolkinsel Norwegen Oman Osttimor Pakistan Palau Panama Papua-Neuguinea Paraguay Peru Philippinen Pitcairninseln Polen Portugal Puerto Rico Réunion Republik Korea Republik Moldau Ruanda Rumänien Russische Föderation São Tomé und Príncipe Südafrika Südgeorgien und Südliche Sandwichinseln Salomonen Sambia Samoa San Marino Saudi-Arabien Schweden Schweiz Senegal Seychellen Sierra Leone Simbabwe Singapur Slowakei Slowenien Somalien Spanien Sri Lanka St. Helena St. Kitts und Nevis St. Lucia St. Pierre und Miquelon St. Vincent und die Grenadinen Sudan Surinam Svalbard und Jan Mayen Swasiland Syrien Türkei Tadschikistan Taiwan Tansania Thailand Togo Tokelau Tonga Trinidad und Tobago Tschad Tschechische Republik Tunesien Turkmenistan Turks- und Caicosinseln Tuvalu Uganda Ukraine Ungarn Uruguay Usbekistan Vanuatu Vatikanstadt Venezuela Vereinigte Arabische Emirate Vereinigte Staaten Vereinigtes Königreich Vietnam Wallis und Futuna Weihnachtsinsel Westsahara Zentralafrikanische Republik Zypern Liechtenstein Litauen Luxemburg Macau Madagaskar Malawi Malaysia Malediven Mali Malta ehemalige jugoslawische Republik Mazedonien Marokko Marshallinseln Martinique Mauretanien Mauritius Mayotte Mexiko Mikronesien Monaco Mongolei Montserrat Mosambik Myanmar Nördliche Marianen Namibia Nauru Nepal Neukaledonien Neuseeland Nicaragua Niederländische Antillen Niederlande Niger Nigeria Niue Norfolkinsel Norwegen Oman Osttimor Pakistan Palau Panama Papua-Neuguinea Paraguay Peru Philippinen Pitcairninseln Polen Portugal Puerto Rico Réunion Republik Korea Republik Moldau Ruanda Rumänien Russische Föderation São Tomé und Príncipe Südafrika Südgeorgien und Südliche Sandwichinseln Salomonen Sambia Samoa San Marino Saudi-Arabien Schweden Schweiz Senegal Seychellen Sierra Leone Simbabwe Singapur Slowakei Slowenien Somalien Spanien Sri Lanka St. Helena St. Kitts und Nevis St. Lucia St. Pierre und Miquelon St. Vincent und die Grenadinen Sudan Surinam Svalbard und Jan Mayen Swasiland Syrien Türkei Tadschikistan Taiwan Tansania Thailand Togo Tokelau Tonga Trinidad und Tobago Tschad Tschechische Republik Tunesien Turkmenistan Turks- und Caicosinseln Tuvalu Uganda Ukraine Ungarn Uruguay Usbekistan Vanuatu Vatikanstadt Venezuela Vereinigte Arabische Emirate Vereinigte Staaten Vereinigtes Königreich Vietnam Wallis und Futuna Weihnachtsinsel Westsahara Zentralafrikanische Republik Zypern"
+                            .Split(' ').Random();
+                    break;
+                default:
+                    result = "Afghanistan, Albania, Algeria, American Samoa, Andorra, Angola, Anguilla, Antarctica (the territory South of 60 deg S), Antigua and Barbuda, Argentina, Armenia, Aruba, Australia, Austria, Azerbaijan, Bahamas, Bahrain, Bangladesh, Barbados, Belarus, Belgium, Belize, Benin, Bermuda, Bhutan, Bolivia, Bosnia and Herzegovina, Botswana, Bouvet Island (Bouvetoya), Brazil, British Indian Ocean Territory (Chagos Archipelago), British Virgin Islands, Brunei Darussalam, Bulgaria, Burkina Faso, Burundi, Cambodia, Cameroon, Canada, Cape Verde, Cayman Islands, Central African Republic, Chad, Chile, China, Christmas Island, Cocos (Keeling) Islands, Colombia, Comoros, Congo, Congo, Cook Islands, Costa Rica, Cote d'Ivoire, Croatia, Cuba, Cyprus, Czech Republic, Denmark, Djibouti, Dominica, Dominican Republic, Ecuador, Egypt, El Salvador, Equatorial Guinea, Eritrea, Estonia, Ethiopia, Faroe Islands, Falkland Islands (Malvinas), Fiji, Finland, France, French Guiana, French Polynesia, French Southern Territories, Gabon, Gambia, Georgia, Germany, Ghana, Gibraltar, Greece, Greenland, Grenada, Guadeloupe, Guam, Guatemala, Guernsey, Guinea, Guinea-Bissau, Guyana, Haiti, Heard Island and McDonald Islands, Holy See (Vatican City State), Honduras, Hong Kong, Hungary, Iceland, India, Indonesia, Iran, Iraq, Ireland, Isle of Man, Israel, Italy, Jamaica, Japan, Jersey, Jordan, Kazakhstan, Kenya, Kiribati, Korea, Korea, Kuwait, Kyrgyz Republic, Lao People's Democratic Republic, Latvia, Lebanon, Lesotho, Liberia, Libyan Arab Jamahiriya, Liechtenstein, Lithuania, Luxembourg, Macao, Macedonia, Madagascar, Malawi, Malaysia, Maldives, Mali, Malta, Marshall Islands, Martinique, Mauritania, Mauritius, Mayotte, Mexico, Micronesia, Moldova, Monaco, Mongolia, Montenegro, Montserrat, Morocco, Mozambique, Myanmar, Namibia, Nauru, Nepal, Netherlands Antilles, Netherlands, New Caledonia, New Zealand, Nicaragua, Niger, Nigeria, Niue, Norfolk Island, Northern Mariana Islands, Norway, Oman, Pakistan, Palau, Palestinian Territory, Panama, Papua New Guinea, Paraguay, Peru, Philippines, Pitcairn Islands, Poland, Portugal, Puerto Rico, Qatar, Reunion, Romania, Russian Federation, Rwanda, Saint Barthelemy, Saint Helena, Saint Kitts and Nevis, Saint Lucia, Saint Martin, Saint Pierre and Miquelon, Saint Vincent and the Grenadines, Samoa, San Marino, Sao Tome and Principe, Saudi Arabia, Senegal, Serbia, Seychelles, Sierra Leone, Singapore, Slovakia (Slovak Republic), Slovenia, Solomon Islands, Somalia, South Africa, South Georgia and the South Sandwich Islands, Spain, Sri Lanka, Sudan, Suriname, Svalbard & Jan Mayen Islands, Swaziland, Sweden, Switzerland, Syrian Arab Republic, Taiwan, Tajikistan, Tanzania, Thailand, Timor-Leste, Togo, Tokelau, Tonga, Trinidad and Tobago, Tunisia, Turkey, Turkmenistan, Turks and Caicos Islands, Tuvalu, Uganda, Ukraine, United Arab Emirates, United Kingdom, United States of America, United States Minor Outlying Islands, United States Virgin Islands, Uruguay, Uzbekistan, Vanuatu, Venezuela, Vietnam, Wallis and Futuna, Western Sahara, Yemen, Zambia, Zimbabwe"
+                            .Split(',').Random();
+                    break;
+            }
+            return result;
+        }
+
         public static string ZipCode()
         {
-            return new[] {"#####", "#####-####"}.Random().Numerify();
+            return ZipCode(Languages.en_US);
+        }
+
+        public static string ZipCode(Languages languages)
+        {
+            string result;
+            switch (languages) {
+                case Languages.de_DE:
+                    result = new[] { "#####" }.Random().Numerify();
+                    break;
+                default:
+                    result = new[] {"#####", "#####-####"}.Random().Numerify();
+                    break;
+            }
+            return result;
         }
 
         public static string UsState()
@@ -25,12 +59,40 @@ namespace Faker
         
         public static string CityPrefix()
         {
-            return "North East West South New Lake Port".Split(' ').Random();
+            return CityPrefix(Languages.en_US);
+        }
+
+        public static string CityPrefix(Languages languages)
+        {
+            string result;
+            switch (languages) {
+                case Languages.de_DE:
+                    result = "Nord Ost West Süd Neu Alt Bad".Split(' ').Random();
+                    break;
+                default:
+                    result = "North East West South New Lake Port".Split(' ').Random();
+                    break;
+            }
+            return result;
         }
 
         public static string CitySufix()
         {
-            return "town ton land ville berg burgh borough bury view port mouth stad furt chester mouth fort haven side shire".Split(' ').Random();
+            return CitySufix(Languages.en_US);
+        }
+
+        public static string CitySufix(Languages languages)
+        {
+            string result;
+            switch (languages) {
+                case Languages.de_DE:
+                    result = "stadt dorf land scheid burg".Split(' ').Random();
+                    break;
+                default:
+                    result = "town ton land ville berg burgh borough bury view port mouth stad furt chester mouth fort haven side shire".Split(' ').Random();
+                    break;
+            }
+            return result;
         }
 
         public static string City()
@@ -40,18 +102,67 @@ namespace Faker
 
         public static string StreetSuffix()
         {
-            return "Alley Avenue Branch Bridge Brook Brooks Burg Burgs Bypass Camp Canyon Cape Causeway Center Centers Circle Circles Cliff Cliffs Club Common Corner Corners Course Court Courts Cove Coves Creek Crescent Crest Crossing Crossroad Curve Dale Dam Divide Drive Drive Drives Estate Estates Expressway Extension Extensions Fall Falls Ferry Field Fields Flat Flats Ford Fords Forest Forge Forges Fork Forks Fort Freeway Garden Gardens Gateway Glen Glens Green Greens Grove Groves Harbor Harbors Haven Heights Highway Hill Hills Hollow Inlet Inlet Island Island Islands Islands Isle Isle Junction Junctions Key Keys Knoll Knolls Lake Lakes Land Landing Lane Light Lights Loaf Lock Locks Locks Lodge Lodge Loop Mall Manor Manors Meadow Meadows Mews Mill Mills Mission Mission Motorway Mount Mountain Mountain Mountains Mountains Neck Orchard Oval Overpass Park Parks Parkway Parkways Pass Passage Path Pike Pine Pines Place Plain Plains Plains Plaza Plaza Point Points Port Port Ports Ports Prairie Prairie Radial Ramp Ranch Rapid Rapids Rest Ridge Ridges River Road Road Roads Roads Route Row Rue Run Shoal Shoals Shore Shores Skyway Spring Springs Springs Spur Spurs Square Square Squares Squares Station Station Stravenue Stravenue Stream Stream Street Street Streets Summit Summit Terrace Throughway Trace Track Trafficway Trail Trail Tunnel Tunnel Turnpike Turnpike Underpass Union Unions Valley Valleys Via Viaduct View Views Village Village  Villages Ville Vista Vista Walk Walks Wall Way Ways Well Wells"
-                .Split(' ').Random();
+            return StreetSuffix(Languages.en_US);
+            
+        }
+
+        public static string StreetSuffix(Languages languages)
+        {
+            string result;
+            switch (languages) {
+                case Languages.de_DE:
+                    result = "allee berg bruecke brücke gaesschen gaeßchen gasse gässchen gäßchen platz ring strasse straße weg"
+                            .Split(',').Random();
+                    break;
+                default:
+                    result = "Alley Avenue Branch Bridge Brook Brooks Burg Burgs Bypass Camp Canyon Cape Causeway Center Centers Circle Circles Cliff Cliffs Club Common Corner Corners Course Court Courts Cove Coves Creek Crescent Crest Crossing Crossroad Curve Dale Dam Divide Drive Drive Drives Estate Estates Expressway Extension Extensions Fall Falls Ferry Field Fields Flat Flats Ford Fords Forest Forge Forges Fork Forks Fort Freeway Garden Gardens Gateway Glen Glens Green Greens Grove Groves Harbor Harbors Haven Heights Highway Hill Hills Hollow Inlet Inlet Island Island Islands Islands Isle Isle Junction Junctions Key Keys Knoll Knolls Lake Lakes Land Landing Lane Light Lights Loaf Lock Locks Locks Lodge Lodge Loop Mall Manor Manors Meadow Meadows Mews Mill Mills Mission Mission Motorway Mount Mountain Mountain Mountains Mountains Neck Orchard Oval Overpass Park Parks Parkway Parkways Pass Passage Path Pike Pine Pines Place Plain Plains Plains Plaza Plaza Point Points Port Port Ports Ports Prairie Prairie Radial Ramp Ranch Rapid Rapids Rest Ridge Ridges River Road Road Roads Roads Route Row Rue Run Shoal Shoals Shore Shores Skyway Spring Springs Springs Spur Spurs Square Square Squares Squares Station Station Stravenue Stravenue Stream Stream Street Street Streets Summit Summit Terrace Throughway Trace Track Trafficway Trail Trail Tunnel Tunnel Turnpike Turnpike Underpass Union Unions Valley Valleys Via Viaduct View Views Village Village  Villages Ville Vista Vista Walk Walks Wall Way Ways Well Wells"
+                            .Split(' ').Random();
+                    break;
+            }
+            return result;
         }
 
         public static string StreetName()
         {
-            return String.Join(" ", _streetFormats.Random());
+            return StreetName(Languages.en_US);
+        }
+
+        public static string StreetName(Languages languages)
+        {
+            string concatChar;
+            switch (languages) {
+                case Languages.de_DE:
+                    concatChar = "";
+                    break;
+                default:
+                    concatChar = " ";
+                    break;
+            }
+            return String.Join(concatChar, _streetFormats.Random());
         }
         
         public static string StreetAddress()
         {
             return StreetAddress(false);
+        }
+
+        public static string StreetAddress(Languages languages)
+        {
+            return StreetAddress(false, languages);
+        }
+
+        public static string StreetAddress(bool includeSecondary, Languages languages)
+        {
+            string result;
+            switch (languages) {
+                case Languages.de_DE:
+                    result = _streetAddressFormatsNumberAtEnd.Random().Numerify() + (includeSecondary ? " " + SecondaryAddress() : "");
+                    break;
+                default:
+                    result = _streetAddressFormats.Random().Numerify() + (includeSecondary ? " " + SecondaryAddress() : "");
+                    break;
+            }
+            return result;
         }
 
         public static string StreetAddress(bool includeSecondary)
@@ -103,6 +214,14 @@ namespace Faker
             () => string.Format("#### {0}", StreetName()),
             () => string.Format("### {0}", StreetName()),
         };
+
+        private static readonly IEnumerable<Func<string>> _streetAddressFormatsNumberAtEnd = new List<Func<string>>
+        {
+            () => string.Format("{0} #####", StreetName(Languages.de_DE)),
+            () => string.Format("{0} ####", StreetName(Languages.de_DE)),
+            () => string.Format("{0} ###", StreetName(Languages.de_DE)),
+        };
         #endregion
+
     }
 }
