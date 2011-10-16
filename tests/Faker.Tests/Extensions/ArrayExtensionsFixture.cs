@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Faker.Extensions;
 using NUnit.Framework;
 
@@ -11,10 +9,10 @@ namespace Faker.Tests.Extensions
     public class ArrayExtensionsFixture
     {
         [Test]
-        [ExpectedException(typeof(InvalidOperationException), "Array must contain at least one item")]
         public void Should_Throw_Exception_For_Empty_Array()
         {
-            new string[] {}.Random();
+            var exception = Assert.Throws<InvalidOperationException>(() => new string[] { }.Random());
+            Assert.AreEqual("Array must contain at least one item", exception.Message);
         }
 
         [Test]
