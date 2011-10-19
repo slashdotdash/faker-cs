@@ -4,3 +4,5 @@ obj/
 *.suo
 _ReSharper.*
 *.sln.cache
+_UpgradeReport_Files*
+UpgradeLog.XML
