@@ -20,7 +20,7 @@ namespace Faker
 
         public static string FreeEmail()
         {
-            return String.Format("{0}@{1}", UserName(), new[] {"gmail.com", "yahoo.com", "hotmail.com"}.Random());
+            return String.Format("{0}@{1}", UserName(), Resources.Internet.FreeMail.Split(Config.Separator).Random());
         }
 
         public static string UserName()
@@ -45,7 +45,7 @@ namespace Faker
 
         public static string DomainSuffix()
         {
-            return _domainSuffixes.Random();
+            return Resources.Internet.DomainSuffix.Split(Config.Separator).Random();
         }
 
         private static readonly IEnumerable<Func<string>> _userNameFormats = new List<Func<string>>
@@ -54,6 +54,5 @@ namespace Faker
             () => string.Format("{0}{1}{2}", Name.First().AlphanumericOnly(), 
                 new [] { ".", "_" }.Random(), Name.Last().AlphanumericOnly()).ToLowerInvariant()
         };
-        private static readonly string[] _domainSuffixes = new [] { "co.uk", "com", "us", "uk", "ca", "biz", "info", "name" };
     }
 }
