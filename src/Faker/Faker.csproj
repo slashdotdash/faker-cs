@@ -83,6 +83,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Address.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resources\Company.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Company.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Lorem.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Lorem.resx</DependentUpon>
+    </Compile>
     <Compile Include="Resources\Name.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -116,6 +126,16 @@
     <EmbeddedResource Include="Resources\Address.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Address.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Company.de-DE.resx" />
+    <EmbeddedResource Include="Resources\Company.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Company.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Lorem.de-DE.resx" />
+    <EmbeddedResource Include="Resources\Lorem.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Lorem.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Name.de-DE.resx" />
     <EmbeddedResource Include="Resources\Name.resx">
