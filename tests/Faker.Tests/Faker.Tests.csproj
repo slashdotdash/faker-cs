@@ -77,6 +77,7 @@
   <ItemGroup>
     <Compile Include="AddressFixture.cs" />
     <Compile Include="CompanyFixture.cs" />
+    <Compile Include="CultureInfoFixture.cs" />
     <Compile Include="Extensions\ArrayExtensionsFixture.cs" />
     <Compile Include="Extensions\EnumerableExtensionsFixture.cs" />
     <Compile Include="Extensions\StringExtensionsFixture.cs" />
