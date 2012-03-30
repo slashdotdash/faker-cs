@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Faker.SL3", "src\Faker.SL3\Faker.SL3.csproj", "{DD3C80B6-AFD8-401C-81F4-7F74398455AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DD3C80B6-AFD8-401C-81F4-7F74398455AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD3C80B6-AFD8-401C-81F4-7F74398455AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD3C80B6-AFD8-401C-81F4-7F74398455AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD3C80B6-AFD8-401C-81F4-7F74398455AD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
