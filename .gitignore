@@ -6,3 +6,4 @@ _ReSharper.*
 *.sln.cache
 _UpgradeReport_Files*
 UpgradeLog.XML
+*.ncrunchsolution
