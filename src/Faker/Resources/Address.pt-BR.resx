@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddressFormat" xml:space="preserve">
+    <value>###;{0} #### ;{0} ##</value>
+  </data>
+  <data name="CityPrefix" xml:space="preserve">
+    <value>Norte;Leste;Oeste;Sul;</value>
+  </data>
+  <data name="CitySufix" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>Afeganistão;África do Sul;Akrotiri;Albânia;Alemanha;Andorra;Angola;Anguila;Antárctida;Antígua e Barbuda;Antilhas Neerlandesas;Arábia Saudita;Arctic Ocean;Argélia;Argentina;Arménia;Aruba;Ashmore and Cartier Islands;Atlantic Ocean;Austrália;Áustria;Azerbaijão;Baamas;Bangladeche;Barbados;Barém;Bélgica;Belize;Benim;Bermudas;Bielorrússia;Birmânia;Bolívia;Bósnia e Herzegovina;Botsuana;Brasil;Brunei;Bulgária;Burquina Faso;Burúndi;Butão;Cabo Verde;Camarões;Camboja;Canadá;Catar;Cazaquistão;Chade;Chile;China;Chipre;Clipperton Island;Colômbia;Comores;Congo-Brazzaville;Congo-Kinshasa;Coral Sea Islands;Coreia do Norte;Coreia do Sul;Costa do Marfim;Costa Rica;Croácia;Cuba;Dhekelia;Dinamarca;Domínica;Egipto;Emiratos Árabes Unidos;Equador;Eritreia;Eslováquia;Eslovénia;Espanha;Estados Unidos;Estónia;Etiópia;Faroé;Fiji;Filipinas;Finlândia;França;Gabão;Gâmbia;Gana;Gaza Strip;Geórgia;Geórgia do Sul e Sandwich do Sul;Gibraltar;Granada;Grécia;Gronelândia;Guame;Guatemala;Guernsey;Guiana;Guiné;Guiné Equatorial;Guiné-Bissau;Haiti;Honduras;Hong Kong;Hungria;Iémen;Ilha Bouvet;Ilha do Natal;Ilha Norfolk;Ilhas Caimão;Ilhas Cook;Ilhas dos Cocos;Ilhas Falkland;Ilhas Heard e McDonald;Ilhas Marshall;Ilhas Salomão;Ilhas Turcas e Caicos;Ilhas Virgens Americanas;Ilhas Virgens Britânicas;Índia;Indian Ocean;Indonésia;Irão;Iraque;Irlanda;Islândia;Israel;Itália;Jamaica;Jan Mayen;Japão;Jersey;Jibuti;Jordânia;Kuwait;Laos;Lesoto;Letónia;Líbano;Libéria;Líbia;Listenstaine;Lituânia;Luxemburgo;Macau;Macedónia;Madagáscar;Malásia;Malávi;Maldivas;Mali;Malta;Man, Isle of;Marianas do Norte;Marrocos;Maurícia;Mauritânia;Mayotte;México;Micronésia;Moçambique;Moldávia;Mónaco;Mongólia;Monserrate;Montenegro;Mundo;Namíbia;Nauru;Navassa Island;Nepal;Nicarágua;Níger;Nigéria;Niue;Noruega;Nova Caledónia;Nova Zelândia;Omã;Pacific Ocean;Países Baixos;Palau;Panamá;Papua-Nova Guiné;Paquistão;Paracel Islands;Paraguai;Peru;Pitcairn;Polinésia Francesa;Polónia;Porto Rico;Portugal;Quénia;Quirguizistão;Quiribáti;Reino Unido;República Centro-Africana;República Checa;República Dominicana;Roménia;Ruanda;Rússia;Salvador;Samoa;Samoa Americana;Santa Helena;Santa Lúcia;São Cristóvão e Neves;São Marinho;São Pedro e Miquelon;São Tomé e Príncipe;São Vicente e Granadinas;Sara Ocidental;Seicheles;Senegal;Serra Leoa;Sérvia;Singapura;Síria;Somália;Southern Ocean;Spratly Islands;Sri Lanca;Suazilândia;Sudão;Suécia;Suíça;Suriname;Svalbard e Jan Mayen;Tailândia;Taiwan;Tajiquistão;Tanzânia;Território Britânico do Oceano Índico;Territórios Austrais Franceses;Timor Leste;Togo;Tokelau;Tonga;Trindade e Tobago;Tunísia;Turquemenistão;Turquia;Tuvalu;Ucrânia;Uganda;União Europeia;Uruguai;Usbequistão;Vanuatu;Vaticano;Venezuela;Vietname;Wake Island;Wallis e Futuna;West Bank;Zâmbia;Zimbabué</value>
+  </data>
+  <data name="SecondaryAddress" xml:space="preserve">
+    <value>Apt. ###;Suíte ###;Casa ###</value>
+  </data>
+  <data name="StreetNameSeparator" xml:space="preserve">
+    <value> </value>
+  </data>
+  <data name="StreetSuffix" xml:space="preserve">
+    <value>Alley;Avenue;Branch;Bridge;Brook;Brooks;Burg;Burgs;Bypass;Camp;Canyon;Cape;Causeway;Center;Centers;Circle;Circles;Cliff;Cliffs;Club;Common;Corner;Corners;Course;Court;Courts;Cove;Coves;Creek;Crescent;Crest;Crossing;Crossroad;Curve;Dale;Dam;Divide;Drive;Drive;Drives;Estate;Estates;Expressway;Extension;Extensions;Fall;Falls;Ferry;Field;Fields;Flat;Flats;Ford;Fords;Forest;Forge;Forges;Fork;Forks;Fort;Freeway;Garden;Gardens;Gateway;Glen;Glens;Green;Greens;Grove;Groves;Harbor;Harbors;Haven;Heights;Highway;Hill;Hills;Hollow;Inlet;Inlet;Island;Island;Islands;Islands;Isle;Isle;Junction;Junctions;Key;Keys;Knoll;Knolls;Lake;Lakes;Land;Landing;Lane;Light;Lights;Loaf;Lock;Locks;Locks;Lodge;Lodge;Loop;Mall;Manor;Manors;Meadow;Meadows;Mews;Mill;Mills;Mission;Mission;Motorway;Mount;Mountain;Mountain;Mountains;Mountains;Neck;Orchard;Oval;Overpass;Park;Parks;Parkway;Parkways;Pass;Passage;Path;Pike;Pine;Pines;Place;Plain;Plains;Plains;Plaza;Plaza;Point;Points;Port;Port;Ports;Ports;Prairie;Prairie;Radial;Ramp;Ranch;Rapid;Rapids;Rest;Ridge;Ridges;River;Road;Road;Roads;Roads;Route;Row;Rue;Run;Shoal;Shoals;Shore;Shores;Skyway;Spring;Springs;Springs;Spur;Spurs;Square;Square;Squares;Squares;Station;Station;Stravenue;Stravenue;Stream;Stream;Street;Street;Streets;Summit;Summit;Terrace;Throughway;Trace;Track;Trafficway;Trail;Trail;Tunnel;Tunnel;Turnpike;Turnpike;Underpass;Union;Unions;Valley;Valleys;Via;Viaduct;View;Views;Village;Village;;Villages;Ville;Vista;Vista;Walk;Walks;Wall;Way;Ways;Well;Wells</value>
+  </data>
+  <data name="UkCounties" xml:space="preserve">
+    <value>Abadia de Goiás;Abadia dos Dourados;Abadiânia;Abaeté;Abaetetuba;Abaiara;Abaíra;Abaré;Abatiá;Abdon Batista;Abelardo Luz;Abel Figueiredo;Abre-Campo;Abreu e Lima;Abreulândia;Acaiaca;Açailândia;Acajutiba;Acará;Acarape;Acaraú;Acari;Acauã;Aceguá;Acopiara;Acorizal;Acrelândia;Acreúna;Açu;Açucena;Adamantina;Adelândia;Adolfo;Adrianópolis;Adustina;Afogados da Ingazeira;Afonso Bezerra;Afonso Cláudio;Afonso Cunha;Afrânio;Afuá;Agrestina;Agricolândia;Agrolândia;Agronômica;Água Azul do Norte;Água Boa;Água Boa;Água Branca;Água Branca;Água Branca;Água Clara;Água Comprida;Água Doce;Água Doce do Maranhão;Água Doce do Norte;Água Fria;Água Fria de Goiás;Aguaí;Água Limpa;Aguanil;Água Nova;Água Preta;Água Santa;Águas Belas;Águas da Prata;Águas de Chapecó;Águas de Lindóia;Águas de Santa Bárbara;Águas de São Pedro;Águas Formosas;Águas Frias;Águas Lindas de Goiás;Águas Mornas;Águas Vermelhas;Agudo;Agudos;Agudos do Sul;Águia Branca;Aguiar;Aguiarnópolis;Aimorés;Aiquara;Aiuaba;Aiuruoca;Ajuricaba;Alagoa;Alagoa Grande;Alagoa Nova;Alagoinha;Alagoinha;Alagoinha do Piauí;Alagoinhas;Alambari;Albertina;Alcântara;Alcântaras;Alcantil;Alcinópolis;Alcobaça;Aldeias Altas;Alecrim;Alegre;Alegrete;Alegrete do Piauí;Alegria;Além Paraíba;Alenquer;Alexandria;Alexânia;Alfenas;Alfredo Chaves;Alfredo Marcondes;Alfredo Vasconcelos;Alfredo Wagner;Algodão de Jandaíra;Alhandra;Aliança;Aliança do Tocantins;Almadina;Almas;Almenara;Almeirim;Almino Afonso;Almirante Tamandaré;Almirante Tamandaré do Sul;Aloândia;Alpercata;Alpestre;Alpinópolis;Alta Floresta;Alta Floresta d'Oeste;Altair;Altamira;Altamira do Maranhão;Altamira do Paraná;Altaneira;Alterosa;Altinho;Altinópolis;Alto Alegre;Alto Alegre;Alto Alegre;Alto Alegre do Maranhão;Alto Alegre do Pindaré;Alto Alegre dos Parecis;Alto Araguaia;Alto Bela Vista;Babaçulândia;Bacabal;Bacabeira;Bacuri;Bacurituba;Bady Bassitt;Baependi;Bagé;Bagre;Baía da Traição;Baía Formosa;Baianópolis;Baião;Baixa Grande;Baixa Grande do Ribeiro;Baixio;Baixo Guandu;Balbinos;Baldim;Baliza;Balneário Arroio do Silva;Balneário Barra do Sul;Balneário Camboriú;Balneário Gaivota;Balneário Piçarras;Balneário Pinhal;Bálsamo;Balsa Nova;Balsas;Bambuí;Banabuiú;Bananal;Bananeiras;Bandeira;Bandeira do Sul;Bandeirante;Bandeirantes;Bandeirantes;Bandeirantes do Tocantins;Bannach;Banzaê;Barão;Barão de Antonina;Barão de Cocais;Barão de Cotegipe;Barão de Grajaú;Barão de Melgaço;Barão de Monte Alto;Barão do Triunfo;Baraúna;Baraúna;Barbacena;Barbalha;Barbosa;Barbosa Ferraz;Barcarena;Barcelona;Barcelos;Bariri;Barra;Barra Bonita;Barra Bonita;Barracão;Barracão;Barra da Estiva;Barra d'Alcântara;Barra de Guabiraba;Barra de Santana;Barra de Santa Rosa;Barra de Santo Antônio;Barra de São Francisco;Barra de São Miguel;Barra de São Miguel;Barra do Bugres;Barra do Chapéu;Barra do Choça;Barra do Corda;Barra do Garças;Barra do Guarita;Barra do Jacaré;Barra do Mendes;Barra do Ouro;Barra do Piraí;Barra do Quaraí;Barra do Ribeiro;Barra do Rio Azul;Barra do Rocha;Barra dos Coqueiros;Barra do Turvo;Barra Funda;Barra Longa;Barra Mansa;Barras;Barra Velha;Barreira;Barreiras;Barreiras do Piauí;Barreirinha;Barreirinhas;Barreiros;Barretos;Barrinha;Barro;Barro Alto;Barro Alto;Barrocas;Barro Duro;Barrolândia;Barro Preto;Barroquinha;Barros Cassal;Barroso;Barueri;Bastos;Bataguaçu;Batalha;Batalha;Batatais;Batayporã;Baturité;Bauru;Bayeux;Bebedouro;Caapiranga;Caaporã;Caarapó;Caatiba;Cabaceiras;Cabaceiras do Paraguaçu;Cabeceira Grande;Cabeceiras;Cabeceiras do Piauí;Cabedelo;Cabixi;Cabo de Santo Agostinho;Cabo Frio;Cabo Verde;Cabrália Paulista;Cabreúva;Cabrobó;Caçador;Caçapava;Caçapava do Sul;Cacaulândia;Cacequi;Cáceres;Cachoeira;Cachoeira Alta;Cachoeira da Prata;Cachoeira de Goiás;Cachoeira de Minas;Cachoeira de Pajeú;Cachoeira do Arari;Cachoeira do Piriá;Cachoeira dos Índios;Cachoeira do Sul;Cachoeira Dourada;Cachoeira Dourada;Cachoeira Grande;Cachoeira Paulista;Cachoeiras de Macacu;Cachoeirinha;Cachoeirinha;Cachoeirinha;Cachoeiro de Itapemirim;Cacimba de Areia;Cacimba de Dentro;Cacimbas;Cacimbinhas;Cacique Doble;Cacoal;Caconde;Caçu;Caculé;Caém;Caetanópolis;Caetanos;Caeté;Caetés;Caetité;Cafarnaum;Cafeara;Cafelândia;Cafelândia;Cafezal do Sul;Caiabu;Caiana;Caiapônia;Caibaté;Caibi;Caiçara;Caiçara;Caiçara do Norte;Caiçara do Rio do Vento;Caicó;Caieiras;Cairu;Caiuá;Cajamar;Cajapió;Cajari;Cajati;Cajazeiras;Cajazeiras do Piauí;Cajazeirinhas;Cajobi;Cajueiro;Cajueiro da Praia;Cajuri;Cajuru;Calçado;Calçoene;Caldas;Caldas Brandão;Caldas Novas;Caldazinha;Caldeirão Grande;Caldeirão Grande do Piauí;Califórnia;Calmon;Calumbi;Camacan;Camaçari;Camacho;Camalaú;Camamu;Camanducaia;Camapuã;Camaquã;Camaragibe;Camargo;Cambará;Cambará do Sul;Cambé;Cambira;Camboriú;Cambuci;Cambuí;Cambuquira;Cametá;Camocim;Camocim de São Félix;Campanário;Campanha;Campestre;Campestre;Campestre da Serra;Campestre de Goiás;Campestre do Maranhão;Campinaçu;Campina da Lagoa;Campina das Missões;Campina do Monte Alegre;Campina do Simão;Campina Grande;Campina Grande do Sul;Campinápolis;Campinas;Campinas do Piauí;Campinas do Sul;Campina Verde;Campinorte;Campo Alegre;Campo Alegre;Campo Alegre de Goiás;Campo Alegre de Lourdes;Campo Alegre do Fidalgo;Campo Azul;Campo Belo;Campo Belo do Sul;Campo Bom;Campo Bonito;Campo do Brito;Campo do Meio;Campo do Tenente;Campo Erê;Campo Florido;Campo Formoso;Campo Grande;Campo Grande;Campo Grande;Campo Grande do Piauí;Campo Largo;Campo Largo do Piauí;Campo Limpo de Goiás;Campo Limpo Paulista;Campo Magro;Campo Maior;Campo Mourão;Campo Novo;Campo Novo de Rondônia;Campo Novo do Parecis;Campo Redondo;Campos Altos;Campos Belos;Campos Borges;Campos de Júlio;Campos do Jordão;Campos dos Goytacazes;Campos Gerais;Campos Lindos;Campos Novos;Campos Novos Paulista;Campos Sales;Campos Verdes;Campo Verde;Camutanga;Canaã;Canaã dos Carajás;Canabrava do Norte;Cananéia;Canapi;Canápolis;Canápolis;Canarana;Canarana;Canas;Cana Verde;Canavieira;Canavieiras;Candeal;Candeias;Candeias;Candeias do Jamari;Candelária;Candiba;Cândido de Abreu;Cândido Godói;Cândido Mendes;Cândido Mota;Cândido Rodrigues;Cândido Sales;Candiota;Candói;Canela;Canelinha;Canguaretama;Canguçu;Canhoba;Canhotinho;Canindé;Canindé de São Francisco;Canitar;Canoas;Canoinhas;Cansanção;Cantagalo;Cantagalo;Cantagalo;Cantanhede;Cantá;Canto do Buriti;Canudos;Canudos do Vale;Canutama;Capanema;Capanema;Capão Alto;Capão Bonito;Capão Bonito do Sul;Damianópolis;Damião;Damolândia;Darcinópolis;Dário Meira;Datas;David Canabarro;Davinópolis;Davinópolis;Delfim Moreira;Delfinópolis;Delmiro Gouveia;Delta;Demerval Lobão;Denise;Deodápolis;Deputado Irapuan Pinheiro;Derrubadas;Descalvado;Descanso;Descoberto;Desterro;Desterro de Entre Rios;Desterro do Melo;Dezesseis de Novembro;Diadema;Diamante;Diamante d'Oeste;Diamante do Norte;Diamante do Sul;Diamantina;Diamantino;Dianópolis;Dias d'Ávila;Dilermando de Aguiar;Diogo de Vasconcelos;Dionísio;Dionísio Cerqueira;Echaporã;Ecoporanga;Edealina;Edéia;Eirunepé;Eldorado;Eldorado;Eldorado dos Carajás;Eldorado do Sul;Elesbão Veloso;Elias Fausto;Eliseu Martins;Elisiário;Elísio Medrado;Elói Mendes;Emas;Embaúba;Embu;Embu-Guaçu;Emilianópolis;Encantado;Encanto;Encruzilhada;Encruzilhada do Sul;Enéas Marques;Engenheiro Beltrão;Engenheiro Caldas;Engenheiro Coelho;Engenheiro Navarro;Engenheiro Paulo de Frontin;Engenho Velho;Entre Folhas;Fagundes;Fagundes Varela;Faina;Fama;Faria Lemos;Farias Brito;Faro;Farol;Farroupilha;Fartura;Fartura do Piauí;Fátima;Fátima;Fátima do Sul;Faxinal;Faxinal dos Guedes;Faxinal do Soturno;Faxinalzinho;Fazenda Nova;Fazenda Rio Grande;Fazenda Vilanova;Feijó;Feira da Mata;Feira de Santana;Feira Grande;Feira Nova;Feira Nova;Feira Nova do Maranhão;Felício dos Santos;Felipe Guerra;Felisburgo;Felixlândia;Feliz;Feliz Deserto;Feliz Natal;Fênix;Fernandes Pinheiro;Fernandes Tourinho;Fernando de Noronha;Fernando Falcão;Fernando Pedroza;Fernandópolis;Fernando Prestes;Fernão;Ferraz de Vasconcelos;Gabriel Monteiro;Gado Bravo;Gália;Galileia;Galinhos;Galvão;Gameleira;Gameleira de Goiás;Gameleiras;Gandu;Garanhuns;Gararu;Garça;Garibaldi;Garopaba;Garrafão do Norte;Garruchos;Garuva;Gaspar;Gastão Vidigal;Gaúcha do Norte;Gaurama;Gavião;Gavião Peixoto;Geminiano;General Câmara;General Carneiro;General Carneiro;General Maynard;General Salgado;General Sampaio;Gentil;Gentio do Ouro;Getulina;Getúlio Vargas;Gilbués;Girau do Ponciano;Giruá;Glaucilândia;Glicério;Glória;Glória de Dourados;Glória d'Oeste;Glória do Goitá;Glorinha;Godofredo Viana;Godoy Moreira;Goiabeira;Goiana;Goianá;Goianápolis;Goiandira;Goianésia;Goianésia do Pará;Goiânia;Goianinha;Goianira;Goianorte;Goiás;Iacanga;Iaciara;Iacri;Iaçu;Iapu;Iaras;Iati;Ibaiti;Ibarama;Ibaté;Ibaretama;Ibateguara;Ibatiba;Ibema;Ibertioga;Ibiá;Ibiaçá;Ibiaí;Ibiam;Ibiapina;Ibiara;Ibiassucê;Ibicaraí;Ibicaré;Ibicoara;Ibicuí;Ibicuitinga;Ibimirim;Ibipeba;Ibipitanga;Ibiporã;Ibiquera;Ibirá;Ibiracatu;Ibiraci;Ibiraçu;Ibiraiaras;Ibirajuba;Ibirama;Ibirapitanga;Ibirapuã;Ibirapuitã;Ibirarema;Ibirataia;Ibirité;Ibirubá;Ibitiara;Ibitinga;Ibitirama;Ibititá;Ibitiúra de Minas;Ibituruna;Ibiúna;Ibotirama;Icapuí;Içara;Icaraí de Minas;Icaraíma;Icatu;Icém;Ichu;Icó;Iconha;Ielmo Marinho;Iepê;Igaci;Igaporã;Igaraçu do Tietê;Igaracy;Igarapava;Igarapé;Igarapé-Açu;Igarapé do Meio;Igarapé Grande;Igarapé-Mirim;Igarassu;Igaratá;Igaratinga;Igrapiúna;Igreja Nova;Igrejinha;Iguaba Grande;Iguaí;Iguape;Iguaraci;Iguaraçu;Iguatama;Iguatemi;Iguatu;Iguatu;Ijaci;Ijuí;Ilhabela;Ilha Comprida;Ilha das Flores;Ilha de Itamaracá;Ilha Grande;Ilha Solteira;Ilhéus;Ilhota;Ilicínea;Ilópolis;Imaculada;Imaruí;Imbaú;Imbé;Imbé de Minas;Imbituba;Imbituva;Imbuia;Imigrante;Imperatriz;Inaciolândia;Inácio Martins;Inajá;Inajá;Inconfidentes;Indaiabira;Indaial;Indaiatuba;Independência;Independência;Indiana;Indianópolis;Indianópolis;Indiaporã;Indiara;Indiaroba;Indiavaí;Ingá;Jaboatão dos Guararapes;Jaborá;Jaborandi;Jaborandi;Jaboticaba;Jaboticabal;Jaboticatubas;Jaboti;Jaçanã;Jacaraci;Jacaraú;Jacareacanga;Jacaré dos Homens;Jacareí;Jacarezinho;Jaci;Jaciara;Jacinto;Jacinto Machado;Jacobina;Jacobina do Piauí;Jacuí;Jacuípe;Jacuizinho;Jacundá;Jacupiranga;Jacutinga;Jacutinga;Jaguapitã;Jaguaquara;Jaguaraçu;Jaguarão;Jaguarari;Jaguaré;Jaguaretama;Jaguari;Jaguariaíva;Jaguaribara;Jaguaribe;Jaguaripe;Jaguariúna;Jaguaruana;Jaguaruna;Jaíba;Jaicós;Jales;Jambeiro;Jampruca;Janaúba;Jandaia;Jandaia do Sul;Jandaíra;Jandaíra;Jandira;Janduís;Jangada;Janiópolis;Januária;Japaraíba;Japaratinga;Japaratuba;Japeri;Japi;Japira;Japoatã;Japonvar;Japorã;Japurá;Lábrea;Lacerdópolis;Ladainha;Ladário;Lafaiete Coutinho;Lagamar;Lagarto;Lages;Lagoa;Lagoa Alegre;Lagoa Bonita do Sul;Lagoa da Canoa;Lagoa da Confusão;Lagoa d'Anta;Lagoa da Prata;Lagoa de Dentro;Lagoa de Itaenga;Lagoa de Pedras;Lagoa de São Francisco;Lagoa de Velhos;Lagoa do Barro do Piauí;Lagoa do Carro;Lagoa do Mato;Lagoa do Ouro;Lagoa do Piauí;Lagoa dos Gatos;Lagoa do Sítio;Lagoa dos Patos;Lagoa dos Três Cantos;Lagoa do Tocantins;Lagoa Dourada;Lagoa Formosa;Lagoa Grande;Lagoa Grande;Lagoa Grande do Maranhão;Lagoa Nova;Lagoão;Lagoa Real;Lagoa Salgada;Lagoa Santa;Lagoa Santa;Lagoa Seca;Lagoa Vermelha;Lago da Pedra;Lago do Junco;Lago dos Rodrigues;Lagoinha;Lagoinha do Piauí;Lago Verde;Laguna;Laguna Carapã;Laje;Lajeado;Macaé;Macaíba;Macajuba;Maçambara;Macambira;Macapá;Macaparana;Macarani;Macatuba;Macau;Macaubal;Macaúbas;Macedônia;Maceió;Machacalis;Machadinho;Machadinho d'Oeste;Machado;Machados;Macieira;Macuco;Macururé;Madalena;Madeiro;Madre de Deus;Madre de Deus de Minas;Mãe d'Água;Mãe do Rio;Maetinga;Mafra;Magalhães Barata;Magalhães de Almeida;Magda;Magé;Maiquinique;Mairi;Mairinque;Mairiporã;Mairipotaba;Major Gercino;Major Isidoro;Major Sales;Major Vieira;Malacacheta;Malhada;Malhada de Pedras;Malhada dos Bois;Malhador;Mallet;Malta;Mamanguape;Mambaí;Mamborê;Mamonas;Mampituba;Manacapuru;Manaíra;Manaquiri;Manari;Manaus;Mâncio Lima;Mandaguaçu;Mandaguari;Mandirituba;Manduri;Manfrinópolis;Manga;Mangaratiba;Mangueirinha;Manhuaçu;Manhumirim;Manicoré;Manoel Emídio;Manoel Ribas;Manoel Urbano;Manoel Viana;Manoel Vitorino;Mansidão;Mantena;Mantenópolis;Maquiné;Maraã;Marabá;Marabá Paulista;Maracaçumé;Maracaí;Maracajá;Maracaju;Maracanã;Maracanaú;Maracás;Maragogi;Maragogipe;Maraial;Marajá do Sena;Maranguape;Maranhãozinho;Marapanim;Marapoama;Mara Rosa;Maratá;Marataízes;Maraú;Marau;Maravilha;Maravilha;Maravilhas;Marcação;Marcelândia;Marcelino Ramos;Marcelino Vieira;Marcionílio Souza;Marco;Marcolândia;Marcos Parente;Mar de Espanha;Marechal Cândido Rondon;Marechal Deodoro;Marechal Floriano;Marechal Thaumaturgo;Marema;Mari;Maria da Fé;Maria Helena;Marialva;Mariana;Mariana Pimentel;Mariano Moro;Marianópolis do Tocantins;Mariápolis;Maribondo;Maricá;Marilac;Marilândia;Marilândia do Sul;Marilena</value>
+  </data>
+  <data name="UkCountry" xml:space="preserve">
+    <value>Brasil</value>
+  </data>
+  <data name="UkPostCode" xml:space="preserve">
+    <value>??# #??;??## #??</value>
+  </data>
+  <data name="UsState" xml:space="preserve">
+    <value>Acre; Alagoas; Amapá; Amazonas; Bahia; Ceará; Distrito Federal; Espírito Santo; Goiás; Maranhão; Mato Grosso; Mato Grosso do Sul; Minas Gerais; Pará; Paraíba; Paraná; Pernambuco; Piauí; Rio de Janeiro; Rio Grande do Norte; Rio Grande do Sul; Rondônia; Rorâima; Santa Catarina; São Paulo; Sergipe; Tocantins</value>
+  </data>
+  <data name="UsStateAbbr" xml:space="preserve">
+    <value>AC;AL; AP; AM; BA; CE; DF; ES; GO; MA; MT; MS; MG; PA; PB; PR; PE; PI; RJ; RN; RS; RO; RR; SC; SP; SE; TO</value>
+  </data>
+  <data name="ZipCode" xml:space="preserve">
+    <value>#####-###;#####-###</value>
+  </data>
+</root>
