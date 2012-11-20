@@ -58,7 +58,7 @@ namespace Faker
                 random.Next(min, max).ToString(),
                 random.Next(min, max).ToString(),
                 random.Next(min, max).ToString(),
-            }
+            };
             return String.Join(".", parts);
         }
 
@@ -76,7 +76,7 @@ namespace Faker
                 random.Next(min, max).ToString("x"),
                 random.Next(min, max).ToString("x"),
                 random.Next(min, max).ToString("x"),
-            }
+            };
             return String.Join(":", parts);
         }
 
