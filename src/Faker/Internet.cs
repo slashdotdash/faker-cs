@@ -48,6 +48,43 @@ namespace Faker
             return Resources.Internet.DomainSuffix.Split(Config.Separator).Random();
         }
 
+        public static string IPv4Address()
+        {
+            Random random = new Random();
+            int min = 2;
+            int max = 255;
+            string[] parts = new string[] {
+                random.Next(min, max).ToString(),
+                random.Next(min, max).ToString(),
+                random.Next(min, max).ToString(),
+                random.Next(min, max).ToString(),
+            }
+            return String.Join(".", parts);
+        }
+
+        public static string IPv6Address()
+        {
+            Random random = new Random();
+            int min = 0;
+            int max = 65536;
+            string[] parts = new string[] {
+                random.Next(min, max).ToString("x"),
+                random.Next(min, max).ToString("x"),
+                random.Next(min, max).ToString("x"),
+                random.Next(min, max).ToString("x"),
+                random.Next(min, max).ToString("x"),
+                random.Next(min, max).ToString("x"),
+                random.Next(min, max).ToString("x"),
+                random.Next(min, max).ToString("x"),
+            }
+            return String.Join(":", parts);
+        }
+
+        public static string Url()
+        {
+            return String.Format("http://{0}/{1}", DomainName(), UserName());
+        }
+
         private static readonly IEnumerable<Func<string>> _userNameFormats = new List<Func<string>>
         {
             () => Name.First().AlphanumericOnly().ToLowerInvariant(),
