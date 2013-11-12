@@ -8,12 +8,12 @@ namespace Faker
     public static class RandomNumber
     {
         private static Random _rnd = new Random();
-
-		public static void ResetSeed(int seed)
-		{
-			_rnd = new Random(seed);
-		}
-
+        
+        public static void ResetSeed(int seed)
+        {
+            _rnd = new Random(seed);
+        }
+        
         public static int Next()
         {
             return _rnd.Next();
