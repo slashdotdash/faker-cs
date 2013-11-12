@@ -7,8 +7,13 @@ namespace Faker
     /// </summary>
     public static class RandomNumber
     {
-        private static readonly Random _rnd = new Random();
-
+        private static Random _rnd = new Random();
+        
+        public static void ResetSeed(int seed)
+        {
+            _rnd = new Random(seed);
+        }
+        
         public static int Next()
         {
             return _rnd.Next();
