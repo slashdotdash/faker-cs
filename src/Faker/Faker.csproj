@@ -76,6 +76,7 @@
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Internet.cs" />
     <Compile Include="Lorem.cs" />
+    <Compile Include="Enumeration.cs" />
     <Compile Include="Name.cs" />
     <Compile Include="Phone.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
