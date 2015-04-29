@@ -96,6 +96,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Resources\Name.pl-PL.Designer.cs">
+      <DependentUpon>Name.pl-PL.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Resources\Phone.pt-BR.Designer.cs">
       <DependentUpon>Phone.pt-BR.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -163,6 +168,11 @@
     <EmbeddedResource Include="Resources\Address.pt-BR.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Address.pt-BR.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Name.pl-PL.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Name.pl-PL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Phone.pt-BR.resx">
       <Generator>ResXFileCodeGenerator</Generator>
