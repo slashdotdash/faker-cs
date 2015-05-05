@@ -117,16 +117,46 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="First" xml:space="preserve">
-    <value>Ada; Adam; Adrian; Agata; Agnieszka; Alan; Albert; Aldona; Aleksander; Aleksandra; Alfred; Alicja; Alina; Amanda; Anastazja; Andrzej; Aneta; Angelika; Aniela; Anita; Anna; Antoni; Antonina; Ariel; Arkadiusz; Arleta; Arnold; Artur; Augustyn; Barbara; Bartłomiej; Beata; Beniamin; Berenika; Bernadeta; Bernard; Blanka; Bogdan; Bogna; Bogumiła; Bogusław; Bolesław; Borys; Bożena; Bruno; Brygida; Cecylia ; Celina; Cezary; Cyryl; Czesław; Dagmara; Damian; Daniel; Danuta; Daria; Dariusz; Dawid; Diana; Diana ; Dominik; Dominika; Dorota; Dymitr; Edward; Edyta; Eleonora; Eliza; Elwira; Elżbieta; Emil; Emilia; Eryk; Eugenia; Eugeniusz; Ewa; Ewelina; Fabian; Felicja; Feliks; Ferdynand; Filip; Franciszek; Franciszka; Fryderyk; Fryderyka; Gabriel; Gabriela; Genowefa; Gerard; Gizela; Grażyna; Grzegorz; Gustaw; Hanna; Helena; Henryk; Herbert; Hilary; Honorata; Hubert; Ida; Iga; Igor; Inga; Irena; Ireneusz; Iwo; Iwona; Izabela; Izydor; Jacek; Jadwiga; Jagoda; Jakub; Jan; Janina; Janusz; Jarosław; Jerzy; Joachim; Joanna; Jolanta; Jowita; Józef; Józefina; Judyta; Julia; Julian; Juliusz; Justyna; Kacper; Kaja; Kalina; Kamil; Kamila; Karina; Karol; Karolina; Katarzyna; Kazimiera; Kazimierz; Kinga; Klara; Klaudia; Klaudiusz; Klementyna; Konrad; Konstancja; Kora; Kornelia; Krystian; Krystyna; Krzysztof; Laura; Lech; Lena; Leokadia ; Leon; Leszek; Lidia; Liliana; Liliana ; Lucjan; Lucyna; Ludmiła; Ludwik; Luiza; Łucja; Łukasz; Maciej; Magdalena; Maja; Maksymilian; Malwina; Małgorzata; Marcin; Marek; Maria; Marian; Marianna; Mariola; Mariusz; Marlena; Marta; Martyna; Marzena; Mateusz; Matylda; Melania; Michalina; Michał; Mieczysław; Mikołaj; Milena; Mirosław; Monika; Narcyz; Natalia; Natasza; Nikodem; Nina; Norbert; Olaf; Olga; Olgierd; Oskar; Otylia; Pamela; Patrycja; Patryk; Paulina; Paweł; Piotr; Przemysław; Radosław; Rafał; Regina; Remigiusz; Renata; Rita; Robert; Roman; Rozalia; Rudolf; Ryszard; Sabina; Samuel; Sandra; Sara; Sebastian; Seweryn; Sławomir; Sonia; Stanisław; Stanisława; Stefan; Stefania; Stella; Sylwester; Sylwia; Szymon; Tadeusz; Tamara; Tatiana; Teodor; Teresa; Tomasz; Tymoteusz; Tytus; Urszula; Wacław; Waldemar; Wawrzyniec; Weronika; Wiesław; Wiktor; Wiktoria; Wioleta, Wioletta; Witold; Władysław; Władysława; Włodzimierz; Wojciech; Zbigniew; Zdzisław; Zdzisława; Zenon; Ziemowit ; Zofia; Zuzanna; Zygmunt; Zyta; Żaneta</value>
+  <data name="AddressFormat" xml:space="preserve">
+    <value>{0} ##;pl. {0} ##;al. {0} ##;{0} ###; {0} ## m. ##</value>
   </data>
-  <data name="Last" xml:space="preserve">
-    <value>Nowak;Kowalski;Wiśniewski;Dąbrowski;Lewandowski;Wójcik;Kamiński;Kowalczyk;Zieliński;Szymański;Woźniak;Kozłowski;Jankowski;Wojciechowski;Kwiatkowski;Kaczmarek;Mazur;Krawczyk;Piotrowski;Grabowski;Nowakowski;Pawłowski;Michalski;Nowicki;Adamczyk;Dudek;Zając;Wieczorek;Jabłoński;Król;Majewski;Olszewski;Jaworski;Wróbel;Malinowski;Pawlak;Witkowski;Walczak;Stępień;Górski;Rutkowski;Michalak;Sikora;Ostrowski;Baran;Duda;Szewczyk;Tomaszewski;Pietrzak;Marciniak;Wróblewski;Zalewski;Jakubowski;Jasiński;Zawadzki;Sadowski;Bąk;Chmielewski;Włodarczyk;Borkowski;Czarnecki;Sawicki;Sokołowski;Urbański;Kubiak;Maciejewski;Szczepański;Kucharski;Wilk;Kalinowski;Lis;Mazurek;Wysocki;Adamski;Kaźmierczak;Wasilewski;Sobczak;Czerwiński;Andrzejewski;Cieślak;Głowacki;Zakrzewski;Kołodziej;Sikorski;Krajewski;Gajewski;Szymczak;Szulc;Baranowski;Laskowski;Brzeziński;Makowski;Ziółkowski;Przybylski;Domański;Nowacki;Borowski;Błaszczyk;Chojnacki;Ciesielski;Mróz;Szczepaniak;Wesołowski;Górecki;Krupa;Kaczmarczyk;Leszczyński;Lipiński;Kowalewski;Urbaniak;Kozak;Kania;Mikołajczyk;Czajkowski;Mucha;Tomczak;Kozioł;Markowski;Kowalik;Nawrocki;Brzozowski;Janik;Musiał;Wawrzyniak;Markiewicz;Orłowski;Tomczyk;Jarosz;Kołodziejczyk;Kurek;Kopeć;Żak;Wolski;Łuczak;Dziedzic;Kot;Stasiak;Stankiewicz;Piątek;Jóźwiak;Urban;Dobrowolski;Pawlik;Kruk;Domagała;Piasecki;Wierzbicki;Karpiński;Jastrzębski;Polak;Zięba;Janicki;Wójtowicz;Stefański;Sosnowski;Bednarek;Majchrzak;Bielecki;Małecki;Maj;Sowa;Milewski;Gajda;Klimek;Olejniczak;Ratajczak;Romanowski;Matuszewski;Śliwiński;Madej;Kasprzak;Wilczyński;Grzelak;Socha;Czajka;Marek;Kowal;Bednarczyk;Skiba;Wrona;Owczarek;Marcinkowski;Matusiak;Orzechowski;Sobolewski;Kędzierski;Kurowski;Rogowski;Olejnik;Dębski;Barański;Skowroński;Mazurkiewicz;Pająk;Czech;Janiszewski;Bednarski;Łukasik;Chrzanowski;Bukowski;Leśniak;Cieślik;Kosiński;Jędrzejewski;Muszyński;Świątek;Kozieł;Osiński;Czaja;Lisowski;Kuczyński;Żukowski;Grzybowski;Kwiecień;Pluta;Morawski;Czyż;Sobczyk;Augustyniak;Rybak;Krzemiński;Marzec;Konieczny;Marczak;Zych;Michalik;Michałowski;Kaczor;Świderski;Kubicki;Gołębiowski;Paluch;Białek;Niemiec;Sroka;Stefaniak;Cybulski;Kacprzak;Marszałek;Kasprzyk;Małek;Szydłowski;Smoliński;Kujawa;Lewicki;Przybysz;Stachowiak;Popławski;Piekarski;Matysiak;Janowski;Murawski;Cichocki;Witek;Niewiadomski;Staniszewski;Bednarz;Lech;Rudnicki;Kulesza;Piątkowski;Turek;Chmiel;Biernacki;Sowiński;Skrzypczak;Podgórski;Cichoń;Rosiński;Karczewski;Żurek;Drozd;Żurawski;Pietrzyk;Komorowski;Antczak;Gołębiewski;Góra;Banach;Filipiak;Grochowski;Krzyżanowski;Graczyk;Przybyła;Gruszka;Banaś;Klimczak;Siwek;Konieczna;Serafin;Bieniek;Godlewski;Rak;Kulik;Maćkowiak;Zawada;Mikołajczak;Różański;Cieśla;Długosz</value>
+  <data name="CityPrefix" xml:space="preserve">
+    <value>Wola;Leśne;Nowe;Stare;Kolonia</value>
   </data>
-  <data name="Prefix" xml:space="preserve">
-    <value>Pan;Pani</value>
+  <data name="CitySufix" xml:space="preserve">
+    <value>Podleskie;Wielkie;Wyżne;Niżne;Małe;Kujawskie;Małopolskie;Zdrój;Górne;Dolne;Kolonia</value>
   </data>
-  <data name="Suffix" xml:space="preserve">
-    <value></value>
+  <data name="Country" xml:space="preserve">
+    <value>Afganistan;Albania;Algieria;Andora;Angola;Antigua i Barbuda;Arabia Saudyjska;Argentyna;Armenia;Australia;Austria;Azerbejdżan;Bahamy;Bahrajn;Bangladesz;Barbados;Belgia;Belize;Benin;Bhutan;Białoruś;Boliwia;Bośnia i Hercegowina;Botswana;Brazylia;Brunei;Bułgaria;Burkina Faso;Burundi;Chile;Chiny;Chorwacja;Cypr;Czad;Czarnogóra;Czechy;Dania;Demokratyczna Republika Konga;Dominika;Dominikana;Dżibuti;Egipt;Ekwador;Erytrea;Estonia;Etiopia;Fidżi;Filipiny;Finlandia;Francja;Gabon;Gambia;Ghana;Grecja;Grenada;Gruzja;Gujana;Gwatemala;Gwinea;Gwinea Bissau;Gwinea Równikowa;Haiti;Hiszpania;Holandia;Honduras;Indie;Indonezja;Irak;Iran;Irlandia;Islandia;Izrael;Jamajka;Japonia;Jemen;Jordania;Kambodża;Kamerun;Kanada;Katar;Kazachstan;Kenia;Kirgistan;Kiribati;Kolumbia;Komory;Kongo;Korea Południowa;Korea Północna;Kostaryka;Kuba;Kuwejt;Laos;Lesotho;Liban;Liberia;Libia;Liechtenstein;Litwa;Luksemburg;Łotwa;Macedonia;Madagaskar;Malawi;Malediwy;Malezja;Mali;Malta;Maroko;Mauretania;Mauritius;Meksyk;Mikronezja;Mjanma;Mołdawia;Monako;Mongolia;Mozambik;Namibia;Nauru;Nepal;Niemcy;Niger;Nigeria;Nikaragua;Norwegia;Nowa Zelandia;Oman;Pakistan;Palau;Panama;Papua-Nowa Gwinea;Paragwaj;Peru;Polska;Portugalia;Republika Południowej Afryki;Republika Środkowoafrykańska;Republika Zielonego Przylądka;Rosja;Rumunia;Rwanda;Saint Kitts i Nevis;Saint Lucia;Saint Vincent i Grenadyny;Salwador;Samoa;San Marino;Senegal;Serbia;Seszele;Sierra Leone;Singapur;Słowacja;Słowenia;Somalia;Sri Lanka;Stany Zjednoczone;Suazi;Sudan;Sudan Południowy;Surinam;Syria;Szwajcaria;Szwecja;Tadżykistan;Tajlandia;Tanzania;Timor Wschodni;Togo;Tonga;Trynidad i Tobago;Tunezja;Turcja;Turkmenistan;Tuvalu;Uganda;Ukraina;Urugwaj;Uzbekistan;Vanuatu;Watykan;Wenezuela;Węgry;Wielka Brytania;Wietnam;Włochy;Wybrzeże Kości Słoniowej;Wyspy Marshalla;Wyspy Salomona;Wyspy Świętego Tomasza i Książęca;Zambia;Zimbabwe;Zjednoczone Emiraty Arabskie</value>
+  </data>
+  <data name="SecondaryAddress" xml:space="preserve">
+    <value>m. ###;lok. ###</value>
+  </data>
+  <data name="StreetNameSeparator" xml:space="preserve">
+    <value> </value>
+  </data>
+  <data name="StreetSuffix" xml:space="preserve">
+    <value>Polskiego;Dukt;Trakt;Górna;Górska;Jantar;Kapeli;Krótka;Laurowa;Leśna;Ładna;Miła;Młoda;Ostra;Polna;Szkolna;Szeroka</value>
+  </data>
+  <data name="UkCounties" xml:space="preserve">
+    <value>Avon;Bedfordshire;Berkshire;Borders;Buckinghamshire;Cambridgeshire;Central;Cheshire;Cleveland;Clwyd;Cornwall;County Antrim;County Armagh;County Down;County Fermanagh;County Londonderry;County Tyrone;Cumbria;Derbyshire;Devon;Dorset;Dumfries and Galloway;Durham;Dyfed;East Sussex;Essex;Fife;Gloucestershire;Grampian;Greater Manchester;Gwent;Gwynedd County;Hampshire;Herefordshire;Hertfordshire;Highlands and Islands;Humberside;Isle of Wight;Kent;Lancashire;Leicestershire;Lincolnshire;Lothian;Merseyside;Mid Glamorgan;Norfolk;North Yorkshire;Northamptonshire;Northumberland;Nottinghamshire;Oxfordshire;Powys;Rutland;Shropshire;Somerset;South Glamorgan;South Yorkshire;Staffordshire;Strathclyde;Suffolk;Surrey;Tayside;Tyne and Wear;Warwickshire;West Glamorgan;West Midlands;West Sussex;West Yorkshire;Wiltshire;Worcestershire</value>
+  </data>
+  <data name="UkCountry" xml:space="preserve">
+    <value>England;Scotland;Wales;Northern Ireland</value>
+  </data>
+  <data name="UkPostCode" xml:space="preserve">
+    <value>??# #??;??## #??</value>
+  </data>
+  <data name="UsState" xml:space="preserve">
+    <value>Alabama;Alaska;Arizona;Arkansas;California;Colorado;Connecticut;Delaware;Florida;Georgia;Hawaii;Idaho;Illinois;Indiana;Iowa;Kansas;Kentucky;Louisiana;Maine;Maryland;Massachusetts;Michigan;Minnesota;Mississippi;Missouri;Montana;Nebraska;Nevada;New Hampshire;New Jersey;New Mexico;New York;North Carolina;North Dakota;Ohio;Oklahoma;Oregon;Pennsylvania;Rhode Island;South Carolina;South Dakota;Tennessee;Texas;Utah;Vermont;Virginia;Washington;West Virginia;Wisconsin;Wyoming</value>
+  </data>
+  <data name="UsStateAbbr" xml:space="preserve">
+    <value>AL;AK;AS;AZ;AR;CA;CO;CT;DE;DC;FM;FL;GA;GU;HI;ID;IL;IN;IA;KS;KY;LA;ME;MH;MD;MA;MI;MN;MS;MO;MT;NE;NV;NH;NJ;NM;NY;NC;ND;MP;OH;OK;OR;PW;PA;PR;RI;SC;SD;TN;TX;UT;VT;VI;VA;WA;WV;WI;WY;AE;AA;AP</value>
+  </data>
+  <data name="ZipCode" xml:space="preserve">
+    <value>##-###</value>
+  </data>
+  <data name="Province" xml:space="preserve">
+    <value>dolnośląskie;kujawsko-pomorskie;lubelskie;lubuskie;łódzkie;małopolskie;mazowieckie;opolskie;podkarpackie;podlaskie;pomorskie;śląskie;świętokrzyskie;warmińsko-mazurskie;wielkopolskie;zachodniopomorskie</value>
   </data>
 </root>
