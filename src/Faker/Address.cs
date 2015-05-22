@@ -82,6 +82,11 @@ namespace Faker
             return Resources.Address.UkPostCode.Split(Config.Separator).Random().Trim().Numerify().Letterify();
         }
 
+        public static string Province()
+        {
+            return Resources.Address.Province.Split(Config.Separator).Random().Trim().Numerify().Letterify();
+        }
+
         #region Format Mappings
         private static readonly IEnumerable<Func<string>> _cityFormats = new List<Func<string>>
         {
