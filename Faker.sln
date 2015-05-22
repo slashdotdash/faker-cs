@@ -1,8 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
-MinimumVisualStudioVersion = 10.0.40219.1
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Faker", "src\Faker\Faker.csproj", "{598D73F1-9EBD-494A-A244-7AA4E7FB7591}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Faker.Tests", "tests\Faker.Tests\Faker.Tests.csproj", "{23996BF0-3124-4BA1-805C-85E2B6580CB5}"
