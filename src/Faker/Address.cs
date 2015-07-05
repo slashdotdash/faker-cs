@@ -59,7 +59,7 @@ namespace Faker
 
         public static string StreetAddress(bool includeSecondary)
         {
-            return _streetAddressFormats.Random().Numerify() + (includeSecondary ? " " + SecondaryAddress() : "");
+            return _streetAddressFormats.Random().Trim().Numerify() + (includeSecondary ? " " + SecondaryAddress() : "");
         }
 
         public static string SecondaryAddress()
