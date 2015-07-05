@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Comments>
+  <ConfigSeparator>
+    <remarks>
+      <note>
+This is no longer used in the project itself, after all the Resource file separators should never be changed.
+      </note>
+      <note type="warning">
+Will be removed in the next major version release.
+      </note>
+    </remarks>
+  </ConfigSeparator>
+
+  <SatelliteResource>
+    <remarks>
+The resources are aquired by satellite assemblies matching the current thread's
+<see cref="System.Globalization.CultureInfo" />.
+If no matching satellite  assembly is found, the english version is used.
+    </remarks>
+  </SatelliteResource>
+
+</Comments>

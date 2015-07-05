@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Revisions>
+
+  <RandomNumber id="NextMaxValue">
+    <revisionHistory>
+      <revision date="07/05/2015" version="1.0.4.0" author="AdmiringWorm">
+Renamed previously named <c>max</c> variable to <paramref name="maxValue" /> to be
+consistent with the
+<see cref="Random.Next(int)">Random.Next(Int32)</see> method.
+      </revision>
+    </revisionHistory>
+  </RandomNumber>
+
+  <RandomNumber id="NextMinValueMaxValue">
+    <revisionHistory>
+      <revision date="07/05/2015" version="1.0.4.0" author="AdmiringWorm">
+Renamed previously named
+<c>min</c>
+and <c>max</c> variable to <paramref name="minValue" /> and
+<paramref name="maxValue" /> to be consistent with the <see cref="Random.Next(int,int)">Random.Next(Int32,Int32)</see> method.
+      </revision>
+    </revisionHistory>
+  </RandomNumber>
+
+  <RandomNumber id="ResetSeed">
+    <revisionHistory>
+      <revision date="07/05/2015" version="1.0.4.0" author="AdmiringWorm">
+Renamed previously named <c>seed</c> to <paramref name="Seed" /> to be consistent with the
+<see cref="Random(int)" /> constructor.
+      </revision>
+    </revisionHistory>
+  </RandomNumber>
+
+</Revisions>

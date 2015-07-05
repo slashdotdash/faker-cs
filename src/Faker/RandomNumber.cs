@@ -1,32 +1,48 @@
 ﻿using System;
 
+// ReSharper disable ExceptionNotThrown
+
 namespace Faker
 {
     /// <summary>
-    /// Provide access to random number geenrator.
+    ///     Provides access to random number generator.
     /// </summary>
+    /// <seealso cref="Random" />
+    /// <threadsafety static="false" />
     public static class RandomNumber
     {
-        private static Random _rnd = new Random();
-        
-        public static void ResetSeed(int seed)
-        {
-            _rnd = new Random(seed);
-        }
-        
+        private static Random s_rnd = new Random();
+
+        /// <inheritdoc cref="Random.Next()" />
+        /// <seealso cref="Random.Next()" />
         public static int Next()
         {
-            return _rnd.Next();
+            return s_rnd.Next();
         }
 
-        public static int Next(int max)
+        /// <inheritdoc cref="Random.Next(int)" />
+        /// <seealso cref="Random.Next(int)" />
+        /// <include file='Docs/RevisionHistory.xml' path='Revisions/RandomNumber[@id="NextMaxValue"]/revisionHistory' />
+        public static int Next(int maxValue)
         {
-            return _rnd.Next(max);
+            return s_rnd.Next(maxValue);
         }
 
-        public static int Next(int min, int max)
+        /// <inheritdoc cref="Random.Next(int,int)" />
+        /// <seealso cref="Random.Next(int,int)" />
+        /// <include file='Docs/RevisionHistory.xml' path='Revisions/RandomNumber[@id="NextMinValueMaxValue"]/revisionHistory' />
+        public static int Next(int minValue, int maxValue)
         {
-            return _rnd.Next(min, max);
+            return s_rnd.Next(minValue, maxValue);
+        }
+
+        /// <inheritdoc cref="Random(int)" />
+        /// <seealso cref="Random" />
+        /// <include file='Docs/RevisionHistory.xml' path='Revisions/RandomNumber[@id="ResetSeed"]/revisionHistory' />
+        // ReSharper disable once InconsistentNaming
+        public static void ResetSeed(int Seed)
+        {
+            s_rnd = new Random(Seed);
         }
     }
 }

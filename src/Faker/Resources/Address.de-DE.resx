@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AddressFormat" xml:space="preserve">
     <value>{0} #####;{0} ####;{0} ###</value>
@@ -123,7 +123,7 @@
   <data name="CityPrefix" xml:space="preserve">
     <value>Nord;Ost;West;Süd;Neu;Alt;Bad</value>
   </data>
-  <data name="CitySufix" xml:space="preserve">
+  <data name="CitySuffix" xml:space="preserve">
     <value>stadt;dorf;land;scheid;burg</value>
   </data>
   <data name="Country" xml:space="preserve">
@@ -136,16 +136,13 @@
     <value />
   </data>
   <data name="StreetSuffix" xml:space="preserve">
-    <value>allee;berg;bruecke;brücke;gaesschen;gaeßchen;gasse;gässchen;gäßchen;platz;ring;strasse;straße;weg</value>
+    <value>allee;berg;bruecke;brücke;gaesschen;gaeßchen;gasse;gässchen;gäßchen;platz;ring;strasse;strße;weg</value>
   </data>
   <data name="UkCounties" xml:space="preserve">
     <value>Avon;Bedfordshire;Berkshire;Borders;Buckinghamshire;Cambridgeshire;Central;Cheshire;Cleveland;Clwyd;Cornwall;County Antrim;County Armagh;County Down;County Fermanagh;County Londonderry;County Tyrone;Cumbria;Derbyshire;Devon;Dorset;Dumfries and Galloway;Durham;Dyfed;East Sussex;Essex;Fife;Gloucestershire;Grampian;Greater Manchester;Gwent;Gwynedd County;Hampshire;Herefordshire;Hertfordshire;Highlands and Islands;Humberside;Isle of Wight;Kent;Lancashire;Leicestershire;Lincolnshire;Lothian;Merseyside;Mid Glamorgan;Norfolk;North Yorkshire;Northamptonshire;Northumberland;Nottinghamshire;Oxfordshire;Powys;Rutland;Shropshire;Somerset;South Glamorgan;South Yorkshire;Staffordshire;Strathclyde;Suffolk;Surrey;Tayside;Tyne and Wear;Warwickshire;West Glamorgan;West Midlands;West Sussex;West Yorkshire;Wiltshire;Worcestershire</value>
   </data>
   <data name="UkCountry" xml:space="preserve">
     <value>England;Schottland;Wales;Nord Irland</value>
-  </data>
-  <data name="UkPostCode" xml:space="preserve">
-    <value>??# #??;??## #??</value>
   </data>
   <data name="UsState" xml:space="preserve">
     <value>Alabama;Alaska;Arizona;Arkansas;California;Colorado;Connecticut;Delaware;Florida;Georgia;Hawaii;Idaho;Illinois;Indiana;Iowa;Kansas;Kentucky;Louisiana;Maine;Maryland;Massachusetts;Michigan;Minnesota;Mississippi;Missouri;Montana;Nebraska;Nevada;New Hampshire;New Jersey;New Mexico;New York;North Carolina;North Dakota;Ohio;Oklahoma;Oregon;Pennsylvania;Rhode Island;South Carolina;South Dakota;Tennessee;Texas;Utah;Vermont;Virginia;Washington;West Virginia;Wisconsin;Wyoming</value>

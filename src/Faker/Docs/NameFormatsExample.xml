@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<example>
+
+  <code language="cs" source="..\Demos\NameFormats.cs" />
+  <code language="VB" source="..\Demos\NameFormats.vb" />
+  <code language="cpp" source="..\Demos\NameFormats.cpp" />
+  <code language="fs" source="..\Demos\NameFormats.fs" />
+
+</example>

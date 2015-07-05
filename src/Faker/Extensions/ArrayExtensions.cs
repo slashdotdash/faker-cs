@@ -1,39 +1,43 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace Faker.Extensions
 {
+    /// <summary>
+    ///     A collection of Array helper extensions
+    /// </summary>
     public static class ArrayExtensions
     {
         /// <summary>
-        /// Select a random element from the array.
+        ///     Select a random element from the array.
         /// </summary>
-        public static string Random(this string[] list)
+        /// <typeparam name="TResult">The type of the result.</typeparam>
+        /// <param name="list">The list.</param>
+        /// <returns>The selected element from the array.</returns>
+        /// <exception cref="System.InvalidOperationException">Array must contain at least one item</exception>
+        public static TResult Random<TResult>(this TResult[] list)
         {
-            if (list.Count() == 0) throw new InvalidOperationException("Array must contain at least one item");
+            if (!list.Any())
+                throw new InvalidOperationException("Array must contain at least one item");
 
             return list[RandomNumber.Next(0, list.Length)];
         }
 
         /// <summary>
-        /// Select a random string from the Enumerable list.
+        ///     Selects a random character from the specified <paramref name="source" />
         /// </summary>
-        public static string Random(this IEnumerable<Func<string>> list)
+        /// <param name="source">The source containing characters to select from.</param>
+        /// <returns>System.Char.</returns>
+        /// <exception cref="System.ArgumentNullException">source is <c>null</c></exception>
+        /// <exception cref="System.ArgumentException">The specified source can not be an empty string.</exception>
+        public static char Random(this string source)
         {
-            if (list.Count() == 0) throw new InvalidOperationException("Enumerable list must contain at least one item");
+            if (source == null)
+                throw new ArgumentNullException(nameof(source));
+            if (source.Trim() == string.Empty)
+                throw new ArgumentException("The specified source can not be an empty string.", nameof(source));
 
-            return list.ElementAt(RandomNumber.Next(0, list.Count())).Invoke();
-        }
-
-        /// <summary>
-        /// Select a random string array from the Enumerable list.
-        /// </summary>
-        public static string[] Random(this IEnumerable<Func<string[]>> list)
-        {
-            if (list.Count() == 0) throw new InvalidOperationException("Enumerable list must contain at least one item");
-
-            return list.ElementAt(RandomNumber.Next(0, list.Count())).Invoke();
+            return source[RandomNumber.Next(0, source.Length)];
         }
     }
 }
