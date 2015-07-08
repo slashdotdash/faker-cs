@@ -9,9 +9,9 @@ namespace Faker.Tests
     {
         [Test]
         [Repeat(10000)]
-        public void Should_Generate_Bs()
+        public void Should_Generate_Bullshit()
         {
-            string bs = Company.BS();
+            string bs = Company.Bullshit();
             //Assert.IsTrue(Regex.IsMatch(bs, @"[\w\-]+ [\w\-]+ [\w\-]+"));
             Assert.That(bs,
                         Is.StringMatching(@"^([\w\-]+ ?){3,4}$")

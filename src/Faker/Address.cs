@@ -171,10 +171,10 @@ namespace Faker
 
         private static readonly IEnumerable<Func<string>> s_cityFormats = new Func<string>[]
         {
-            () => string.Format(CultureInfo.CurrentCulture, "{0} {1}{2}", CityPrefix(), Name.First(), CitySuffix()),
-            () => string.Format(CultureInfo.CurrentCulture, "{0} {1}", CityPrefix(), Name.First()),
-            () => Name.First() + CitySuffix(),
-            () => Name.Last() + CitySuffix()
+            () => string.Format("{0} {1}{2}", CityPrefix(), Name.First(), CitySuffix()),
+            () => string.Format("{0} {1}", CityPrefix(), Name.First()),
+            () => String.Format("{0}{1}", Name.First(), CitySuffix()),
+            () => string.Format("{0}{1}", Name.Last(), CitySuffix())
         };
 
         private static readonly IEnumerable<Func<string[]>> s_streetFormats = new Func<string[]>[]

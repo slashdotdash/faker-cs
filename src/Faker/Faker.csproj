@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Faker</RootNamespace>
-    <AssemblyName>Faker</AssemblyName>
+    <AssemblyName>Faker.Portable</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -24,7 +24,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\Faker.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\Faker.Portable.xml</DocumentationFile>
     <RunCodeAnalysis>true</RunCodeAnalysis>
     <CodeAnalysisRuleSet>..\..\Faker.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
@@ -35,15 +35,25 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\Faker.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\Faker.Portable.xml</DocumentationFile>
     <RunCodeAnalysis>true</RunCodeAnalysis>
     <CodeAnalysisRuleSet>..\..\Faker.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>false</SignAssembly>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Faker.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
+    <EmbeddedResource Include="Resources\Lorem.de-DE.resx" />
+    <EmbeddedResource Include="Resources\Phone.de-DE.resx" />
+    <EmbeddedResource Include="Resources\Phone.pt-BR.resx" />
+    <EmbeddedResource Include="Resources\Phone.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Phone.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="Docs\NameFormatsExample.xml" />
     <EmbeddedResource Include="Resources\Address.de-DE.resx">
       <SubType>Designer</SubType>
@@ -56,18 +66,38 @@
       <LastGenOutput>Address.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Company.de-DE.resx" />
+    <EmbeddedResource Include="Resources\Company.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Company.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Internet.de-DE.resx" />
+    <EmbeddedResource Include="Resources\Internet.pt-BR.resx" />
+    <EmbeddedResource Include="Resources\Internet.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Internet.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Lorem.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Lorem.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Name.de-DE.resx" />
     <EmbeddedResource Include="Resources\Name.pt-BR.resx" />
     <EmbeddedResource Include="Resources\Name.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Name.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Faker.snk" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Address.cs" />
+    <Compile Include="Company.cs" />
     <Compile Include="Config.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Internet.cs" />
+    <Compile Include="Lorem.cs" />
     <Compile Include="Name.cs" />
+    <Compile Include="Phone.cs" />
     <Compile Include="RandomNumber.cs" />
     <Compile Include="Extensions\ArrayExtensions.cs" />
     <Compile Include="Extensions\EnumerableExtensions.cs" />
@@ -77,10 +107,30 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Address.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resources\Company.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Company.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Internet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Internet.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Lorem.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Lorem.resx</DependentUpon>
+    </Compile>
     <Compile Include="Resources\Name.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Name.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Phone.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Phone.resx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

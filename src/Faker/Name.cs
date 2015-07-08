@@ -66,7 +66,7 @@ namespace Faker
         /// <include file='Docs/NameFormatsExample.xml' path='example' />
         public static string FullName(NameFormats format)
         {
-            return string.Join(" ", _formatMap[format].Invoke());
+            return string.Join(" ", s_formatMap[format].Invoke());
         }
 
         /// <summary>
@@ -106,7 +106,7 @@ namespace Faker
             NameFormats.Standard, NameFormats.Standard
         };
 
-        private static readonly IDictionary<NameFormats, Func<string[]>> _formatMap = new Dictionary
+        private static readonly IDictionary<NameFormats, Func<string[]>> s_formatMap = new Dictionary
             <NameFormats, Func<string[]>>
         {
             {NameFormats.Standard, () => new[] {First(), Last()}},

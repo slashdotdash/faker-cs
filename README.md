@@ -1,24 +1,29 @@
-Faker
+Faker.NET Portable Edition
 =====
+[![Build status](https://ci.appveyor.com/api/projects/status/iggsqi972k9dqvoo/branch/develop?svg=true)](https://ci.appveyor.com/project/AdmiringWorm/faker-cs/branch/develop)
+
 
 C# port of the Ruby Faker gem (http://faker.rubyforge.org/) and is used to easily generate fake data: 
 names, addresses, phone numbers, etc.
 
-Available as a NuGet package (https://nuget.org/packages/Faker.Net).
+Will be available as a NuGet package when it's ready.
 
 Get the code via git:
 
-    git clone git://github.com/slashdotdash/faker-cs.git
+    git clone https://github.com/AdmiringWorm/faker-cs.git
 
 Supported version:
 
-	.NET framework 3.5 SP1,
+
 	.NET framework 4.0,
-	Silverlight 3.0,
-	Silverlight 4.0,
 	Silverlight 5.0,
-	Windows Phone 7,
-	Windows Phone 7.1,
+    Windows 8,
+    Windows Phone 8.1,
+    Windows Phone Silverlight 8,
+    Xamarin.Android,
+    Xamarin.iOS,
+    Xamarin.iOS (Classic),
+    Mono (Currently Untested)
 
 ## Usage
 

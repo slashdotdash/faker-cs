@@ -35,10 +35,10 @@ namespace Faker.Extensions
         /// <param name="count">How many times to call the function.</param>
         /// <param name="func">The function to call.</param>
         /// <returns>An enumerable of the result from the called function.</returns>
-        /// <exception cref="Exception">A delegate callback throws an exception.</exception>
         public static IEnumerable<T> Times<T>(this int count, Func<int, T> func)
         {
             for (var i = 0; i < count; i++)
+                // ReSharper disable once EventExceptionNotDocumented
                 yield return func.Invoke(i);
         }
     }

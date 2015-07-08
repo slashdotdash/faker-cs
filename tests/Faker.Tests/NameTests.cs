@@ -12,7 +12,7 @@ namespace Faker.Tests
         {
             string name = Name.FullName();
             //Assert.IsTrue(Regex.IsMatch(name, @"^(\w+\.? ?){2,3}$"));
-            Assert.That(name, Is.StringMatching(@"^([\w']+\.? ?){2,3}$"));
+            Assert.That(name, Is.StringMatching(@"^([\w']+\.? ?){2,4}$"));
         }
 
         [Test]

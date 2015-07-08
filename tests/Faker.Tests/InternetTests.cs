@@ -62,7 +62,8 @@ namespace Faker.Tests
         {
             string domain = Internet.DomainName();
             //Assert.IsTrue(Regex.IsMatch(domain, @"\w+\.\w+"));
-            Assert.That(domain, Is.StringMatching(@"^\w+(\.\w+){1,2}$"));
+            Assert.That(domain, Is.StringMatching(@"^\w+(\.\w+){1,2}$")
+                                  .Or.StringMatching(@"^www2?\.\w+(\.\w+){1,2}$"));
         }
 
         [Test]

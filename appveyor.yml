@@ -1,0 +1,21 @@
+version: 1.4.0.{build}
+configuration: Release
+assembly_info:
+  patch: true
+  file: src\Faker\Properties\AssemblyInfo.cs
+  assembly_version: '{version}'
+  assembly_file_version: '{version}'
+  assembly_informational_version: '{version}-alpha'
+install:
+- nuget restore Faker.sln
+cache: packages
+build:
+  project: Faker.sln
+  parallel: true
+  verbosity: minimal
+after_build:
+- cd src\Faker\bin\%configuration%
+- 7z a "%APPVEYOR_BUILD_FOLDER%\Faker.NET.Portable-%APPVEYOR_BUILD_VERSION%.zip" -x!*CodeAnalysis* -r -mx=9
+- cd "%APPVEYOR_BUILD_FOLDER%"
+artifacts:
+- path: Faker.NET-Portable-$(version).zip
