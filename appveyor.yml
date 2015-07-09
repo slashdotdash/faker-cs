@@ -18,4 +18,4 @@ after_build:
 - 7z a "%APPVEYOR_BUILD_FOLDER%\Faker.NET.Portable-%APPVEYOR_BUILD_VERSION%.zip" -x!*CodeAnalysis* -r -mx=9
 - cd "%APPVEYOR_BUILD_FOLDER%"
 artifacts:
-- path: Faker.NET-Portable-$(version).zip
+- path: *.zip

@@ -36,7 +36,7 @@ namespace Faker
             return s_rnd.Next(minValue, maxValue);
         }
 
-        /// <inheritdoc cref="Random(int)" />
+        /// <inheritdoc cref="System.Random(int)" />
         /// <seealso cref="Random" />
         /// <include file='Docs/RevisionHistory.xml' path='Revisions/RandomNumber[@id="ResetSeed"]/revisionHistory' />
         // ReSharper disable once InconsistentNaming
