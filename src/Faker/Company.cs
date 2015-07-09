@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using Faker.Extensions;
 
 namespace Faker
@@ -9,6 +10,7 @@ namespace Faker
     /// </summary>
     /// <include file='Docs/CustomRemarks.xml' path='Comments/SatelliteResource/*' />
     /// <threadsafety static="false" />
+    [SuppressMessage("ReSharper", "UseStringInterpolation")]
     public static class Company
     {
         #region Format Mappings
@@ -33,7 +35,10 @@ namespace Faker
         /// </remarks>
         [Obsolete("This method is obsolete. Call Bullshit() instead", true)]
         // ReSharper disable once InconsistentNaming
-        public static string BS() => Bullshit();
+        public static string BS()
+        {
+            return Bullshit();
+        }
 
         /// <summary>
         ///     When a straight answer won't do, Bullshit to the rescue!

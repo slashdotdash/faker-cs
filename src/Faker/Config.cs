@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Faker
 {
@@ -18,6 +19,10 @@ namespace Faker
         /// <value>The separator.</value>
         /// <include file='Docs/CustomRemarks.xml' path='Comments/ConfigSeparator/remarks' />
         [Obsolete]
-        public static char Separator { get; set; } = SEPARATOR;
+        [SuppressMessage("ReSharper", "ConvertPropertyToExpressionBody")]
+        public static char Separator
+        {
+            get { return SEPARATOR; }
+        }
     }
 }
