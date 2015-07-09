@@ -1,4 +1,7 @@
 version: 1.4.0.{build}
+branches:
+  except:
+  - ci/travis
 configuration: Release
 assembly_info:
   patch: true
@@ -9,13 +12,13 @@ assembly_info:
 install:
 - nuget restore Faker.sln
 cache: packages
+nuget:
+  disable_publish_on_pr: true
 build:
   project: Faker.sln
   parallel: true
   verbosity: minimal
 after_build:
-- cd src\Faker\bin\%configuration%
-- 7z a "%APPVEYOR_BUILD_FOLDER%\Faker.NET.Portable-%APPVEYOR_BUILD_VERSION%.zip" -x!*CodeAnalysis* -r -mx=9
-- cd "%APPVEYOR_BUILD_FOLDER%"
+- 7z a "Faker.NET.Portable-%APPVEYOR_BUILD_VERSION%.zip" "%APPVEYOR_BUILD_FOLDER%\src\Faker\bin\%" -x!*CodeAnalysis* -r -mx=9
 artifacts:
-- path: *.zip
+- path: '*.zip'

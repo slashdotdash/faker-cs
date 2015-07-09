@@ -7,7 +7,7 @@ cache:
   directories:
     - packages
 mono:
-  - 4.0.2
+  - 4.0.0
 solution: Faker.sln
 install:
   - nuget restore Faker.sln

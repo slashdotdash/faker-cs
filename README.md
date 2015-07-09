@@ -11,7 +11,7 @@ Will be available as a NuGet package when it's ready.
 
 Get the code via git:
 
-    git clone https://github.com/AdmiringWorm/faker-cs.git
+    git clone https://github.com/AdmiringWorm/Faker.NET.Portable.git
 
 Supported version:
 
@@ -24,7 +24,7 @@ Supported version:
     Xamarin.Android,
     Xamarin.iOS,
     Xamarin.iOS (Classic),
-    Mono (Currently Untested)
+    Mono 3.2.8
 
 ## Usage
 
