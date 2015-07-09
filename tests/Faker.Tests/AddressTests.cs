@@ -1,9 +1,11 @@
-﻿using NUnit.Framework;
+﻿using System.Diagnostics.CodeAnalysis;
+using NUnit.Framework;
 
 namespace Faker.Tests
 {
     [TestFixture]
     [SetCulture("en-US")]
+    [SuppressMessage("ReSharper", "UseStringInterpolation")]
     public class AddressTests
     {
         private const string ADDRESS_REGEX1 = @"^[0-9]{3,5} [A-Z][A-z]+ [A-Z][a-z]+";
@@ -32,19 +34,19 @@ namespace Faker.Tests
             //                              .Replace(".", @"\.")
             //                              .Replace("###", "[0-9]{3}") + ")";
 
-            string secondary = $"({Resources.Address.SecondaryAddress})"
-                .Replace(';', '|')
-                .Replace(".", "\\.")
-                .Replace("#", "[0-9]");
+            string secondary = string.Format("({0})", Resources.Address.SecondaryAddress)
+                                     .Replace(';', '|')
+                                     .Replace(".", "\\.")
+                                     .Replace("#", "[0-9]");
 
             string address = Address.StreetAddress(true);
             //Assert.That(address, Is.StringMatching(@"^[0-9]{3,5} [A-Z][A-z' ]+ (Suite|Apt\.) [0-9]{3}$"));
 
             Assert.That(address,
-                        Is.StringMatching($"{ADDRESS_REGEX1} {secondary}$")
-                          .Or.StringMatching($"{ADDRESS_REGEX2} {secondary}$")
-                          .Or.StringMatching($"{ADDRESS_REGEX3} {secondary}$")
-                          .Or.StringMatching($"{ADDRESS_REGEX4} {secondary}$"));
+                        Is.StringMatching(string.Format("{0} {1}$", ADDRESS_REGEX1, secondary))
+                          .Or.StringMatching(string.Format("{0} {1}$", ADDRESS_REGEX2, secondary))
+                          .Or.StringMatching(string.Format("{0} {1}$", ADDRESS_REGEX3, secondary))
+                          .Or.StringMatching(string.Format("{0} {1}$", ADDRESS_REGEX4, secondary)));
         }
     }
 }

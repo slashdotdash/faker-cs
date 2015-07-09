@@ -1,8 +1,10 @@
-﻿using NUnit.Framework;
+﻿using System.Diagnostics.CodeAnalysis;
+using NUnit.Framework;
 
 namespace Faker.Tests
 {
     [TestFixture]
+    [SuppressMessage("ReSharper", "UseStringInterpolation")]
     public class InternetTests
     {
         private const string EMAIL_REGEX =
@@ -35,7 +37,7 @@ namespace Faker.Tests
             //Assert.IsTrue(Regex.IsMatch(email, @".+@(gmail|hotmail|yahoo)\.com"));
             string freeMails = Resources.Internet.FreeMail.Replace(';', '|').Replace(".", "\\.");
 
-            Assert.That(email, Is.StringMatching($"@({freeMails})$")
+            Assert.That(email, Is.StringMatching(string.Format("@({0})$", freeMails))
                                  .And.StringMatching(EMAIL_REGEX));
         }
 

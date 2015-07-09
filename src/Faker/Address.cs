@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using Faker.Extensions;
 
@@ -10,6 +11,7 @@ namespace Faker
     /// </summary>
     /// <include file='Docs/CustomRemarks.xml' path='Comments/SatelliteResource/*' />
     /// <threadsafety static="false" />
+    [SuppressMessage("ReSharper", "UseStringInterpolation")]
     public static class Address
     {
         #region Random Example
@@ -173,7 +175,7 @@ namespace Faker
         {
             () => string.Format("{0} {1}{2}", CityPrefix(), Name.First(), CitySuffix()),
             () => string.Format("{0} {1}", CityPrefix(), Name.First()),
-            () => String.Format("{0}{1}", Name.First(), CitySuffix()),
+            () => string.Format("{0}{1}", Name.First(), CitySuffix()),
             () => string.Format("{0}{1}", Name.Last(), CitySuffix())
         };
 

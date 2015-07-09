@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Faker.Extensions;
 
@@ -10,6 +11,7 @@ namespace Faker
     /// </summary>
     /// <include file='Docs/CustomRemarks.xml' path='Comments/SatelliteResource/*' />
     /// <threadsafety static="false" />
+    [SuppressMessage("ReSharper", "UseNameofExpression")]
     public static class Lorem
     {
         /// <summary>
@@ -47,7 +49,7 @@ namespace Faker
             if (minSentenceCount <= 0)
             {
                 throw new ArgumentException("Minimum Sentence Count must be greater than zero.",
-                                            nameof(minSentenceCount));
+                                            "minSentenceCount");
             }
 
             return string.Join(" ", Sentences(minSentenceCount + RandomNumber.Next(3)));
@@ -63,7 +65,7 @@ namespace Faker
         public static IEnumerable<string> Paragraphs(int paragraphCount)
         {
             if (paragraphCount <= 0)
-                throw new ArgumentException("Paragraph Count must be greater than zero", nameof(paragraphCount));
+                throw new ArgumentException("Paragraph Count must be greater than zero", "paragraphCount");
 
             return paragraphCount.Times(x => Paragraph());
         }
@@ -90,7 +92,7 @@ namespace Faker
         public static string Sentence(int minWordCount)
         {
             if (minWordCount <= 0)
-                throw new ArgumentException("Minimum word count must be greater than zero", nameof(minWordCount));
+                throw new ArgumentException("Minimum word count must be greater than zero", "minWordCount");
 
             return string.Join(" ", Words(minWordCount + RandomNumber.Next(6)).ToArray()).Capitalise() + ".";
         }
@@ -105,7 +107,7 @@ namespace Faker
         public static IEnumerable<string> Sentences(int sentenceCount)
         {
             if (sentenceCount <= 0)
-                throw new ArgumentException("Sentence count must be greater than zero", nameof(sentenceCount));
+                throw new ArgumentException("Sentence count must be greater than zero", "sentenceCount");
 
             return sentenceCount.Times(x => Sentence());
         }
@@ -119,7 +121,7 @@ namespace Faker
         public static IEnumerable<string> Words(int count)
         {
             if (count <= 0)
-                throw new ArgumentException("Count must be greater than zero", nameof(count));
+                throw new ArgumentException("Count must be greater than zero", "count");
 
             return count.Times(x => Resources.Lorem.Words.Split(Config.SEPARATOR).Random());
         }
