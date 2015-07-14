@@ -44,9 +44,9 @@ namespace Faker
                                    string set = "set1")
         {
             if (set == null)
-                throw new ArgumentNullException(nameof(set));
+                throw new ArgumentNullException("set");
             if (!Regex.IsMatch(size, @"^[0-9]+x[0-9]+$"))
-                throw new ArgumentException("Size should be specified in format 300x300");
+                throw new ArgumentException("Size should be specified in format 300x300", "size");
 
             slug = slug ?? string.Join(string.Empty, Lorem.Words(3));
 
