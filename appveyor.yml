@@ -19,6 +19,6 @@ build:
   parallel: true
   verbosity: minimal
 after_build:
-- 7z a "Faker.NET.Portable-%APPVEYOR_BUILD_VERSION%.zip" "%APPVEYOR_BUILD_FOLDER%\src\Faker\bin\%" -x!*CodeAnalysis* -r -mx=9
+- 7z a "Faker.NET.Portable-%APPVEYOR_BUILD_VERSION%.zip" "%APPVEYOR_BUILD_FOLDER%\src\Faker\bin\%CONFIGURATION%\*" -x!*CodeAnalysis* -r -mx=9
 artifacts:
 - path: '*.zip'
