@@ -9,7 +9,7 @@ namespace Faker
     ///     A collection of Random sentences/words/paragraphs etc. related resources.
     /// </summary>
     /// <include file='Docs/CustomRemarks.xml' path='Comments/SatelliteResource/*' />
-    /// <threadsafety static="false" />
+    /// <threadsafety static="true" />
     [SuppressMessage("ReSharper", "UseNameofExpression")]
     public static class Lorem
     {

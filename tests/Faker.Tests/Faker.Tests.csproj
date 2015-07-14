@@ -60,6 +60,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="AddressTests.cs" />
+    <Compile Include="AvatarTests.cs" />
     <Compile Include="CompanyTests.cs" />
     <Compile Include="Extensions\ArrayExtensionsTests.cs" />
     <Compile Include="Extensions\EnumerableExtensionsTests.cs" />

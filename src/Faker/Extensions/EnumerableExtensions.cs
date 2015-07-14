@@ -7,6 +7,7 @@ namespace Faker.Extensions
     /// <summary>
     ///     A collection of Enumerable helper extensions.
     /// </summary>
+    /// <threadsafety static="true" />
     public static class EnumerableExtensions
     {
         /// <summary>

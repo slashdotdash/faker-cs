@@ -12,18 +12,23 @@ namespace Faker.Extensions
     /// <summary>
     ///     A collection of string helper extensions.
     /// </summary>
+    /// <threadsafety static="true" />
     public static class StringExtensions
     {
         private const string ALPHABET = "abcdefghijklmnopqrstuvwxyz";
-        private static readonly IDictionary<string, Func<string>> validVariables;
+        private static readonly object s_dictionaryLock = new object();
+        private static readonly IDictionary<string, Func<string>> s_validVariables;
 
         static StringExtensions()
         {
-            validVariables = new Dictionary<string, Func<string>>();
+            lock (s_dictionaryLock)
+            {
+                s_validVariables = new Dictionary<string, Func<string>>();
 
-            AddVariables(typeof (Address), validVariables);
-            AddVariables(typeof (Company), validVariables);
-            AddVariables(typeof (Name), validVariables);
+                AddVariables(typeof (Address), s_validVariables);
+                AddVariables(typeof (Company), s_validVariables);
+                AddVariables(typeof (Name), s_validVariables);
+            }
         }
 
         /// <summary>
@@ -46,6 +51,12 @@ namespace Faker.Extensions
             return Regex.Replace(s, "^[a-z]", x => x.Value.ToUpperInvariant());
         }
 
+        /// <summary>
+        ///     Helper function for formatting a string with the current <see cref="CultureInfo" />
+        /// </summary>
+        /// <param name="format">The format.</param>
+        /// <param name="args">The arguments.</param>
+        /// <returns>The formatted string.</returns>
         [NotNull]
         [Pure]
         [StringFormatMethod("format")]
@@ -54,6 +65,12 @@ namespace Faker.Extensions
             return string.Format(CultureInfo.CurrentCulture, format, args);
         }
 
+        /// <summary>
+        ///     Helper function for formatting string with an invariant <see cref="CultureInfo" />.
+        /// </summary>
+        /// <param name="format">The format.</param>
+        /// <param name="args">The arguments.</param>
+        /// <returns>The formatted string.</returns>
         [NotNull]
         [Pure]
         [StringFormatMethod("format")]
@@ -82,6 +99,12 @@ namespace Faker.Extensions
             return new string(Transform(s, false, true).ToArray());
         }
 
+        /// <summary>
+        ///     Transforms the specified source and conditionally replaces variables.
+        /// </summary>
+        /// <param name="s">The s.</param>
+        /// <param name="replaceVariables">if set to <see langword="true" /> replace variables in the string.</param>
+        /// <returns>The transformed string.</returns>
         public static string Transform(this string s, bool replaceVariables = false)
         {
             char[] currentChars = Transform(s, true, true).ToArray();
@@ -97,7 +120,7 @@ namespace Faker.Extensions
 
                 if (c == '{' && char.IsLetter(currentChars[++index]))
                 {
-                    string value = getVariableValue(currentChars, ref index);
+                    string value = GetVariableValue(currentChars, ref index);
                     builder.Append(value);
                 }
                 else
@@ -111,33 +134,38 @@ namespace Faker.Extensions
         {
             MethodInfo[] methods = classType.GetMethods(BindingFlags.Public | BindingFlags.Static);
 
-            foreach (MethodInfo methodInfo in methods)
+            foreach (MethodInfo methodInfo in
+                methods
+                    .Where(
+                           methodInfo =>
+                           methodInfo.ReturnType == typeof (string)
+                           && !methodInfo.GetParameters().Any()))
             {
-                if (methodInfo.ReturnType == typeof (string) && !methodInfo.GetParameters().Any())
-                {
-                    validVariables.Add(
-                                       classType.Name + "." + methodInfo.Name,
-                                       () => (string) methodInfo.Invoke(null, null)
-                        );
-                }
+                validVariables.Add(
+                                   classType.Name + "." + methodInfo.Name,
+                                   () => (string) methodInfo.Invoke(null, null)
+                    );
             }
         }
 
-        private static string getVariable(char[] chars, ref int index)
+        private static string GetVariable(IList<char> chars, ref int index)
         {
             var substring = new StringBuilder();
 
-            while (chars.Length >= index && chars[index] != '}')
+            while (chars.Count >= index && chars[index] != '}')
                 substring.Append(chars[index++]);
 
             return substring.ToString();
         }
 
-        private static string getVariableValue(char[] chars, ref int index)
+        private static string GetVariableValue(IList<char> chars, ref int index)
         {
-            string variable = getVariable(chars, ref index);
+            string variable = GetVariable(chars, ref index);
 
-            return validVariables.ContainsKey(variable) ? validVariables[variable].Invoke() : string.Empty;
+            lock (s_dictionaryLock)
+            {
+                return s_validVariables.ContainsKey(variable) ? s_validVariables[variable].Invoke() : string.Empty;
+            }
         }
 
         private static IEnumerable<char> Transform(string s, bool letterify, bool numerify)

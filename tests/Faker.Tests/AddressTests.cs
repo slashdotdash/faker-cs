@@ -68,6 +68,69 @@ namespace Faker.Tests
         }
 
         [Test]
+        [Repeat(1000)]
+        public void Should_Get_Country_Code()
+        {
+            string[] existingCountryCodes = Resources.Address.CountryCode.Split(Config.SEPARATOR);
+
+            string countryCode = Address.CountryCode();
+
+            Assert.That(new[] {countryCode}, Is.SubsetOf(existingCountryCodes));
+        }
+
+        [Test]
+        public void Should_Get_Default_Country()
+        {
+            string expectedCountry = Resources.Address.DefaultCountry;
+
+            string actualCountry = Address.DefaultCountry();
+
+            Assert.That(actualCountry, Is.EqualTo(expectedCountry));
+        }
+
+        [Test]
+        [Repeat(10000)]
+        public void Should_Get_Latitude()
+        {
+            double actual = Address.Latitude();
+
+            Assert.That(actual, Is.GreaterThanOrEqualTo(-90)
+                                  .And.LessThanOrEqualTo(90));
+        }
+
+        [Test]
+        [Repeat(10000)]
+        public void Should_Get_Longitude()
+        {
+            double actual = Address.Longitude();
+
+            Assert.That(actual, Is.GreaterThanOrEqualTo(-180)
+                                  .And.LessThanOrEqualTo(180));
+        }
+
+        [Test]
+        [Repeat(10000)]
+        public void Should_Get_State()
+        {
+            string[] expectedStates = Resources.Address.State.Split(Config.SEPARATOR);
+
+            string state = Address.State();
+
+            Assert.That(new[] {state}, Is.SubsetOf(expectedStates));
+        }
+
+        [Test]
+        [Repeat(10000)]
+        public void Should_Get_State_Abbreviation()
+        {
+            string[] possibleAbberivations = Resources.Address.StateAbbr.Split(Config.SEPARATOR);
+
+            string stateAbbr = Address.StateAbbreviation();
+
+            Assert.That(new[] {stateAbbr}, Is.SubsetOf(possibleAbberivations));
+        }
+
+        [Test]
         [Repeat(10000)]
         public void Should_Get_Street_Address()
         {
@@ -96,6 +159,17 @@ namespace Faker.Tests
                           .Or.StringMatching(string.Format("{0} {1}$", ADDRESS_REGEX2, secondary))
                           .Or.StringMatching(string.Format("{0} {1}$", ADDRESS_REGEX3, secondary))
                           .Or.StringMatching(string.Format("{0} {1}$", ADDRESS_REGEX4, secondary)));
+        }
+
+        [Test]
+        [Repeat(10000)]
+        public void Should_Get_TimeZone()
+        {
+            string[] possibleResults = Resources.Address.TimeZone.Split(Config.SEPARATOR);
+
+            string result = Address.TimeZone();
+
+            Assert.That(new[] {result}, Is.SubsetOf(possibleResults));
         }
 
         [Test]

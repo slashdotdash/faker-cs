@@ -7,6 +7,7 @@ namespace Faker.Extensions
     /// <summary>
     ///     A collection of Array helper extensions
     /// </summary>
+    /// <threadsafety static="true" />
     [SuppressMessage("ReSharper", "UseNameofExpression")]
     public static class ArrayExtensions
     {

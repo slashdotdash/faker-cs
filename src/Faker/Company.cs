@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
 using Faker.Extensions;
 
 namespace Faker
@@ -8,8 +8,7 @@ namespace Faker
     ///     A collection of Company related resources.
     /// </summary>
     /// <include file='Docs/CustomRemarks.xml' path='Comments/SatelliteResource/*' />
-    /// <threadsafety static="false" />
-    [SuppressMessage("ReSharper", "UseStringInterpolation")]
+    /// <threadsafety static="true" />
     public static class Company
     {
         /// <summary>
@@ -40,6 +39,16 @@ namespace Faker
                                Resources.Company.Buzzwords1.Split(Config.SEPARATOR).Random(),
                                Resources.Company.Buzzwords2.Split(Config.SEPARATOR).Random(),
                                Resources.Company.Buzzwords3.Split(Config.SEPARATOR).Random());
+        }
+
+        /// <summary>
+        ///     Gets a random logo URL.
+        /// </summary>
+        /// <returns>System.String.</returns>
+        public static string Logo()
+        {
+            int randNum = RandomNumber.Next(13) + 1;
+            return "http://pigment.github.io/fake-logos/logos/medium/color/{0}.png".FormatCulture(randNum);
         }
 
         /// <summary>

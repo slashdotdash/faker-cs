@@ -8,16 +8,20 @@ namespace Faker
     ///     Provides access to random number generator.
     /// </summary>
     /// <seealso cref="Random" />
-    /// <threadsafety static="false" />
+    /// <threadsafety static="true" />
     public static class RandomNumber
     {
+        private static readonly object s_lockObject = new object();
         private static Random s_rnd = new Random();
 
         /// <inheritdoc cref="Random.Next()" />
         /// <seealso cref="Random.Next()" />
         public static int Next()
         {
-            return s_rnd.Next();
+            lock (s_lockObject)
+            {
+                return s_rnd.Next();
+            }
         }
 
         /// <inheritdoc cref="Random.Next(int)" />
@@ -25,7 +29,10 @@ namespace Faker
         /// <include file='Docs/RevisionHistory.xml' path='Revisions/RandomNumber[@id="NextMaxValue"]/revisionHistory' />
         public static int Next(int maxValue)
         {
-            return s_rnd.Next(maxValue);
+            lock (s_lockObject)
+            {
+                return s_rnd.Next(maxValue);
+            }
         }
 
         /// <inheritdoc cref="Random.Next(int,int)" />
@@ -33,7 +40,19 @@ namespace Faker
         /// <include file='Docs/RevisionHistory.xml' path='Revisions/RandomNumber[@id="NextMinValueMaxValue"]/revisionHistory' />
         public static int Next(int minValue, int maxValue)
         {
-            return s_rnd.Next(minValue, maxValue);
+            lock (s_lockObject)
+            {
+                return s_rnd.Next(minValue, maxValue);
+            }
+        }
+
+        /// <inheritdoc cref="Random.NextDouble()" />
+        public static double NextDouble()
+        {
+            lock (s_lockObject)
+            {
+                return s_rnd.NextDouble();
+            }
         }
 
         /// <inheritdoc cref="System.Random(int)" />
@@ -42,7 +61,10 @@ namespace Faker
         // ReSharper disable once InconsistentNaming
         public static void ResetSeed(int Seed)
         {
-            s_rnd = new Random(Seed);
+            lock (s_lockObject)
+            {
+                s_rnd = new Random(Seed);
+            }
         }
     }
 }

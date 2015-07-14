@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -11,14 +12,17 @@ namespace Faker
     ///     A collection of address related resources.
     /// </summary>
     /// <include file='Docs/CustomRemarks.xml' path='Comments/SatelliteResource/*' />
-    /// <threadsafety static="false" />
+    /// <threadsafety static="true" />
     public static class Internet
     {
+        private static readonly object s_userNameFormatLock = new object();
+
         private static readonly IEnumerable<Func<string>> s_userNameFormats = new Func<string>[]
         {
             () => Name.First().AlphanumericOnly(),
-            () => string.Format(CultureInfo.CurrentCulture, "{0}{1}{2}", Name.First().AlphanumericOnly(),
-                                new[] {".", "_"}.Random(), Name.Last().AlphanumericOnly())
+            () => Name.First().AlphanumericOnly()
+                  + new[] {".", "_"}.Random()
+                  + Name.Last().AlphanumericOnly()
         };
 
         /// <summary>
@@ -28,8 +32,7 @@ namespace Faker
         public static string DomainName()
         {
             var prefix = new[] {string.Empty, "www.", "www2."};
-
-            return string.Format("{0}{1}.{2}", prefix.Random(), DomainWord(), DomainSuffix());
+            return "{0}{1}.{2}".FormatCulture(prefix.Random(), DomainWord(), DomainSuffix());
         }
 
         /// <summary>
@@ -45,6 +48,7 @@ namespace Faker
         ///     Generates a random domain word.
         /// </summary>
         /// <returns>The random domain word.</returns>
+        [SuppressMessage("Microsoft.Globalization", "CA1308:NormalizeStringsToUppercase")]
         public static string DomainWord()
         {
             return Company.Name().Split(' ').First().AlphanumericOnly().ToLowerInvariant();
@@ -56,7 +60,7 @@ namespace Faker
         /// <returns>A random email address.</returns>
         public static string Email()
         {
-            return string.Format("{0}@{1}", UserName(), DomainName());
+            return "{0}@{1}".FormatCulture(UserName(), DomainName());
         }
 
         /// <summary>
@@ -66,7 +70,7 @@ namespace Faker
         /// <returns>The random email address, with the generated username.</returns>
         public static string Email(string name)
         {
-            return string.Format("{0}@{1}", UserName(name), DomainName());
+            return "{0}@{1}".FormatCulture(UserName(name), DomainName());
         }
 
         /// <summary>
@@ -83,18 +87,7 @@ namespace Faker
         /// </example>
         public static string FreeEmail()
         {
-            return string.Format("{0}@{1}", UserName(), Resources.Internet.FreeMail.Split(Config.SEPARATOR).Random());
-        }
-
-        /// <summary>
-        ///     Gets a random URL.
-        /// </summary>
-        /// <returns>A random URL.</returns>
-        public static string Url()
-        {
-            string protocol = new[] {"http", "https"}.Random();
-
-            return string.Format("{0}://{1}/{2}", protocol, DomainName(), UserName());
+            return "{0}@{1}".FormatCulture(UserName(), Resources.Internet.FreeMail.RandomResource());
         }
 
         /// <summary>
@@ -107,7 +100,7 @@ namespace Faker
             const int min = 2;
             const int max = 255;
 
-            return string.Join(".", 4.Times(c => RandomNumber.Next(min, max).ToString()));
+            return string.Join(".", 4.Times(c => RandomNumber.Next(min, max).ToString(CultureInfo.CurrentCulture)));
         }
 
         /// <summary>
@@ -120,7 +113,17 @@ namespace Faker
             const int min = 0;
             const int max = 65536;
 
-            return string.Join(":", 8.Times(c => RandomNumber.Next(min, max).ToString("x")));
+            return string.Join(":", 8.Times(c => RandomNumber.Next(min, max).ToString("x", CultureInfo.CurrentCulture)));
+        }
+
+        /// <summary>
+        ///     Gets a random URL.
+        /// </summary>
+        /// <returns>A random URL.</returns>
+        public static string Url()
+        {
+            string protocol = new[] {"http", "https"}.Random();
+            return "{0}://{1}/{2}".FormatCulture(protocol, DomainName(), UserName());
         }
 
         /// <summary>
@@ -129,7 +132,10 @@ namespace Faker
         /// <returns>The random username.</returns>
         public static string UserName()
         {
-            return UserName(s_userNameFormats.Random());
+            lock (s_userNameFormatLock)
+            {
+                return UserName(s_userNameFormats.Random());
+            }
         }
 
         /// <summary>
@@ -137,6 +143,7 @@ namespace Faker
         /// </summary>
         /// <param name="name">The name to generate the user name from.</param>
         /// <returns>The generated username.</returns>
+        [SuppressMessage("Microsoft.Globalization", "CA1308:NormalizeStringsToUppercase")]
         public static string UserName(string name)
         {
             return Regex.Replace(name, @"[^\w]+", x => new[] {".", "_"}.Random()).ToLowerInvariant();

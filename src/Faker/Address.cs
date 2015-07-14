@@ -7,9 +7,18 @@ namespace Faker
     ///     A collection of address related resources.
     /// </summary>
     /// <include file='Docs/CustomRemarks.xml' path='Comments/SatelliteResource/*' />
-    /// <threadsafety static="false" />
+    /// <threadsafety static="true" />
     public static class Address
     {
+        /// <summary>
+        ///     Gets a random building number.
+        /// </summary>
+        /// <returns>The building number.</returns>
+        public static string BuildingNumber()
+        {
+            return Resources.Address.BuildingNumber.RandomResource().Numerify();
+        }
+
         #region Random Example
 
         /// <summary>
@@ -51,6 +60,42 @@ namespace Faker
         }
 
         /// <summary>
+        ///     Gets a random country code.
+        /// </summary>
+        /// <returns>The random country code.</returns>
+        public static string CountryCode()
+        {
+            return Resources.Address.CountryCode.RandomResource();
+        }
+
+        /// <summary>
+        ///     Gets the default country.
+        /// </summary>
+        /// <returns>The default country.</returns>
+        public static string DefaultCountry()
+        {
+            return Resources.Address.DefaultCountry;
+        }
+
+        /// <summary>
+        ///     Gets a random latitude coordinate.
+        /// </summary>
+        /// <returns>The latitude.</returns>
+        public static double Latitude()
+        {
+            return ((RandomNumber.NextDouble()*180) - 90);
+        }
+
+        /// <summary>
+        ///     Gets a random longitude coordinate.
+        /// </summary>
+        /// <returns>The longitude.</returns>
+        public static double Longitude()
+        {
+            return ((RandomNumber.NextDouble()*360) - 180);
+        }
+
+        /// <summary>
         ///     Gets a random secondary address.
         /// </summary>
         /// <returns>A random secondary address.</returns>
@@ -60,17 +105,30 @@ namespace Faker
         }
 
         /// <summary>
+        ///     Gets a random state.
+        /// </summary>
+        /// <returns>The random state.</returns>
+        public static string State()
+        {
+            return Resources.Address.State.RandomResource();
+        }
+
+        /// <summary>
+        ///     Gets a random state abbreviation.
+        /// </summary>
+        /// <returns>The state abbreviation.</returns>
+        public static string StateAbbreviation()
+        {
+            return Resources.Address.StateAbbr.RandomResource();
+        }
+
+        /// <summary>
         ///     Gets a random street address, without a Secondary address.
         /// </summary>
         /// <returns>A random street address, without a secondary address.</returns>
         public static string StreetAddress()
         {
             return StreetAddress(false);
-        }
-
-        public static string BuildingNumber()
-        {
-            return Resources.Address.BuildingNumber.RandomResource().Numerify();
         }
 
         /// <summary>
@@ -101,6 +159,15 @@ namespace Faker
         public static string StreetSuffix()
         {
             return Resources.Address.StreetSuffix.RandomResource();
+        }
+
+        /// <summary>
+        ///     Gets a random time zone.
+        /// </summary>
+        /// <returns>The time zone.</returns>
+        public static string TimeZone()
+        {
+            return Resources.Address.TimeZone.RandomResource();
         }
 
         /// <summary>

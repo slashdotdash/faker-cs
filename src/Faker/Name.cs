@@ -37,7 +37,7 @@ namespace Faker
     ///     A collection of Personal name related resources.
     /// </summary>
     /// <include file='Docs/CustomRemarks.xml' path='Comments/SatelliteResource/*' />
-    /// <threadsafety static="false" />
+    /// <threadsafety static="true" />
     public static class Name
     {
         /// <summary>
@@ -55,7 +55,10 @@ namespace Faker
         /// <returns>The randomly created name.</returns>
         public static string FullName()
         {
-            return FullName(s_formats.ElementAt(RandomNumber.Next(s_formats.Count() - 1)));
+            lock (s_formatsLock)
+            {
+                return FullName(s_formats.ElementAt(RandomNumber.Next(s_formats.Count() - 1)));
+            }
         }
 
         /// <summary>
@@ -66,7 +69,10 @@ namespace Faker
         /// <include file='Docs/NameFormatsExample.xml' path='example' />
         public static string FullName(NameFormats format)
         {
-            return string.Join(" ", s_formatMap[format].Invoke());
+            lock (s_formatMapLock)
+            {
+                return string.Join(" ", s_formatMap[format].Invoke());
+            }
         }
 
         /// <summary>
@@ -114,6 +120,9 @@ namespace Faker
             {NameFormats.WithSuffix, () => new[] {First(), Last(), Suffix()}},
             {NameFormats.WithPrefixAndSuffix, () => new[] {Prefix(), First(), Last(), Suffix()}}
         };
+
+        private static readonly object s_formatMapLock = new object();
+        private static readonly object s_formatsLock = new object();
 
         #endregion
     }

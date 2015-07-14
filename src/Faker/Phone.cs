@@ -6,7 +6,7 @@ namespace Faker
     ///     A collection of Phone related resources.
     /// </summary>
     /// <include file='Docs/CustomRemarks.xml' path='Comments/SatelliteResource/*' />
-    /// <threadsafety static="false" />
+    /// <threadsafety static="true" />
     public static class Phone
     {
         /// <summary>
