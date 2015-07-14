@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using NUnit.Framework;
 
@@ -8,6 +9,15 @@ namespace Faker.Tests
     [SetCulture("en-US")]
     public class LoremTests
     {
+        [Test]
+        public void Should_Generate_Multiple_Paragraphs([Range(3, 100)] int num)
+        {
+            IEnumerable<string> paragraphs = Lorem.Paragraphs(num);
+
+            Assert.That(paragraphs.ToArray(), Is.Not.Null.And.Not.Empty.And.Length.EqualTo(num)
+                                                .And.All.Not.Empty);
+        }
+
         [Test]
         [Repeat(10000)]
         public void Should_Generate_Paragraph()
@@ -35,6 +45,48 @@ namespace Faker.Tests
 
             Assert.That(words.Count(), Is.EqualTo(length));
             Assert.That(words, Is.All.StringMatching(@"^[A-z]+$"));
+        }
+
+        [Test]
+        [ExpectedException(typeof (ArgumentOutOfRangeException))]
+        public void Should_Throw_ArgumentOutOfRangeException_If_Sentence_Count_Below_Zero()
+        {
+            Lorem.Paragraph(-1);
+        }
+
+        [Test]
+        [ExpectedException(typeof (ArgumentOutOfRangeException))]
+        public void Should_Throw_ArgumentOutOfRangeException_If_Sentences_Count_Below_Zero()
+        {
+            Lorem.Sentences(-1);
+        }
+
+        [Test]
+        [ExpectedException(typeof (ArgumentOutOfRangeException))]
+        public void Should_Throw_ArgumentOutOfRangeException_If_Sentences_Count_Is_Zero()
+        {
+            Lorem.Sentences(0);
+        }
+
+        [Test]
+        [ExpectedException(typeof (ArgumentOutOfRangeException))]
+        public void Should_Throw_ArgumentOutOfRangeException_If_Word_Count_Below_Zero()
+        {
+            Lorem.Sentence(-1);
+        }
+
+        [Test]
+        [ExpectedException(typeof (ArgumentOutOfRangeException))]
+        public void Should_Throw_ArgumentOutOfRangeException_If_Words_Count_Below_Zero()
+        {
+            Lorem.Words(-1);
+        }
+
+        [Test]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void Should_Throw_ArgumentOutOfRangeException_If_Paragraphs_Count_Below_Zero()
+        {
+            Lorem.Paragraphs(-1);
         }
     }
 }

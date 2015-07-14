@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using Faker.Extensions;
 
@@ -13,33 +12,6 @@ namespace Faker
     [SuppressMessage("ReSharper", "UseStringInterpolation")]
     public static class Company
     {
-        #region Format Mappings
-
-        private static readonly IEnumerable<Func<string>> s_nameFormats = new Func<string>[]
-        {
-            () => string.Format("{0} {1}", Faker.Name.Last(), Suffix()),
-            () => string.Format("{0}-{1}", Faker.Name.Last(), Faker.Name.Last()),
-            () =>
-            string.Format("{0}, {1} {2} {3}", Faker.Name.Last(), Faker.Name.Last(), Resources.Company.And,
-                          Faker.Name.Last())
-        };
-
-        #endregion
-
-        /// <summary>
-        ///     When a straight answer won't do, BS to the rescue!
-        /// </summary>
-        /// <returns>Some <c>bullshit</c>.</returns>
-        /// <remarks>
-        ///     Wordlist originates from http://dack.com/web/bullshit.html
-        /// </remarks>
-        [Obsolete("This method is obsolete. Call Bullshit() instead", true)]
-        // ReSharper disable once InconsistentNaming
-        public static string BS()
-        {
-            return Bullshit();
-        }
-
         /// <summary>
         ///     When a straight answer won't do, Bullshit to the rescue!
         /// </summary>
@@ -76,7 +48,7 @@ namespace Faker
         /// <returns>The random company name.</returns>
         public static string Name()
         {
-            return s_nameFormats.Random();
+            return Resources.Company.NameFormats.RandomResource().Transform(true);
         }
 
         /// <summary>

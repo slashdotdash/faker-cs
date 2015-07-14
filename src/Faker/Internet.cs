@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
 using Faker.Extensions;
@@ -16,7 +17,7 @@ namespace Faker
         private static readonly IEnumerable<Func<string>> s_userNameFormats = new Func<string>[]
         {
             () => Name.First().AlphanumericOnly(),
-            () => string.Format("{0}{1}{2}", Name.First().AlphanumericOnly(),
+            () => string.Format(CultureInfo.CurrentCulture, "{0}{1}{2}", Name.First().AlphanumericOnly(),
                                 new[] {".", "_"}.Random(), Name.Last().AlphanumericOnly())
         };
 
@@ -26,7 +27,7 @@ namespace Faker
         /// <returns>The random domain name.</returns>
         public static string DomainName()
         {
-            var prefix = new[] {string.Empty, "www."};
+            var prefix = new[] {string.Empty, "www.", "www2."};
 
             return string.Format("{0}{1}.{2}", prefix.Random(), DomainWord(), DomainSuffix());
         }
@@ -89,12 +90,11 @@ namespace Faker
         ///     Gets a random URL.
         /// </summary>
         /// <returns>A random URL.</returns>
-        public static string GetARandomUrl()
+        public static string Url()
         {
             string protocol = new[] {"http", "https"}.Random();
-            string prefix = new[] {"", "www.", "www2."}.Random();
 
-            return string.Format("{0}://{1}{2}/{3}", protocol, prefix, DomainName(), UserName());
+            return string.Format("{0}://{1}/{2}", protocol, DomainName(), UserName());
         }
 
         /// <summary>
@@ -107,7 +107,7 @@ namespace Faker
             const int min = 2;
             const int max = 255;
 
-            return string.Join(":", 4.Times(c => RandomNumber.Next(min, max).ToString()));
+            return string.Join(".", 4.Times(c => RandomNumber.Next(min, max).ToString()));
         }
 
         /// <summary>

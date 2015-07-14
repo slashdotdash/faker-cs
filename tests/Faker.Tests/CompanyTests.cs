@@ -12,7 +12,6 @@ namespace Faker.Tests
         public void Should_Generate_Bullshit()
         {
             string bs = Company.Bullshit();
-            //Assert.IsTrue(Regex.IsMatch(bs, @"[\w\-]+ [\w\-]+ [\w\-]+"));
             Assert.That(bs,
                         Is.StringMatching(@"^([\w\-]+ ?){3,4}$")
                           .Or.StringMatching(@"^[\w\-]+ [0-9]+\/[0-9]+ ([\w\-]+ ?){1,2}$"));
@@ -23,7 +22,6 @@ namespace Faker.Tests
         public void Should_Generate_Catchphrase()
         {
             string catchPhrase = Company.CatchPhrase();
-            //Assert.IsTrue(Regex.IsMatch(catchPhrase, @"[\w\-]+ [\w\-]+ [\w\-]+"));
             Assert.That(catchPhrase,
                         Is.StringMatching(@"^([\w\-]+ ?){3,}$")
                           .Or.StringMatching(@"^([\w\-]+ ?)+ [0-9]+\/[0-9]+ ([\w\-]+ ?)+$"));
@@ -35,19 +33,10 @@ namespace Faker.Tests
         {
             string name = Company.Name();
 
-            // Name should match one of the given formats
-            //Assert.IsTrue(new List<Func<bool>>
-            //                  {
-            //                      () => Regex.IsMatch(name, @"\w+ \w+"),
-            //                      () => Regex.IsMatch(name, @"\w+-\w+"),
-            //                      () => Regex.IsMatch(name, @"\w+, \w+ and \w+")
-            //                  }.Any(x => x.Invoke()));
-
             Assert.That(name,
-                        Is.StringMatching(@"^[\w']+ [\w']+$")
-                          .Or.StringMatching(@"[\w']+-[\w']+")
-                          .Or.StringMatching(@"[\w']+ [\w']+ and [\w']+")
-                          .Or.StringMatching(@"[\w']+, [\w']+ and [\w']+"));
+                Is.StringMatching(@"^[\w']+ (and )?[\w]+$")
+                .Or.StringMatching(@"^[\w']+-[\w']+$")
+                .Or.StringMatching(@"^[\w']+, [\w']+ and [\w']+$"));
         }
     }
 }

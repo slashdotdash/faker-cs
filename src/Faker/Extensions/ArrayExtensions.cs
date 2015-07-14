@@ -41,5 +41,19 @@ namespace Faker.Extensions
 
             return source[RandomNumber.Next(0, source.Length)];
         }
+
+        /// <summary>
+        ///     A small helper methods which splits a resource string and selects a random item.
+        /// </summary>
+        /// <param name="resourceString">The resource string.</param>
+        /// <returns>The selected item.</returns>
+        /// <exception cref="System.ArgumentNullException"><paramref name="resourceString" /> is <see langword="null" />.</exception>
+        public static string RandomResource(this string resourceString)
+        {
+            if (resourceString == null)
+                throw new ArgumentNullException("resourceString");
+
+            return resourceString.Split(Config.SEPARATOR).Random().Trim();
+        }
     }
 }

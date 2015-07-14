@@ -106,7 +106,7 @@ namespace Faker.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 24 hour;24/7;3rd generation;4th generation;5th generation;6th generation;actuating;analyzing;assymetric;asynchronous;attitude-oriented;background;bandwidth-monitored;bi-directional;bifurcated;bottom-line;clear-thinking;client-driven;client-server;coherent;cohesive;composite;context-sensitive;contextually-based;content-based;dedicated;demand-driven;didactic;directional;discrete;disintermediate;dynamic;eco-centric;empowering;encompassing;even-keeled;executive;explicit;exuding;fault-tolerant;foreground;fresh-t [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to 24 hour;24/7;3rd generation;4th generation;5th generation;6th generation;actuating;analyzing;asymmetric;asynchronous;attitude-oriented;background;bandwidth-monitored;bi-directional;bifurcated;bottom-line;clear-thinking;client-driven;client-server;coherent;cohesive;composite;context-sensitive;contextually-based;content-based;dedicated;demand-driven;didactic;directional;discrete;disintermediate;dynamic;eco-centric;empowering;encompassing;even-keeled;executive;explicit;exuding;fault-tolerant;foreground;fresh-t [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Buzzwords2 {
             get {
@@ -124,7 +124,16 @@ namespace Faker.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Inc and Sons;LLC;Group.
+        ///   Looks up a localized string similar to {Name.Last} {Company.Suffix};{Name.Last}-{Name.Last};{Name.Last}, {Name.Last} and {Name.Last}.
+        /// </summary>
+        internal static string NameFormats {
+            get {
+                return ResourceManager.GetString("NameFormats", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inc;and Sons;LLC;Group.
         /// </summary>
         internal static string Suffix {
             get {

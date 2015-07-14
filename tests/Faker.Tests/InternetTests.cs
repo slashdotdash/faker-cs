@@ -1,4 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using System.Net;
+using System.Net.Sockets;
 using NUnit.Framework;
 
 namespace Faker.Tests
@@ -47,7 +49,7 @@ namespace Faker.Tests
         {
             string username = Internet.UserName();
             //Assert.IsTrue(Regex.IsMatch(username, @"[a-z]+((_|\.)[a-z]+)?"));
-            Assert.That(username, Is.StringMatching(@"^[a-z]+((_|\.)[a-z]+)?"));
+            Assert.That(username, Is.StringMatching(@"^[a-z]+((_|\.)[a-z]+)?$"));
         }
 
         [Test]
@@ -56,6 +58,18 @@ namespace Faker.Tests
             string username = Internet.UserName("Bob Smith");
             //Assert.IsTrue(Regex.IsMatch(username, @"bob[_\.]smith"));
             Assert.That(username, Is.StringMatching(@"^bob[_\.]smith$"));
+        }
+
+        [Test]
+        [Repeat(10000)]
+        public void Should_Get_A_Random_Url()
+        {
+            string url = Internet.Url();
+
+            Assert.That(url, Is.StringMatching(
+                                               @"https?\:\/\/\w+(\.\w+){1,2}\/[a-z]+((_|\.)[a-z]+)?$")
+                               .Or.StringMatching(
+                                                  @"https?\:\/\/www2?\.\w+(\.\w+){1,2}\/[a-z]+((_|\.)[a-z]+)?$"));
         }
 
         [Test]
@@ -84,6 +98,32 @@ namespace Faker.Tests
             string word = Internet.DomainWord();
             //Assert.IsTrue(Regex.IsMatch(word, @"^\w+$"));
             Assert.That(word, Is.StringMatching(@"^\w+$"));
+        }
+
+        [Test]
+        [Repeat(10000)]
+        public void Should_Get_IP_Version_4_Address()
+        {
+            string ipAddressString = Internet.IPv4Address();
+
+            IPAddress ipAddress = IPAddress.Parse(ipAddressString);
+
+            Assert.That(ipAddress.AddressFamily, Is.EqualTo(AddressFamily.InterNetwork));
+
+            //Assert.That(ipAddress, Is.StringMatching(@"^(\d{1,3}\.){3}\d{1,3}$"));
+        }
+
+        [Test]
+        [Repeat(10000)]
+        public void Should_Get_IP_Version_6_Address()
+        {
+            string ipAddressString = Internet.IPv6Address();
+
+            IPAddress ipAddress = IPAddress.Parse(ipAddressString);
+
+            Assert.That(ipAddress.AddressFamily, Is.EqualTo(AddressFamily.InterNetworkV6));
+
+            //Assert.That(ipAddress, Is.StringMatching(@"^(\d{1,3}\.){3}\d{1,3}$"));
         }
     }
 }

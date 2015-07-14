@@ -61,11 +61,20 @@ namespace Faker.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ##### {0};#### {0};### {0}.
+        ///   Looks up a localized string similar to #####;####;###.
         /// </summary>
-        internal static string AddressFormat {
+        internal static string BuildingNumber {
             get {
-                return ResourceManager.GetString("AddressFormat", resourceCulture);
+                return ResourceManager.GetString("BuildingNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {Address.CityPrefix} {Name.First}{Address.CitySuffix};{Address.CityPrefix} {Name.First};{Name.First}{Address.CitySuffix};{Name.Last}{Address.CitySuffix}.
+        /// </summary>
+        internal static string CityFormat {
+            get {
+                return ResourceManager.GetString("CityFormat", resourceCulture);
             }
         }
         
@@ -81,14 +90,14 @@ namespace Faker.Resources {
         /// <summary>
         ///   Looks up a localized string similar to town;ton;land;ville;berg;burgh;borough;bury;view;port;mouth;stad;furt;chester;mouth;fort;haven;side;shire.
         /// </summary>
-        internal static string CitySufix {
+        internal static string CitySuffix {
             get {
-                return ResourceManager.GetString("CitySufix", resourceCulture);
+                return ResourceManager.GetString("CitySuffix", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Afghanistan;Albania;Algeria;American Samoa;Andorra;Angola;Anguilla;Antarctica (the territory South of 60 deg S);Antigua and Barbuda;Argentina;Armenia;Aruba;Australia;Austria;Azerbaijan;Bahamas;Bahrain;Bangladesh;Barbados;Belarus;Belgium;Belize;Benin;Bermuda;Bhutan;Bolivia;Bosnia and Herzegovina;Botswana;Bouvet Island (Bouvetoya);Brazil;British Indian Ocean Territory (Chagos Archipelago);British Virgin Islands;Brunei Darussalam;Bulgaria;Burkina Faso;Burundi;Cambodia;Cameroon;Canada;Cape Verde;Cayman Islands; [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to Afghanistan;Albania;Algeria;American Samoa;Andorra;Angola;Anguilla;Antarctica (the territory South of 60 deg S);Antigua and Barbuda;Argentina;Armenia;Aruba;Australia;Austria;Azerbaijan;Bahamas;Bahrain;Bangladesh;Barbados;Belarus;Belgium;Belize;Benin;Bermuda;Bhutan;Bolivia;Bosnia and Herzegovina;Botswana;Bouvet Island (Bouvetoya);Brazil;British Indian Ocean Territory (Chagos Archipelago);Brunei Darussalam;Bulgaria;Burkina Faso;Burundi;Cambodia;Cameroon;Canada;Cape Verde;Cayman Islands;Central African Republi [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Country {
             get {
@@ -102,6 +111,33 @@ namespace Faker.Resources {
         internal static string SecondaryAddress {
             get {
                 return ResourceManager.GetString("SecondaryAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {Address.BuildingNumber} {Address.StreetName}.
+        /// </summary>
+        internal static string StreetAddressFormat {
+            get {
+                return ResourceManager.GetString("StreetAddressFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {Address.BuildingNumber} {Address.StreetName} {Address.SecondaryAddress}.
+        /// </summary>
+        internal static string StreetAddressSecondaryFormat {
+            get {
+                return ResourceManager.GetString("StreetAddressSecondaryFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {Name.First} {Address.StreetSuffix};{Name.Last} {Address.StreetSuffix}.
+        /// </summary>
+        internal static string StreetNameFormat {
+            get {
+                return ResourceManager.GetString("StreetNameFormat", resourceCulture);
             }
         }
         
@@ -120,51 +156,6 @@ namespace Faker.Resources {
         internal static string StreetSuffix {
             get {
                 return ResourceManager.GetString("StreetSuffix", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Avon;Bedfordshire;Berkshire;Borders;Buckinghamshire;Cambridgeshire;Central;Cheshire;Cleveland;Clwyd;Cornwall;County Antrim;County Armagh;County Down;County Fermanagh;County Londonderry;County Tyrone;Cumbria;Derbyshire;Devon;Dorset;Dumfries and Galloway;Durham;Dyfed;East Sussex;Essex;Fife;Gloucestershire;Grampian;Greater Manchester;Gwent;Gwynedd County;Hampshire;Herefordshire;Hertfordshire;Highlands and Islands;Humberside;Isle of Wight;Kent;Lancashire;Leicestershire;Lincolnshire;Lothian;Merseyside;Mid Glamor [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string UkCounties {
-            get {
-                return ResourceManager.GetString("UkCounties", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to England;Scotland;Wales;Northern Ireland.
-        /// </summary>
-        internal static string UkCountry {
-            get {
-                return ResourceManager.GetString("UkCountry", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to ??# #??;??## #??.
-        /// </summary>
-        internal static string UkPostCode {
-            get {
-                return ResourceManager.GetString("UkPostCode", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Alabama;Alaska;Arizona;Arkansas;California;Colorado;Connecticut;Delaware;Florida;Georgia;Hawaii;Idaho;Illinois;Indiana;Iowa;Kansas;Kentucky;Louisiana;Maine;Maryland;Massachusetts;Michigan;Minnesota;Mississippi;Missouri;Montana;Nebraska;Nevada;New Hampshire;New Jersey;New Mexico;New York;North Carolina;North Dakota;Ohio;Oklahoma;Oregon;Pennsylvania;Rhode Island;South Carolina;South Dakota;Tennessee;Texas;Utah;Vermont;Virginia;Washington;West Virginia;Wisconsin;Wyoming.
-        /// </summary>
-        internal static string UsState {
-            get {
-                return ResourceManager.GetString("UsState", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to AL;AK;AS;AZ;AR;CA;CO;CT;DE;DC;FM;FL;GA;GU;HI;ID;IL;IN;IA;KS;KY;LA;ME;MH;MD;MA;MI;MN;MS;MO;MT;NE;NV;NH;NJ;NM;NY;NC;ND;MP;OH;OK;OR;PW;PA;PR;RI;SC;SD;TN;TX;UT;VT;VI;VA;WA;WV;WI;WY;AE;AA;AP.
-        /// </summary>
-        internal static string UsStateAbbr {
-            get {
-                return ResourceManager.GetString("UsStateAbbr", resourceCulture);
             }
         }
         
