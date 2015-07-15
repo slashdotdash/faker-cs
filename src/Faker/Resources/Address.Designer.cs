@@ -88,11 +88,29 @@ namespace Faker.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string CityRoot {
+            get {
+                return ResourceManager.GetString("CityRoot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to town;ton;land;ville;berg;burgh;borough;bury;view;port;mouth;stad;furt;chester;mouth;fort;haven;side;shire.
         /// </summary>
         internal static string CitySuffix {
             get {
                 return ResourceManager.GetString("CitySuffix", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string CommonStreetSuffixes {
+            get {
+                return ResourceManager.GetString("CommonStreetSuffixes", resourceCulture);
             }
         }
         
@@ -183,6 +201,15 @@ namespace Faker.Resources {
         internal static string StreetNameSeparator {
             get {
                 return ResourceManager.GetString("StreetNameSeparator", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string StreetRoot {
+            get {
+                return ResourceManager.GetString("StreetRoot", resourceCulture);
             }
         }
         
