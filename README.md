@@ -1,7 +1,7 @@
 Faker.NET Portable Edition
 =====
-AppVeyor = [![AppVeyor](https://img.shields.io/appveyor/ci/AdmiringWorm/faker-cs.svg?style=plastic)](https://ci.appveyor.com/project/AdmiringWorm/faker-cs) 
-Travis   = [![Travis](https://img.shields.io/travis/AdmiringWorm/Faker.NET.Portable.svg?style=plastic)](https://travis-ci.org/AdmiringWorm/Faker.NET.Portable)
+AppVeyor = [![Build status](https://ci.appveyor.com/api/projects/status/iggsqi972k9dqvoo/branch/release%2Fv.2.0.0?svg=true)](https://ci.appveyor.com/project/AdmiringWorm/faker-cs)
+Travis   = [![Build Status](https://travis-ci.org/AdmiringWorm/Faker.NET.Portable.svg?branch=release%2Fv.2.0.0)](https://travis-ci.org/AdmiringWorm/Faker.NET.Portable)
 
 
 C# port of the Ruby Faker gem (http://faker.rubyforge.org/) and is used to easily generate fake data: 

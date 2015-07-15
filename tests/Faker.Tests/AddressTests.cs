@@ -81,11 +81,11 @@ namespace Faker.Tests
         [Test]
         public void Should_Get_Default_Country()
         {
-            string expectedCountry = Resources.Address.DefaultCountry;
+            string[] possibleCountries = Resources.Address.DefaultCountry.Split(Config.SEPARATOR);
 
             string actualCountry = Address.DefaultCountry();
 
-            Assert.That(actualCountry, Is.EqualTo(expectedCountry));
+            Assert.That(new[] {actualCountry}, Is.SubsetOf(possibleCountries));
         }
 
         [Test]
