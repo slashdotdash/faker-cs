@@ -10,12 +10,12 @@
         <description>C# port of the Ruby gem (http://faker.rubyforge.org/) and is used to easily generate fake data: names, addresses, phone numbers, etc.</description>
     </metadata>
     <files>
-        <file src="src\Faker\bin\Release\de-DE\Faker.Portable.resources.dll" target="lib\portable-net4+sl5+wp8+win8+wpa81+netcore45+MonoAndroid+Xamarin.iOS1\de-DE\Faker.Portable.resources.dll" />
-        <file src="src\Faker\bin\Release\en-US\Faker.Portable.resources.dll" target="lib\portable-net4+sl5+wp8+win8+wpa81+netcore45+MonoAndroid+Xamarin.iOS1\en-US\Faker.Portable.resources.dll" />
-        <file src="src\Faker\bin\Release\nb-NO\Faker.Portable.resources.dll" target="lib\portable-net4+sl5+wp8+win8+wpa81+netcore45+MonoAndroid+Xamarin.iOS1\nb-NO\Faker.Portable.resources.dll" />
-        <file src="src\Faker\bin\Release\pt-BR\Faker.Portable.resources.dll" target="lib\portable-net4+sl5+wp8+win8+wpa81+netcore45+MonoAndroid+Xamarin.iOS1\pt-BR\Faker.Portable.resources.dll" />
-        <file src="src\Faker\bin\Release\Faker.Portable.dll" target="lib\portable-net4+sl5+wp8+win8+wpa81+netcore45+MonoAndroid+Xamarin.iOS1\Faker.Portable.dll" />
-        <file src="src\Faker\bin\Release\Faker.Portable.pdb" target="lib\portable-net4+sl5+wp8+win8+wpa81+netcore45+MonoAndroid+Xamarin.iOS1\Faker.Portable.pdb" />
-        <file src="src\Faker\bin\Release\Faker.Portable.xml" target="lib\portable-net4+sl5+wp8+win8+wpa81+netcore45+MonoAndroid+Xamarin.iOS1\Faker.Portable.xml" />
+        <file src="bin\Release\de-DE\Faker.Portable.resources.dll" target="lib\portable-net4+sl5+wp8+win8+wpa81+netcore45+MonoAndroid+Xamarin.iOS1\de-DE\Faker.Portable.resources.dll" />
+        <file src="bin\Release\en-US\Faker.Portable.resources.dll" target="lib\portable-net4+sl5+wp8+win8+wpa81+netcore45+MonoAndroid+Xamarin.iOS1\en-US\Faker.Portable.resources.dll" />
+        <file src="bin\Release\nb-NO\Faker.Portable.resources.dll" target="lib\portable-net4+sl5+wp8+win8+wpa81+netcore45+MonoAndroid+Xamarin.iOS1\nb-NO\Faker.Portable.resources.dll" />
+        <file src="bin\Release\pt-BR\Faker.Portable.resources.dll" target="lib\portable-net4+sl5+wp8+win8+wpa81+netcore45+MonoAndroid+Xamarin.iOS1\pt-BR\Faker.Portable.resources.dll" />
+        <file src="bin\Release\Faker.Portable.dll" target="lib\portable-net4+sl5+wp8+win8+wpa81+netcore45+MonoAndroid+Xamarin.iOS1\Faker.Portable.dll" />
+        <file src="bin\Release\Faker.Portable.pdb" target="lib\portable-net4+sl5+wp8+win8+wpa81+netcore45+MonoAndroid+Xamarin.iOS1\Faker.Portable.pdb" />
+        <file src="bin\Release\Faker.Portable.xml" target="lib\portable-net4+sl5+wp8+win8+wpa81+netcore45+MonoAndroid+Xamarin.iOS1\Faker.Portable.xml" />
     </files>
 </package>
