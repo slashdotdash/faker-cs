@@ -5,7 +5,7 @@ branches:
 configuration: Release
 assembly_info:
   patch: true
-  file: src\Faker\Properties\AssemblyInfo.cs
+  file: **\AssemblyInfo.cs
   assembly_version: '{version}'
   assembly_file_version: '{version}'
   assembly_informational_version: '{version}'
@@ -22,6 +22,7 @@ build:
   verbosity: minimal
 after_build:
 - 7z a "Faker.NET.Portable-%APPVEYOR_BUILD_VERSION%.zip" "%APPVEYOR_BUILD_FOLDER%\src\Faker\bin\%CONFIGURATION%\*" -x!*CodeAnalysis* -r -mx=9
+- nuget pack Faker.NET.Portable.nuspec
 artifacts:
 - path: '*.zip'
 - path: '*.nupkg'

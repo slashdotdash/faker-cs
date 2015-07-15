@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>Faker.Net.Portable</id>
+        <version>2.0.0</version>
+        <title>Faker.NET (Portable Edition)</title>
+        <authors>AdmiringWorm</authors>
+        <licenseUrl>https://raw.githubusercontent.com/AdmiringWorm/Faker.NET.Portable/develop/LICENSE</licenseUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>C# port of the Ruby gem (http://faker.rubyforge.org/) and is used to easily generate fake data: names, addresses, phone numbers, etc.</description>
+    </metadata>
+    <files>
+        <file src="src\Faker\bin\Release\de-DE\Faker.Portable.resources.dll" target="lib\portable-net4+sl5+wp8+win8+wpa81+netcore45+MonoAndroid+Xamarin.iOS1\de-DE\Faker.Portable.resources.dll" />
+        <file src="src\Faker\bin\Release\en-US\Faker.Portable.resources.dll" target="lib\portable-net4+sl5+wp8+win8+wpa81+netcore45+MonoAndroid+Xamarin.iOS1\en-US\Faker.Portable.resources.dll" />
+        <file src="src\Faker\bin\Release\nb-NO\Faker.Portable.resources.dll" target="lib\portable-net4+sl5+wp8+win8+wpa81+netcore45+MonoAndroid+Xamarin.iOS1\nb-NO\Faker.Portable.resources.dll" />
+        <file src="src\Faker\bin\Release\pt-BR\Faker.Portable.resources.dll" target="lib\portable-net4+sl5+wp8+win8+wpa81+netcore45+MonoAndroid+Xamarin.iOS1\pt-BR\Faker.Portable.resources.dll" />
+        <file src="src\Faker\bin\Release\Faker.Portable.dll" target="lib\portable-net4+sl5+wp8+win8+wpa81+netcore45+MonoAndroid+Xamarin.iOS1\Faker.Portable.dll" />
+        <file src="src\Faker\bin\Release\Faker.Portable.pdb" target="lib\portable-net4+sl5+wp8+win8+wpa81+netcore45+MonoAndroid+Xamarin.iOS1\Faker.Portable.pdb" />
+        <file src="src\Faker\bin\Release\Faker.Portable.xml" target="lib\portable-net4+sl5+wp8+win8+wpa81+netcore45+MonoAndroid+Xamarin.iOS1\Faker.Portable.xml" />
+    </files>
+</package>
