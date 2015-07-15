@@ -120,4 +120,7 @@
   <data name="DomainSuffix" xml:space="preserve">
     <value>no;com;net;org</value>
   </data>
+  <data name="FreeMail" xml:space="preserve">
+    <value>gmail.com;yahoo.com;hotmail.no</value>
+  </data>
 </root>

@@ -47,6 +47,7 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
+    <EmbeddedResource Include="Resources\Address.en-US.resx" />
     <EmbeddedResource Include="Resources\Address.nb-NO.resx" />
     <EmbeddedResource Include="Resources\App.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -57,10 +58,12 @@
       <LastGenOutput>Business.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Company.nb-NO.resx" />
+    <EmbeddedResource Include="Resources\Internet.en-US.resx" />
     <EmbeddedResource Include="Resources\Internet.nb-NO.resx" />
     <EmbeddedResource Include="Resources\Lorem.de-DE.resx" />
     <EmbeddedResource Include="Resources\Name.nb-NO.resx" />
     <EmbeddedResource Include="Resources\Phone.de-DE.resx" />
+    <EmbeddedResource Include="Resources\Phone.en-US.resx" />
     <EmbeddedResource Include="Resources\Phone.nb-NO.resx" />
     <EmbeddedResource Include="Resources\Phone.pt-BR.resx" />
     <EmbeddedResource Include="Resources\Phone.resx">

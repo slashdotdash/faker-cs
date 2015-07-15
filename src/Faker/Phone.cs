@@ -18,6 +18,16 @@ namespace Faker
             return Number(Resources.Phone.CellPhoneFormats.RandomResource());
         }
 
+        public static string Extension()
+        {
+            return Extension(4);
+        }
+
+        public static string Extension(int length)
+        {
+            return string.Concat(length.Times((i => RandomNumber.Next(0, 10))));
+        }
+
         /// <summary>
         ///     Generates a random phone number with a random pattern.
         /// </summary>
@@ -36,6 +46,11 @@ namespace Faker
         public static string Number(string pattern)
         {
             return pattern.Trim().Numerify();
+        }
+
+        public static string SubscriberNumber()
+        {
+            return Extension(4);
         }
     }
 }

@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AddressFormat" xml:space="preserve">
-    <value>{0} #####;{0} ####;{0} ###</value>
-  </data>
   <data name="CityPrefix" xml:space="preserve">
     <value>Nord;Ost;West;Süd;Neu;Alt;Bad</value>
   </data>
@@ -132,23 +129,8 @@
   <data name="SecondaryAddress" xml:space="preserve">
     <value>Apt. ###;Suite ###</value>
   </data>
-  <data name="StreetNameSeparator" xml:space="preserve">
-    <value />
-  </data>
   <data name="StreetSuffix" xml:space="preserve">
     <value>allee;berg;bruecke;brücke;gaesschen;gaeßchen;gasse;gässchen;gäßchen;platz;ring;strasse;strße;weg</value>
-  </data>
-  <data name="UkCounties" xml:space="preserve">
-    <value>Avon;Bedfordshire;Berkshire;Borders;Buckinghamshire;Cambridgeshire;Central;Cheshire;Cleveland;Clwyd;Cornwall;County Antrim;County Armagh;County Down;County Fermanagh;County Londonderry;County Tyrone;Cumbria;Derbyshire;Devon;Dorset;Dumfries and Galloway;Durham;Dyfed;East Sussex;Essex;Fife;Gloucestershire;Grampian;Greater Manchester;Gwent;Gwynedd County;Hampshire;Herefordshire;Hertfordshire;Highlands and Islands;Humberside;Isle of Wight;Kent;Lancashire;Leicestershire;Lincolnshire;Lothian;Merseyside;Mid Glamorgan;Norfolk;North Yorkshire;Northamptonshire;Northumberland;Nottinghamshire;Oxfordshire;Powys;Rutland;Shropshire;Somerset;South Glamorgan;South Yorkshire;Staffordshire;Strathclyde;Suffolk;Surrey;Tayside;Tyne and Wear;Warwickshire;West Glamorgan;West Midlands;West Sussex;West Yorkshire;Wiltshire;Worcestershire</value>
-  </data>
-  <data name="UkCountry" xml:space="preserve">
-    <value>England;Schottland;Wales;Nord Irland</value>
-  </data>
-  <data name="UsState" xml:space="preserve">
-    <value>Alabama;Alaska;Arizona;Arkansas;California;Colorado;Connecticut;Delaware;Florida;Georgia;Hawaii;Idaho;Illinois;Indiana;Iowa;Kansas;Kentucky;Louisiana;Maine;Maryland;Massachusetts;Michigan;Minnesota;Mississippi;Missouri;Montana;Nebraska;Nevada;New Hampshire;New Jersey;New Mexico;New York;North Carolina;North Dakota;Ohio;Oklahoma;Oregon;Pennsylvania;Rhode Island;South Carolina;South Dakota;Tennessee;Texas;Utah;Vermont;Virginia;Washington;West Virginia;Wisconsin;Wyoming</value>
-  </data>
-  <data name="UsStateAbbr" xml:space="preserve">
-    <value>AL;AK;AS;AZ;AR;CA;CO;CT;DE;DC;FM;FL;GA;GU;HI;ID;IL;IN;IA;KS;KY;LA;ME;MH;MD;MA;MI;MN;MS;MO;MT;NE;NV;NH;NJ;NM;NY;NC;ND;MP;OH;OK;OR;PW;PA;PR;RI;SC;SD;TN;TX;UT;VT;VI;VA;WA;WV;WI;WY;AE;AA;AP</value>
   </data>
   <data name="ZipCode" xml:space="preserve">
     <value>#####;#####-####</value>

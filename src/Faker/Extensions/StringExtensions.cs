@@ -21,6 +21,7 @@ namespace Faker.Extensions
 
         static StringExtensions()
         {
+
             lock (s_dictionaryLock)
             {
                 s_validVariables = new Dictionary<string, Func<string>>();
@@ -31,6 +32,8 @@ namespace Faker.Extensions
                 s_validVariables.Add("StreetRoot", Resources.Address.StreetRoot.RandomResource);
                 s_validVariables.Add("CityRoot", Resources.Address.CityRoot.RandomResource);
                 s_validVariables.Add("CommonStreetSuffixes", Resources.Address.CommonStreetSuffixes.RandomResource);
+                s_validVariables.Add("AreaCode", Resources.Phone.AreaCode.RandomResource);
+                s_validVariables.Add("ExchangeCode", Resources.Phone.ExchangeCode.RandomResource);
             }
         }
 

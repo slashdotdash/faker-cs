@@ -74,7 +74,7 @@ namespace Faker
         /// <returns>The default country.</returns>
         public static string DefaultCountry()
         {
-            return Resources.Address.DefaultCountry;
+            return Resources.Address.DefaultCountry.RandomResource();
         }
 
         /// <summary>

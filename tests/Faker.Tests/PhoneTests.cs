@@ -23,7 +23,8 @@ namespace Faker.Tests
                                     + Resources.Phone.CellPhoneFormats.Replace(';', '|')
                                                .Replace("#", "[0-9]")
                                                .Replace("(", @"\(")
-                                               .Replace(")", @"\)") + ")$";
+                                               .Replace(")", @"\)")
+                                               .Replace("+", "\\+")+ ")$";
 
             string number = Phone.CellNumber();
 
@@ -32,11 +33,25 @@ namespace Faker.Tests
 
         [Test]
         [Repeat(10000)]
+        [SetUICulture("en")]
         public void Should_Generate_Phone_Number()
         {
             string number = Phone.Number();
-            //Assert.IsTrue(Regex.IsMatch(number, @"[0-9 x\-\(\)\.]+"));
+
             Assert.That(number, Is.StringMatching(@"^[0-9 x\-(\)\.]+$"));
+        }
+
+        [Test]
+        [Repeat(10000)]
+        [SetUICulture("nb-NO")]
+        public void Should_Generate_Norwegian_Phone_Number()
+        {
+            string number = Phone.Number();
+
+            Assert.That(number, 
+                Is.StringMatching(@"^\+47( [0-9]{2}){4}$")
+                .Or.StringMatching(@"^[0-9]{3} [0-9]{2} [0-9]{3}$")
+                .Or.StringMatching(@"^([0-9]{2} ?){4}$"));
         }
     }
 }

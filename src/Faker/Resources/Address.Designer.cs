@@ -196,11 +196,11 @@ namespace Faker.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to  .
+        ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string StreetNameSeparator {
+        internal static string StreetPrefix {
             get {
-                return ResourceManager.GetString("StreetNameSeparator", resourceCulture);
+                return ResourceManager.GetString("StreetPrefix", resourceCulture);
             }
         }
         

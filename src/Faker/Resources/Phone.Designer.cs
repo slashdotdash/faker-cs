@@ -61,11 +61,29 @@ namespace Faker.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string AreaCode {
+            get {
+                return ResourceManager.GetString("AreaCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ###-###-####;(###) ###-####;1-###-###-####;###.###.####.
         /// </summary>
         internal static string CellPhoneFormats {
             get {
                 return ResourceManager.GetString("CellPhoneFormats", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string ExchangeCode {
+            get {
+                return ResourceManager.GetString("ExchangeCode", resourceCulture);
             }
         }
         

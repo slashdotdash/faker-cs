@@ -162,8 +162,8 @@
   <data name="StreetNameFormat" xml:space="preserve">
     <value>{Name.First} {Address.StreetSuffix};{Name.Last} {Address.StreetSuffix}</value>
   </data>
-  <data name="StreetNameSeparator" xml:space="preserve">
-    <value> </value>
+  <data name="StreetPrefix" xml:space="preserve">
+    <value />
   </data>
   <data name="StreetRoot" xml:space="preserve">
     <value />

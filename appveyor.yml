@@ -16,9 +16,21 @@ nuget:
   disable_publish_on_pr: true
 build:
   project: Faker.sln
+  publish_nuget: true
+  publish_nuget_symbols: true
   parallel: true
   verbosity: minimal
 after_build:
 - 7z a "Faker.NET.Portable-%APPVEYOR_BUILD_VERSION%.zip" "%APPVEYOR_BUILD_FOLDER%\src\Faker\bin\%CONFIGURATION%\*" -x!*CodeAnalysis* -r -mx=9
 artifacts:
 - path: '*.zip'
+- path: '*.nupkg'
+deploy:
+- provider: Environment
+  name: NuGetRelease
+  on:
+    branch: master
+- provider: Environment
+  name: GithubRelease
+  on:
+    branch: master
