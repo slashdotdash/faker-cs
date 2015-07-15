@@ -22,7 +22,7 @@ build:
   verbosity: minimal
 after_build:
 - 7z a "Faker.NET.Portable-%APPVEYOR_BUILD_VERSION%.zip" "%APPVEYOR_BUILD_FOLDER%\src\Faker\bin\%CONFIGURATION%\*" -x!*CodeAnalysis* -r -mx=9
-- nuget pack Faker.NET.Portable.nuspec
+- nuget pack -Symbols -Version %APPVEYOR_BUILD_VERSION% Faker.NET.Portable.nuspec
 artifacts:
 - path: '*.zip'
 - path: '*.nupkg'
