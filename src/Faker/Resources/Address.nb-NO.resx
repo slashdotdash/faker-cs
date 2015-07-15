@@ -117,10 +117,46 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="CellPhoneFormats" xml:space="preserve">
-    <value>###-###-####;(###) ###-####;1-###-###-####;###.###.####</value>
+  <data name="BuildingNumber" xml:space="preserve">
+    <value>#;##;###</value>
   </data>
-  <data name="Formats" xml:space="preserve">
-    <value>###-###-####;(###)###-####;1-###-###-####;###.###.####;###-###-####;(###)###-####;1-###-###-####;###.###.####;###-###-#### x###;(###)###-#### x###;1-###-###-#### x###;###.###.#### x###;###-###-#### x####;(###)###-#### x####;1-###-###-#### x####;###.###.#### x####;###-###-#### x#####;(###)###-#### x#####;1-###-###-#### x#####;###.###.#### x#####</value>
+  <data name="CityFormat" xml:space="preserve">
+    <value>{CityRoot}{Address.CitySuffix}</value>
+  </data>
+  <data name="CityRoot" xml:space="preserve">
+    <value>Fet;Gjes;Høy;Inn;Fager;Lille;Lo;Mal;Nord;Nær;Sand;Sme;Stav;Stor;Tand;Ut;Vest</value>
+  </data>
+  <data name="CitySuffix" xml:space="preserve">
+    <value>berg;borg;by;bø;dal;eid;fjell;fjord;foss;grunn;hamn;havn;helle;mark;nes;odden;sand;sjøen;stad;strand;strøm;sund;vik;vær;våg;ø;øy;ås</value>
+  </data>
+  <data name="CommonStreetSuffixes" xml:space="preserve">
+    <value>sgate;svei;s Gate;s Vei;gata;veien</value>
+  </data>
+  <data name="DefaultCountr" xml:space="preserve">
+    <value>Norge</value>
+  </data>
+  <data name="SecondaryAddress" xml:space="preserve">
+    <value>Leil. ###;Oppgang A;Oppgang B</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>Østfold;Akershus;Oslo;Hedmark;Oppland;Buskerud;Vestfold;Telemark;Aust-Agder;Vest-Agder;Rogaland;Hordaland;Sogn og Fjordane;Møre og Romsdal;Sør-Trøndelag;Nord-Trøndelag;Nordland;Trom;Finmark</value>
+  </data>
+  <data name="StreetAddressFormat" xml:space="preserve">
+    <value>{Address.StreetName} {Address.BuildingNumber}</value>
+  </data>
+  <data name="StreetNameFormat" xml:space="preserve">
+    <value>{StreetRoot}{Address.StreetSuffix};{Address.StreetPrefix} {StreetRoot}{Address.StreetSuffix};{Name.First}{CommonStreetSuffix};{Name.Last}{CommonStreetSuffix}</value>
+  </data>
+  <data name="StreetPrefix" xml:space="preserve">
+    <value>Øvre;Nedre;Søndre;Gamle;Østre;Vestre</value>
+  </data>
+  <data name="StreetRoot" xml:space="preserve">
+    <value>Eike;Bjørke;Gran;Vass;Furu;Litj;Lille;Høy;Fosse;Elve;Ku;Konvall;Soldugg;Hestemyr;Granitt;Hegge;Rogne;Fiol;Sol;Ting;Malm;Klokker;Preste;Dam;Geiterygg;Bekke;Berg;Kirke;Kors;Bru;Blåveis;Torg;Sjø</value>
+  </data>
+  <data name="StreetSuffix" xml:space="preserve">
+    <value>alléen;bakken;berget;bråten;eggen;engen;ekra;faret;flata;gata;gjerdet;grenda;gropa;hagen;haugen;havna;holtet;høgda;jordet;kollen;kroken;lia;lunden;lyngen;løkka;marka;moen;myra;plassen;ringen;roa;røa;skogen;skrenten;spranget;stien;stranda;stubben;stykket;svingen;tjernet;toppen;tunet;vollen;vika;åsen</value>
+  </data>
+  <data name="ZipCode" xml:space="preserve">
+    <value>####;####;####;0###</value>
   </data>
 </root>

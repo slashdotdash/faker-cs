@@ -22,14 +22,14 @@ namespace Faker.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Phone {
+    internal class App {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Phone() {
+        internal App() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace Faker.Resources {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Faker.Resources.Phone", typeof(Phone).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Faker.Resources.App", typeof(App).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,20 +61,29 @@ namespace Faker.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ###-###-####;(###) ###-####;1-###-###-####;###.###.####.
+        ///   Looks up a localized string similar to {Name.FullName};{Company.Name}.
         /// </summary>
-        internal static string CellPhoneFormats {
+        internal static string Author {
             get {
-                return ResourceManager.GetString("CellPhoneFormats", resourceCulture);
+                return ResourceManager.GetString("Author", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ###-###-####;(###)###-####;1-###-###-####;###.###.####;###-###-####;(###)###-####;1-###-###-####;###.###.####;###-###-#### x###;(###)###-#### x###;1-###-###-#### x###;###.###.#### x###;###-###-#### x####;(###)###-#### x####;1-###-###-#### x####;###.###.#### x####;###-###-#### x#####;(###)###-#### x#####;1-###-###-#### x#####;###.###.#### x#####.
+        ///   Looks up a localized string similar to Redhold;Treeflex;Trippledex;Kanlam;Bigtax;Daltfresh;Toughjoyfax;Mat Lam Tam;Otcom;Tres-Zap;Y-Solowarm;Tresom;Voltsillam;Biodex;Greenlam;Viva;Matsoft;Temp;Zoolab;Subin;Rank;Job;Stringtough;Tin;It;Home Ing;Zamit;Sonsing;Konklab;Alpha;Latlux;Voyatouch;Alphazap;Holdlamis;Zaam-Dox;Sub-Ex;Quo Lux;Bamity;Ventosanzap;Lotstring;Hatity;Tempsoft;Overhold;Fixflex;Konklux;Zontrax;Tampflex;Span;Namfix;Transcof;Stim;Fix San;Sonair;Stronghold;Fintone;Y-find;Opela;Lotlux;Ronstring;Zathin;Duobam;Keylex.
         /// </summary>
-        internal static string Formats {
+        internal static string Name {
             get {
-                return ResourceManager.GetString("Formats", resourceCulture);
+                return ResourceManager.GetString("Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 0.#.#;0.##;#.##;#.#;#.#.#.
+        /// </summary>
+        internal static string VersionFormat {
+            get {
+                return ResourceManager.GetString("VersionFormat", resourceCulture);
             }
         }
     }

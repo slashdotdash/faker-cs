@@ -108,6 +108,11 @@ namespace Faker
         ///     Gets a random state.
         /// </summary>
         /// <returns>The random state.</returns>
+        /// <remarks>
+        ///     <note>
+        ///         If the selected Culture doesn't have states, this will output a Random Country instead.
+        ///     </note>
+        /// </remarks>
         public static string State()
         {
             return Resources.Address.State.RandomResource();
@@ -117,6 +122,11 @@ namespace Faker
         ///     Gets a random state abbreviation.
         /// </summary>
         /// <returns>The state abbreviation.</returns>
+        /// <remarks>
+        ///     <note>
+        ///         If the selected Culture doesn't have states, this will output a Random Country Abbreviation instead.
+        ///     </note>
+        /// </remarks>
         public static string StateAbbreviation()
         {
             return Resources.Address.StateAbbr.RandomResource();

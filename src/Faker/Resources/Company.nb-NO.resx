@@ -117,10 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="CellPhoneFormats" xml:space="preserve">
-    <value>###-###-####;(###) ###-####;1-###-###-####;###.###.####</value>
+  <data name="NameFormats" xml:space="preserve">
+    <value>{Name.Last} {Company.Suffix};{Name.Last}-{Name.Last};{Name.Last}, {Name.Last} og {Name.Last}</value>
   </data>
-  <data name="Formats" xml:space="preserve">
-    <value>###-###-####;(###)###-####;1-###-###-####;###.###.####;###-###-####;(###)###-####;1-###-###-####;###.###.####;###-###-#### x###;(###)###-#### x###;1-###-###-#### x###;###.###.#### x###;###-###-#### x####;(###)###-#### x####;1-###-###-#### x####;###.###.#### x####;###-###-#### x#####;(###)###-#### x#####;1-###-###-#### x#####;###.###.#### x#####</value>
+  <data name="Suffix" xml:space="preserve">
+    <value>Gruppen;AS;ASA;BA;RFH;og Sønner</value>
   </data>
 </root>

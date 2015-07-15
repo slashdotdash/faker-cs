@@ -61,15 +61,6 @@ namespace Faker.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to and.
-        /// </summary>
-        internal static string And {
-            get {
-                return ResourceManager.GetString("And", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to implement;utilize;integrate;streamline;optimize;evolve;transform;embrace;enable;orchestrate;leverage;reinvent;aggregate;architect;enhance;incentivize;morph;empower;envisioneer;monetize;harness;facilitate;seize;disintermediate;synergize;strategize;deploy;brand;grow;target;syndicate;synthesize;deliver;mesh;incubate;engage;maximize;benchmark;expedite;reintermediate;whiteboard;visualize;repurpose;innovate;scale;unleash;drive;extend;engineer;revolutionize;generate;exploit;transition;e-enable;iterate;cultivate;ma [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string BS1 {

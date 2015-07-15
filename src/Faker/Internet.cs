@@ -117,6 +117,58 @@ namespace Faker
         }
 
         /// <summary>
+        ///     Gets a random mac address.
+        /// </summary>
+        /// <param name="prefix">The prefix.</param>
+        /// <param name="groupSplit">The group split.</param>
+        /// <returns>The random mac address.</returns>
+        public static string MacAddress(string prefix = null, char groupSplit = ':')
+        {
+            const int maxBufferLength = 6;
+
+            int prefixesLength = prefix == null ? 0 : prefix.Split(groupSplit).Length;
+            if (prefix != null && prefixesLength < maxBufferLength
+                && !prefix.EndsWith(groupSplit.ToString(), StringComparison.CurrentCulture))
+                prefix += groupSplit;
+
+            var buffer = new byte[maxBufferLength - prefixesLength];
+            RandomNumber.NextBytes(buffer);
+            string result = string.Concat(buffer.Select(x => x.ToString("X2", CultureInfo.CurrentCulture) + groupSplit));
+
+            return prefix + result.TrimEnd(groupSplit);
+        }
+
+        /// <summary>
+        ///     Gets a random password.
+        /// </summary>
+        /// <param name="minLength">The minimum length.</param>
+        /// <param name="maxLength">The maximum length.</param>
+        /// <returns>The random password.</returns>
+        public static string Password(int minLength, int maxLength)
+        {
+            string result = Lorem.Characters(minLength);
+            int difference = RandomNumber.Next(maxLength - minLength + 1);
+
+            if (difference > 0)
+                result += Lorem.Characters(difference);
+
+            return result;
+        }
+
+        /// <summary>
+        /// Gets a random slug.
+        /// </summary>
+        /// <param name="words">The words.</param>
+        /// <param name="glue">The glue.</param>
+        /// <returns>The slug.</returns>
+        public static string Slug(string words = null, string glue = null)
+        {
+            glue = glue ?? new[] {"_", ".", "-"}.Random();
+
+            return (words ?? string.Join(" ", Lorem.Words(2))).Replace(" ", glue).ToLower();
+        }
+
+        /// <summary>
         ///     Gets a random URL.
         /// </summary>
         /// <returns>A random URL.</returns>

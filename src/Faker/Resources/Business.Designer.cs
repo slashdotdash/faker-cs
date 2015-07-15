@@ -22,14 +22,14 @@ namespace Faker.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Phone {
+    internal class Business {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Phone() {
+        internal Business() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace Faker.Resources {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Faker.Resources.Phone", typeof(Phone).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Faker.Resources.Business", typeof(Business).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,20 +61,29 @@ namespace Faker.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ###-###-####;(###) ###-####;1-###-###-####;###.###.####.
+        ///   Looks up a localized string similar to 2011-10-12;2012-11-12;2015-11-11;2013-9-12.
         /// </summary>
-        internal static string CellPhoneFormats {
+        internal static string CreditCardExpiryDates {
             get {
-                return ResourceManager.GetString("CellPhoneFormats", resourceCulture);
+                return ResourceManager.GetString("CreditCardExpiryDates", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ###-###-####;(###)###-####;1-###-###-####;###.###.####;###-###-####;(###)###-####;1-###-###-####;###.###.####;###-###-#### x###;(###)###-#### x###;1-###-###-#### x###;###.###.#### x###;###-###-#### x####;(###)###-#### x####;1-###-###-#### x####;###.###.#### x####;###-###-#### x#####;(###)###-#### x#####;1-###-###-#### x#####;###.###.#### x#####.
+        ///   Looks up a localized string similar to 1234-2121-1221-1211;1212-1221-1121-1234;1211-1221-1234-2201;1228-1221-1221-1431.
         /// </summary>
-        internal static string Formats {
+        internal static string CreditCardNumbers {
             get {
-                return ResourceManager.GetString("Formats", resourceCulture);
+                return ResourceManager.GetString("CreditCardNumbers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to visa;mastercard;americanexpress;discover.
+        /// </summary>
+        internal static string CreditCardTypes {
+            get {
+                return ResourceManager.GetString("CreditCardTypes", resourceCulture);
             }
         }
     }

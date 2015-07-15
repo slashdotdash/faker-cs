@@ -24,6 +24,15 @@ namespace Faker
             }
         }
 
+        /// <inheritdoc cref="Random.NextBytes(byte[])" />
+        public static void NextBytes(byte[] buffer)
+        {
+            lock (s_lockObject)
+            {
+                s_rnd.NextBytes(buffer);
+            }
+        }
+
         /// <inheritdoc cref="Random.Next(int)" />
         /// <seealso cref="Random.Next(int)" />
         /// <include file='Docs/RevisionHistory.xml' path='Revisions/RandomNumber[@id="NextMaxValue"]/revisionHistory' />

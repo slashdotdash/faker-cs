@@ -44,6 +44,15 @@ namespace Faker.Tests
         }
 
         [Test]
+        public void Should_Generate_Slug()
+        {
+            string slug = Internet.Slug();
+
+            Assert.That(slug,
+                Is.StringMatching("^[A-Za-z_\\.\\-]+$"));
+        }
+
+        [Test]
         [Repeat(10000)]
         public void Should_Create_User_Name()
         {
@@ -58,6 +67,42 @@ namespace Faker.Tests
             string username = Internet.UserName("Bob Smith");
             //Assert.IsTrue(Regex.IsMatch(username, @"bob[_\.]smith"));
             Assert.That(username, Is.StringMatching(@"^bob[_\.]smith$"));
+        }
+
+        [Test]
+        public void Should_Generate_Mac_Address()
+        {
+            string mac = Internet.MacAddress();
+
+            Assert.That(mac,
+                        Is.StringMatching(@"^([A-F0-9]{2}\:){5}[A-F0-9]{2}$"));
+        }
+
+        [Test]
+        public void Should_Generate_Mac_Address_With_Custom_Group_Split()
+        {
+            string mac = Internet.MacAddress(groupSplit: '-');
+
+            Assert.That(mac,
+                        Is.StringMatching(@"^([A-F0-9]{2}-){5}[A-F0-9]{2}$"));
+        }
+
+        [Test]
+        public void Should_Generate_Mac_Address_With_Existing_Prefix()
+        {
+            string mac = Internet.MacAddress("0F:3A");
+
+            Assert.That(mac,
+                        Is.StringMatching(@"^0F\:3A(\:[A-F0-9]{2}){4}$"));
+        }
+
+        [Test]
+        public void Should_Generate_Password()
+        {
+            string password = Internet.Password(8, 16);
+
+            Assert.That(password, Has.Length.GreaterThanOrEqualTo(8)
+                                     .And.Length.LessThanOrEqualTo(16));
         }
 
         [Test]

@@ -28,6 +28,9 @@ namespace Faker.Extensions
                 AddVariables(typeof (Address), s_validVariables);
                 AddVariables(typeof (Company), s_validVariables);
                 AddVariables(typeof (Name), s_validVariables);
+                s_validVariables.Add("StreetRoot", Resources.Address.StreetRoot.RandomResource);
+                s_validVariables.Add("CityRoot", Resources.Address.CityRoot.RandomResource);
+                s_validVariables.Add("CommonStreetSuffixes", Resources.Address.CommonStreetSuffixes.RandomResource);
             }
         }
 

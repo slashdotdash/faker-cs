@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
+using System.Text;
 using Faker.Extensions;
 
 namespace Faker
@@ -13,6 +15,22 @@ namespace Faker
     [SuppressMessage("ReSharper", "UseNameofExpression")]
     public static class Lorem
     {
+        /// <summary>
+        ///     Generates random characters with the specified <paramref name="charCount">character count</paramref>.
+        /// </summary>
+        /// <param name="charCount">The character count.</param>
+        /// <returns>The random characters.</returns>
+        /// <exception cref="System.ArgumentOutOfRangeException">Character count must be more than zero.</exception>
+        public static string Characters(int charCount = 255)
+        {
+            if (charCount <= 0)
+                throw new ArgumentOutOfRangeException("charCount", "Character count must be more than zero.");
+
+            byte[] characters = charCount.Times(count => (byte) RandomNumber.Next(33, 126)).ToArray();
+
+            return Encoding.UTF8.GetString(characters, 0, charCount);
+        }
+
         /// <summary>
         ///     Gets a random paragraph.
         /// </summary>

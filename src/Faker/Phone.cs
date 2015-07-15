@@ -10,13 +10,22 @@ namespace Faker
     public static class Phone
     {
         /// <summary>
+        ///     Gets a random cell phone number.
+        /// </summary>
+        /// <returns>The generated cell phone number.</returns>
+        public static string CellNumber()
+        {
+            return Number(Resources.Phone.CellPhoneFormats.RandomResource());
+        }
+
+        /// <summary>
         ///     Generates a random phone number with a random pattern.
         /// </summary>
         /// <returns>The generated phone number.</returns>
         /// <seealso cref="Number(string)" />
         public static string Number()
         {
-            return Number(Resources.Phone.Formats.Split(Config.SEPARATOR).Random());
+            return Number(Resources.Phone.Formats.RandomResource());
         }
 
         /// <summary>
