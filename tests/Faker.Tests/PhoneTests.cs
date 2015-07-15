@@ -17,6 +17,21 @@ namespace Faker.Tests
 
         [Test]
         [Repeat(10000)]
+        public void Should_Generate_Cell_Phone_Number()
+        {
+            string expectedFormat = "^("
+                                    + Resources.Phone.CellPhoneFormats.Replace(';', '|')
+                                               .Replace("#", "[0-9]")
+                                               .Replace("(", @"\(")
+                                               .Replace(")", @"\)") + ")$";
+
+            string number = Phone.CellNumber();
+
+            Assert.That(number, Is.StringMatching(expectedFormat));
+        }
+
+        [Test]
+        [Repeat(10000)]
         public void Should_Generate_Phone_Number()
         {
             string number = Phone.Number();

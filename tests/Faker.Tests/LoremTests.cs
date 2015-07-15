@@ -19,6 +19,14 @@ namespace Faker.Tests
         }
 
         [Test]
+        public void Should_Generate_Characters([Range(1, 100)] int charCount)
+        {
+            string characters = Lorem.Characters(charCount);
+
+            Assert.That(characters, Has.Length.EqualTo(charCount));
+        }
+
+        [Test]
         [Repeat(10000)]
         public void Should_Generate_Paragraph()
         {

@@ -117,10 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="CellPhoneFormats" xml:space="preserve">
-    <value>###-###-####;(###) ###-####;1-###-###-####;###.###.####</value>
+  <data name="Author" xml:space="preserve">
+    <value>{Name.FullName};{Company.Name}</value>
   </data>
-  <data name="Formats" xml:space="preserve">
-    <value>###-###-####;(###)###-####;1-###-###-####;###.###.####;###-###-####;(###)###-####;1-###-###-####;###.###.####;###-###-#### x###;(###)###-#### x###;1-###-###-#### x###;###.###.#### x###;###-###-#### x####;(###)###-#### x####;1-###-###-#### x####;###.###.#### x####;###-###-#### x#####;(###)###-#### x#####;1-###-###-#### x#####;###.###.#### x#####</value>
+  <data name="Name" xml:space="preserve">
+    <value>Redhold;Treeflex;Trippledex;Kanlam;Bigtax;Daltfresh;Toughjoyfax;Mat Lam Tam;Otcom;Tres-Zap;Y-Solowarm;Tresom;Voltsillam;Biodex;Greenlam;Viva;Matsoft;Temp;Zoolab;Subin;Rank;Job;Stringtough;Tin;It;Home Ing;Zamit;Sonsing;Konklab;Alpha;Latlux;Voyatouch;Alphazap;Holdlamis;Zaam-Dox;Sub-Ex;Quo Lux;Bamity;Ventosanzap;Lotstring;Hatity;Tempsoft;Overhold;Fixflex;Konklux;Zontrax;Tampflex;Span;Namfix;Transcof;Stim;Fix San;Sonair;Stronghold;Fintone;Y-find;Opela;Lotlux;Ronstring;Zathin;Duobam;Keylex</value>
+  </data>
+  <data name="VersionFormat" xml:space="preserve">
+    <value>0.#.#;0.##;#.##;#.#;#.#.#</value>
   </data>
 </root>

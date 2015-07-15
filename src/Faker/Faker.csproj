@@ -47,6 +47,14 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
+    <EmbeddedResource Include="Resources\App.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>App.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Business.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Business.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Lorem.de-DE.resx" />
     <EmbeddedResource Include="Resources\Phone.de-DE.resx" />
     <EmbeddedResource Include="Resources\Phone.pt-BR.resx" />
@@ -91,7 +99,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Address.cs" />
+    <Compile Include="App.cs" />
     <Compile Include="Avatar.cs" />
+    <Compile Include="Business.cs" />
     <Compile Include="Company.cs" />
     <Compile Include="Config.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
@@ -108,6 +118,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Address.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\App.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>App.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Business.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Business.resx</DependentUpon>
     </Compile>
     <Compile Include="Resources\Company.Designer.cs">
       <AutoGen>True</AutoGen>

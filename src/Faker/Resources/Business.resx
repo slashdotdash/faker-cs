@@ -117,10 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="CellPhoneFormats" xml:space="preserve">
-    <value>###-###-####;(###) ###-####;1-###-###-####;###.###.####</value>
+  <data name="CreditCardExpiryDates" xml:space="preserve">
+    <value>2011-10-12;2012-11-12;2015-11-11;2013-9-12</value>
   </data>
-  <data name="Formats" xml:space="preserve">
-    <value>###-###-####;(###)###-####;1-###-###-####;###.###.####;###-###-####;(###)###-####;1-###-###-####;###.###.####;###-###-#### x###;(###)###-#### x###;1-###-###-#### x###;###.###.#### x###;###-###-#### x####;(###)###-#### x####;1-###-###-#### x####;###.###.#### x####;###-###-#### x#####;(###)###-#### x#####;1-###-###-#### x#####;###.###.#### x#####</value>
+  <data name="CreditCardNumbers" xml:space="preserve">
+    <value>1234-2121-1221-1211;1212-1221-1121-1234;1211-1221-1234-2201;1228-1221-1221-1431</value>
+  </data>
+  <data name="CreditCardTypes" xml:space="preserve">
+    <value>visa;mastercard;americanexpress;discover</value>
   </data>
 </root>
