@@ -31,14 +31,9 @@ namespace Faker
         /// <returns>The random domain name.</returns>
         public static string DomainName()
         {
-            var prefix = new[] {string.Empty, "www.", "www2."};
+            var prefix = new[] {string.Empty, string.Empty, "www.", "www2."};
 
             return prefix.Random() + DomainNameWithoutPrefix();
-        }
-
-        private static string DomainNameWithoutPrefix()
-        {
-            return "{0}.{1}".FormatCulture(DomainWord(), DomainSuffix());
         }
 
         /// <summary>
@@ -66,7 +61,7 @@ namespace Faker
         /// <returns>A random email address.</returns>
         public static string Email()
         {
-            return "{0}@{1}".FormatCulture(UserName(), DomainName());
+            return "{0}@{1}".FormatCulture(UserName(), DomainNameWithoutPrefix());
         }
 
         /// <summary>
@@ -162,7 +157,7 @@ namespace Faker
         }
 
         /// <summary>
-        /// Gets a random slug.
+        ///     Gets a random slug.
         /// </summary>
         /// <param name="words">The words.</param>
         /// <param name="glue">The glue.</param>
@@ -205,6 +200,11 @@ namespace Faker
         public static string UserName(string name)
         {
             return Regex.Replace(name, @"[^\w]+", x => new[] {".", "_"}.Random()).ToLowerInvariant();
+        }
+
+        private static string DomainNameWithoutPrefix()
+        {
+            return "{0}.{1}".FormatCulture(DomainWord(), DomainSuffix());
         }
     }
 }

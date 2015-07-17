@@ -45,7 +45,7 @@ namespace Faker
         /// <returns>The generated phone number.</returns>
         public static string Number(string pattern)
         {
-            return pattern.Trim().Numerify();
+            return pattern.Trim().Numerify(true);
         }
 
         public static string SubscriberNumber()

@@ -11,7 +11,7 @@ namespace Faker.Tests
         public void Should_Generate_Phone_Number_Based_On_Pattern(string pattern, string regexMatchPattern)
         {
             string number = Phone.Number(pattern);
-            //Assert.IsTrue(Regex.IsMatch(number, regexMatchPattern));
+
             Assert.That(number, Is.StringMatching(regexMatchPattern));
         }
 

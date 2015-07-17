@@ -15,7 +15,6 @@ namespace Faker.Tests.Extensions
             var input = new[] {"a", "b", "c"};
             IEnumerable<string> result = 100.Times(x => input.Random());
 
-            //Assert.AreEqual(3, result.Distinct().Count());
             Assert.That(result.Distinct(), Is.EquivalentTo(input));
         }
 
@@ -23,7 +22,7 @@ namespace Faker.Tests.Extensions
         public void Should_Return_Single_Item_From_Array()
         {
             string s = new[] {"Foo"}.Random();
-            //Assert.AreEqual("Foo", s);
+
             Assert.That(s, Is.EqualTo("Foo"));
         }
 

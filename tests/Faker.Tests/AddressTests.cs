@@ -41,8 +41,7 @@ namespace Faker.Tests
             string[] existingPrefixies = Resources.Address.CityPrefix.Split(Config.SEPARATOR);
 
             string prefix = Address.CityPrefix();
-
-            //Assert.That(prefix, Is.SubsetOf(existingPrefixies));
+            
             Assert.That(new[] {prefix}, Is.SubsetOf(existingPrefixies));
         }
 
@@ -154,7 +153,6 @@ namespace Faker.Tests
                                      .Replace("#", "[0-9]");
 
             string address = Address.StreetAddress(true);
-            //Assert.That(address, Is.StringMatching(@"^[0-9]{3,5} [A-Z][A-z' ]+ (Suite|Apt\.) [0-9]{3}$"));
 
             Assert.That(address,
                         Is.StringMatching(string.Format("{0} {1}$", ADDRESS_REGEX1, secondary))

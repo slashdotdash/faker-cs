@@ -31,7 +31,7 @@ namespace Faker.Tests
         public void Should_Generate_Paragraph()
         {
             string para = Lorem.Paragraph();
-            //Assert.IsTrue(Regex.IsMatch(para, @"([A-Z][a-z ]+\.\s?){3,6}"));
+
             Assert.That(para, Is.StringMatching(@"^([A-z ]+\.\s?){3,6}$"));
         }
 
@@ -40,15 +40,13 @@ namespace Faker.Tests
         public void Should_Generate_Random_Word_Sentence()
         {
             string sentence = Lorem.Sentence();
-            //Assert.IsTrue(Regex.IsMatch(sentence, @"[A-Z][a-z ]+\."));
+
             Assert.That(sentence, Is.StringMatching(@"^[A-z ]+\.$"));
         }
 
         [Test]
         public void Should_Return_Word_List([Range(10, 100)] int length)
         {
-            //IEnumerable<string> words = Lorem.Words(10);
-            //Assert.AreEqual(10, words.Count());
             IEnumerable<string> words = Lorem.Words(length);
 
             Assert.That(words.Count(), Is.EqualTo(length));
@@ -56,15 +54,15 @@ namespace Faker.Tests
         }
 
         [Test]
-        public void Should_Throw_ArgumentOutOfRangeException_If_Paragraphs_Count_Below_Zero()
-        {
-            Assert.Throws<ArgumentOutOfRangeException>(() => Lorem.Paragraphs(-1));
-        }
-
-        [Test]
         public void Should_Throw_ArgumentOutOfRangeException_If_Characters_Count_Below_Zero()
         {
             Assert.Throws<ArgumentOutOfRangeException>(() => Lorem.Characters(-1));
+        }
+
+        [Test]
+        public void Should_Throw_ArgumentOutOfRangeException_If_Paragraphs_Count_Below_Zero()
+        {
+            Assert.Throws<ArgumentOutOfRangeException>(() => Lorem.Paragraphs(-1));
         }
 
         [Test]
