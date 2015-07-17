@@ -18,6 +18,16 @@ namespace Faker.Tests.Extensions
         }
 
         [Test]
+        public void Should_Not_Replace_Characters_If_ReplaceVariables_Is_False()
+        {
+            const string expected = "{Name.First}";
+
+            string actual = expected.Transform(false);
+
+            Assert.That(actual, Is.EqualTo(expected));
+        }
+
+        [Test]
         [Repeat(10000)]
         public void Should_Replace_Both_Hash_And_Question_Marks()
         {

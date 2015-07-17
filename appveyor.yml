@@ -1,7 +1,8 @@
-version: 2.0.0.{build}
+version: 2.0.1.{build}
 branches:
   except:
   - ci/travis
+skip_tags: true
 configuration: Release
 assembly_info:
   patch: true
@@ -11,7 +12,7 @@ assembly_info:
   assembly_informational_version: '{version}'
 install:
 - nuget restore Faker.sln
-cache: packages
+cache: packages -> **\packages.config
 nuget:
   disable_publish_on_pr: true
 build:
@@ -29,9 +30,5 @@ artifacts:
 deploy:
 - provider: Environment
   name: NuGetRelease
-  on:
-    branch: master
-- provider: Environment
-  name: GithubRelease
   on:
     branch: master

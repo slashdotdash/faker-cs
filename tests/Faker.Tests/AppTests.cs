@@ -7,6 +7,7 @@ namespace Faker.Tests
     {
         [Test]
         [Repeat(100)]
+        [SetUICulture("en-US")]
         public void Should_Generate_Author()
         {
             string author = App.Author();

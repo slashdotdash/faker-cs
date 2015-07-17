@@ -70,17 +70,18 @@ namespace Faker.Tests
         }
 
         [Test]
-        [ExpectedException(typeof (ArgumentException))]
         public static void Should_Throw_Argument_Exception_If_Size_Not_Valid()
         {
-            Avatar.Image(size: "NotValid");
+            var ex = Assert.Throws<ArgumentException>(() => Avatar.Image(size: "NotValid"));
+            Assert.That(ex.Message, Is.StringStarting("Size should be specified in format 300x300"));
+            Assert.That(ex.ParamName, Is.EqualTo("size"));
         }
 
         [Test]
-        [ExpectedException(typeof (ArgumentNullException))]
         public static void Should_Throw_Argument_Null_Exception_If_Set_Is_Null()
         {
-            Avatar.Image(set: null);
+            var ex = Assert.Throws<ArgumentNullException>(() => Avatar.Image(set: null));
+            Assert.That(ex.ParamName, Is.EqualTo("set"));
         }
     }
 }

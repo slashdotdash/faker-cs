@@ -1,13 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>Faker.Net.Portable</id>
-        <version>2.0.0</version>
+        <version>2.0.1</version>
         <title>Faker.NET (Portable Edition)</title>
         <authors>AdmiringWorm</authors>
         <licenseUrl>https://raw.githubusercontent.com/AdmiringWorm/Faker.NET.Portable/develop/LICENSE</licenseUrl>
+        <projectUrl>https://github.com/AdmiringWorm/Faker.NET.Portable</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>C# port of the Ruby gem (http://faker.rubyforge.org/) and is used to easily generate fake data: names, addresses, phone numbers, etc.</description>
+        <releaseNotes>* Fixed an issue with Email generation would be invalid with non-english culture.</releaseNotes>
     </metadata>
     <files>
         <file src="src\Faker\bin\Release\de-DE\Faker.Portable.resources.dll" target="lib\portable-net4+sl5+wp8+win8+wpa81+netcore45+MonoAndroid+Xamarin.iOS1\de-DE\Faker.Portable.resources.dll" />

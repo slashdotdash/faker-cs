@@ -28,18 +28,24 @@ namespace Faker.Tests
         [Repeat(10000)]
         public void Should_Get_Prefix()
         {
+            string[] possiblePrefixes = Resources.Name.Prefix.Split(Config.SEPARATOR);
+
             string prefix = Name.Prefix();
             //Assert.IsTrue(Regex.IsMatch(prefix, @"^[A-Z][a-z]+\.?$"));
-            Assert.That(prefix, Is.StringMatching(@"^[A-Z][a-z]+\.?$"));
+            //Assert.That(prefix, Is.StringMatching(@"^[A-Z][a-z]+\.?$"));
+            Assert.That(new[] {prefix}, Is.SubsetOf(possiblePrefixes));
         }
 
         [Test]
         [Repeat(10000)]
         public void Should_Get_Suffix()
         {
+            string[] possibleSuffixes = Resources.Name.Suffix.Split(Config.SEPARATOR);
+
             string suffix = Name.Suffix();
             //Assert.IsTrue(Regex.IsMatch(suffix, @"^[A-Z][A-Za-z]*\.?$"));
-            Assert.That(suffix, Is.StringMatching(@"^[A-Z][A-z]*?\.?$"));
+            //Assert.That(suffix, Is.StringMatching(@"^[A-Z][A-z]*?\.?$"));
+            Assert.That(new[] {suffix}, Is.SubsetOf(possibleSuffixes));
         }
     }
 }

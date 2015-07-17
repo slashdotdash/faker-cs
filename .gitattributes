@@ -12,6 +12,9 @@
 ###############################################################################
 *.cs     diff=csharp
 
+# Files which line endings should be forced on
+*.DotSettings eol=lf
+
 ###############################################################################
 # Set the merge driver for project and solution files
 #

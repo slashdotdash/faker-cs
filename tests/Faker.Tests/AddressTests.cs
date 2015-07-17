@@ -4,7 +4,6 @@ using NUnit.Framework;
 namespace Faker.Tests
 {
     [TestFixture]
-    [SetCulture("en-US")]
     [SuppressMessage("ReSharper", "UseStringInterpolation")]
     public class AddressTests
     {
@@ -26,6 +25,7 @@ namespace Faker.Tests
 
         [Test]
         [Repeat(10000)]
+        [SetUICulture("en-US")]
         public void Should_Get_City()
         {
             string city = Address.City();
@@ -132,6 +132,7 @@ namespace Faker.Tests
 
         [Test]
         [Repeat(10000)]
+        [SetUICulture("en-US")]
         public void Should_Get_Street_Address()
         {
             string address = Address.StreetAddress();
@@ -144,6 +145,7 @@ namespace Faker.Tests
 
         [Test]
         [Repeat(10000)]
+        [SetUICulture("en-US")]
         public void Should_Get_Street_Address_With_Secondary_Address()
         {
             string secondary = string.Format("({0})", Resources.Address.SecondaryAddress)
