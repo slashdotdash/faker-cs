@@ -21,7 +21,6 @@ namespace Faker.Extensions
 
         static StringExtensions()
         {
-
             lock (s_dictionaryLock)
             {
                 s_validVariables = new Dictionary<string, Func<string>>();
@@ -44,7 +43,12 @@ namespace Faker.Extensions
         /// <returns>The transformed string.</returns>
         public static string AlphanumericOnly(this string s)
         {
-            return Regex.Replace(s, @"[^A-z0-9]", string.Empty);
+            IEnumerable<char> result =
+                RemoveAccent(s)
+                    .ToCharArray()
+                    .Where(x => (x >= 'A' && x <= 'Z') || (x >= 'a' && x <= 'z') || char.IsDigit(x));
+
+            return new string(result.ToArray());
         }
 
         /// <summary>
@@ -92,7 +96,7 @@ namespace Faker.Extensions
         /// <returns>The formatted string.</returns>
         public static string Letterify(this string s)
         {
-            return new string(Transform(s, true, false).ToArray());
+            return new string(Transform(s, true, false, false).ToArray());
         }
 
         /// <summary>
@@ -102,7 +106,7 @@ namespace Faker.Extensions
         /// <returns>The formatted string.</returns>
         public static string Numerify(this string s)
         {
-            return new string(Transform(s, false, true).ToArray());
+            return Numerify(s, false);
         }
 
         /// <summary>
@@ -113,27 +117,14 @@ namespace Faker.Extensions
         /// <returns>The transformed string.</returns>
         public static string Transform(this string s, bool replaceVariables = false)
         {
-            char[] currentChars = Transform(s, true, true).ToArray();
+            char[] currentChars = Transform(s, true, true, replaceVariables).ToArray();
 
-            if (!replaceVariables)
-                return new string(currentChars);
+            return new string(currentChars.ToArray());
+        }
 
-            var builder = new StringBuilder();
-
-            for (var index = 0; index < currentChars.Length; index++)
-            {
-                char c = currentChars[index];
-
-                if (c == '{' && char.IsLetter(currentChars[++index]))
-                {
-                    string value = GetVariableValue(currentChars, ref index);
-                    builder.Append(value);
-                }
-                else
-                    builder.Append(c);
-            }
-
-            return builder.ToString();
+        internal static string Numerify(this string s, bool replaceVariables)
+        {
+            return new string(Transform(s, false, true, replaceVariables).ToArray());
         }
 
         private static void AddVariables(Type classType, IDictionary<string, Func<string>> validVariables)
@@ -154,17 +145,17 @@ namespace Faker.Extensions
             }
         }
 
-        private static string GetVariable(IList<char> chars, ref int index)
+        private static string GetVariable(string chars, ref int index)
         {
             var substring = new StringBuilder();
 
-            while (chars.Count >= index && chars[index] != '}')
+            while (chars.Length >= index && chars[index] != '}')
                 substring.Append(chars[index++]);
 
             return substring.ToString();
         }
 
-        private static string GetVariableValue(IList<char> chars, ref int index)
+        private static string GetVariableValue(string chars, ref int index)
         {
             string variable = GetVariable(chars, ref index);
 
@@ -174,14 +165,28 @@ namespace Faker.Extensions
             }
         }
 
-        private static IEnumerable<char> Transform(string s, bool letterify, bool numerify)
+        private static string RemoveAccent(string source)
         {
-            foreach (char c in s)
+            byte[] bytes = Encoding.GetEncoding("Cyrillic").GetBytes(source);
+
+            return Encoding.UTF8.GetString(bytes, 0, bytes.Length);
+        }
+
+        private static IEnumerable<char> Transform(string s, bool letterify, bool numerify, bool replaceVariables)
+        {
+            for (var index = 0; index < s.Length; index++)
             {
+                char c = s[index];
                 if (numerify && c == '#')
                     yield return RandomNumber.Next(0, 10).ToString()[0];
                 else if (letterify && c == '?')
                     yield return ALPHABET.Random();
+                else if (replaceVariables && c == '{' && char.IsLetter(s[++index]))
+                {
+                    string value = GetVariableValue(s, ref index);
+                    foreach (char chValue in value)
+                        yield return chValue;
+                }
                 else
                     yield return c;
             }

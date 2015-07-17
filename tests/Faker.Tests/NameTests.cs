@@ -11,7 +11,7 @@ namespace Faker.Tests
         public void Should_Get_FullName()
         {
             string name = Name.FullName();
-            //Assert.IsTrue(Regex.IsMatch(name, @"^(\w+\.? ?){2,3}$"));
+
             Assert.That(name, Is.StringMatching(@"^([\w']+\.? ?){2,4}$"));
         }
 
@@ -20,7 +20,7 @@ namespace Faker.Tests
         public void Should_Get_FullName_With_Standard_Format()
         {
             string name = Name.FullName(NameFormats.Standard);
-            //Assert.IsTrue(Regex.IsMatch(name, @"^\w+\.? \w+\.?$"));
+
             Assert.That(name, Is.StringMatching(@"^([\w']+\.? ?){2}$"));
         }
 
@@ -31,8 +31,7 @@ namespace Faker.Tests
             string[] possiblePrefixes = Resources.Name.Prefix.Split(Config.SEPARATOR);
 
             string prefix = Name.Prefix();
-            //Assert.IsTrue(Regex.IsMatch(prefix, @"^[A-Z][a-z]+\.?$"));
-            //Assert.That(prefix, Is.StringMatching(@"^[A-Z][a-z]+\.?$"));
+
             Assert.That(new[] {prefix}, Is.SubsetOf(possiblePrefixes));
         }
 
@@ -43,8 +42,7 @@ namespace Faker.Tests
             string[] possibleSuffixes = Resources.Name.Suffix.Split(Config.SEPARATOR);
 
             string suffix = Name.Suffix();
-            //Assert.IsTrue(Regex.IsMatch(suffix, @"^[A-Z][A-Za-z]*\.?$"));
-            //Assert.That(suffix, Is.StringMatching(@"^[A-Z][A-z]*?\.?$"));
+
             Assert.That(new[] {suffix}, Is.SubsetOf(possibleSuffixes));
         }
     }
