@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>Faker.Net.Portable</id>
         <version>2.0.1</version>
@@ -9,7 +9,7 @@
         <projectUrl>https://github.com/AdmiringWorm/Faker.NET.Portable</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>C# port of the Ruby gem (http://faker.rubyforge.org/) and is used to easily generate fake data: names, addresses, phone numbers, etc.</description>
-		<releaseNotes>* Fixed an issue with Email generation would be invalid with non-english culture.
+        <releaseNotes>* Fixed an issue with Email generation would be invalid with non-english culture.
 * Fixed an issue where Phone.Numbers wasn't replacing Variables
 * Internet.DomainName lacked sanitizer which generated an invalid domain name</releaseNotes>
     </metadata>
@@ -21,5 +21,6 @@
         <file src="src\Faker\bin\Release\Faker.Portable.dll" target="lib\portable-net4+sl5+wp8+win8+wpa81+netcore45+MonoAndroid+Xamarin.iOS1\Faker.Portable.dll" />
         <file src="src\Faker\bin\Release\Faker.Portable.pdb" target="lib\portable-net4+sl5+wp8+win8+wpa81+netcore45+MonoAndroid+Xamarin.iOS1\Faker.Portable.pdb" />
         <file src="src\Faker\bin\Release\Faker.Portable.xml" target="lib\portable-net4+sl5+wp8+win8+wpa81+netcore45+MonoAndroid+Xamarin.iOS1\Faker.Portable.xml" />
+        <file src="src\Faker\**\*.cs" target="src" />
     </files>
 </package>
