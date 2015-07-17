@@ -44,7 +44,7 @@ namespace Faker.Extensions
         /// <returns>The transformed string.</returns>
         public static string AlphanumericOnly(this string s)
         {
-            return Regex.Replace(s, @"\W", string.Empty);
+            return Regex.Replace(s, @"[^A-z0-9]", string.Empty);
         }
 
         /// <summary>

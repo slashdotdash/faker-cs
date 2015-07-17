@@ -29,6 +29,7 @@ namespace Faker.Tests
 
         [Test]
         [Repeat(10000)]
+        [SetUICulture("en-US")]
         public void Should_Generate_Company_Name()
         {
             string name = Company.Name();

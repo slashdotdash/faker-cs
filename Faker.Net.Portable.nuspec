@@ -2,10 +2,11 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Faker.Net.Portable</id>
-        <version>2.0.0</version>
+        <version>2.0.1</version>
         <title>Faker.NET (Portable Edition)</title>
         <authors>AdmiringWorm</authors>
         <licenseUrl>https://raw.githubusercontent.com/AdmiringWorm/Faker.NET.Portable/develop/LICENSE</licenseUrl>
+        <projectUrl>https://github.com/AdmiringWorm/Faker.NET.Portable</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>C# port of the Ruby gem (http://faker.rubyforge.org/) and is used to easily generate fake data: names, addresses, phone numbers, etc.</description>
     </metadata>

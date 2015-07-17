@@ -32,7 +32,13 @@ namespace Faker
         public static string DomainName()
         {
             var prefix = new[] {string.Empty, "www.", "www2."};
-            return "{0}{1}.{2}".FormatCulture(prefix.Random(), DomainWord(), DomainSuffix());
+
+            return prefix.Random() + DomainNameWithoutPrefix();
+        }
+
+        private static string DomainNameWithoutPrefix()
+        {
+            return "{0}.{1}".FormatCulture(DomainWord(), DomainSuffix());
         }
 
         /// <summary>
@@ -70,7 +76,7 @@ namespace Faker
         /// <returns>The random email address, with the generated username.</returns>
         public static string Email(string name)
         {
-            return "{0}@{1}".FormatCulture(UserName(name), DomainName());
+            return "{0}@{1}".FormatCulture(UserName(name), DomainNameWithoutPrefix());
         }
 
         /// <summary>
