@@ -1,16 +1,13 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using System.Net;
+﻿using System.Net;
 using System.Net.Sockets;
 using NUnit.Framework;
 
-namespace Faker.Tests
+namespace Faker.Tests.Base
 {
-    [TestFixture]
-    [SuppressMessage("ReSharper", "UseStringInterpolation")]
-    public class InternetTests
+    public abstract class InternetTestsBase
     {
-        private const string EMAIL_REGEX =
-            "^((([a-z]|\\d|[!#\\$%&'\\*\\+\\-\\/=\\?\\^_`{\\|}~]|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])+(\\.([a-z]|\\d|[!#\\$%&'\\*\\+\\-\\/=\\?\\^_`{\\|}~]|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])+)*)|((\\x22)((((\\x20|\\x09)*(\\x0d\\x0a))?(\\x20|\\x09)+)?(([\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x7f]|\\x21|[\\x23-\\x5b]|[\\x5d-\\x7e]|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])|(\\\\([\\x01-\\x09\\x0b\\x0c\\x0d-\\x7f]|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF]))))*(((\\x20|\\x09)*(\\x0d\\x0a))?(\\x20|\\x09)+)?(\\x22)))@((([a-z]|\\d|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])|(([a-z]|\\d|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])([a-z]|\\d|-|\\.|_|~|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])*([a-z]|\\d|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])))\\.)+(([a-z]|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])|(([a-z]|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])([a-z]|\\d|-|\\.|_|~|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])*([a-z]|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])))\\.?$";
+        protected const string EMAIL_REGEX =
+           "^((([a-z]|\\d|[!#\\$%&'\\*\\+\\-\\/=\\?\\^_`{\\|}~]|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])+(\\.([a-z]|\\d|[!#\\$%&'\\*\\+\\-\\/=\\?\\^_`{\\|}~]|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])+)*)|((\\x22)((((\\x20|\\x09)*(\\x0d\\x0a))?(\\x20|\\x09)+)?(([\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x7f]|\\x21|[\\x23-\\x5b]|[\\x5d-\\x7e]|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])|(\\\\([\\x01-\\x09\\x0b\\x0c\\x0d-\\x7f]|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF]))))*(((\\x20|\\x09)*(\\x0d\\x0a))?(\\x20|\\x09)+)?(\\x22)))@((([a-z]|\\d|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])|(([a-z]|\\d|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])([a-z]|\\d|-|\\.|_|~|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])*([a-z]|\\d|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])))\\.)+(([a-z]|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])|(([a-z]|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])([a-z]|\\d|-|\\.|_|~|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])*([a-z]|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])))\\.?$";
 
         [Test]
         [Repeat(10000)]
@@ -18,7 +15,8 @@ namespace Faker.Tests
         {
             string email = Internet.Email();
 
-            Assert.That(email, Is.StringMatching(EMAIL_REGEX));
+            Assert.That(email, Is.StringMatching(EMAIL_REGEX)
+                .And.Not.Contains("www"));
         }
 
         [Test]
@@ -40,10 +38,12 @@ namespace Faker.Tests
             string freeMails = Resources.Internet.FreeMail.Replace(';', '|').Replace(".", "\\.");
 
             Assert.That(email, Is.StringMatching(string.Format("@({0})$", freeMails))
-                                 .And.StringMatching(EMAIL_REGEX));
+                                 .And.StringMatching(EMAIL_REGEX)
+                                 .And.Not.Contains("www"));
         }
 
         [Test]
+        [Repeat(10000)]
         public void Should_Generate_Slug()
         {
             string slug = Internet.Slug();
@@ -70,12 +70,13 @@ namespace Faker.Tests
         }
 
         [Test]
+        [Repeat(10000)]
         public void Should_Generate_Mac_Address()
         {
             string mac = Internet.MacAddress();
 
             Assert.That(mac,
-                        Is.StringMatching(@"^([A-F0-9]{2}\:){5}[A-F0-9]{2}$"));
+                        Is.StringMatching(@"^([0-9A-F]{2}:){5}([0-9A-F]{2})$"));
         }
 
         [Test]
@@ -84,7 +85,7 @@ namespace Faker.Tests
             string mac = Internet.MacAddress(groupSplit: '-');
 
             Assert.That(mac,
-                        Is.StringMatching(@"^([A-F0-9]{2}-){5}[A-F0-9]{2}$"));
+                        Is.StringMatching(@"^([0-9A-F]{2}-){5}([0-9A-F]{2})$"));
         }
 
         [Test]
@@ -93,10 +94,11 @@ namespace Faker.Tests
             string mac = Internet.MacAddress("0F:3A");
 
             Assert.That(mac,
-                        Is.StringMatching(@"^0F\:3A(\:[A-F0-9]{2}){4}$"));
+                        Is.StringMatching(@"^0F:3A:([0-9A-F]{2}:){3}([0-9A-F]{2})$"));
         }
 
         [Test]
+        [Repeat(10000)]
         public void Should_Generate_Password()
         {
             string password = Internet.Password(8, 16);
@@ -123,8 +125,7 @@ namespace Faker.Tests
         {
             string domain = Internet.DomainName();
 
-            Assert.That(domain, Is.StringMatching(@"^\w+(\.\w+){1,2}$")
-                                  .Or.StringMatching(@"^www2?\.\w+(\.\w+){1,2}$"));
+            Assert.That(domain, Is.StringMatching(@"^([a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,6}$"));
         }
 
         [Test]

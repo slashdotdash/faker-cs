@@ -1,11 +1,8 @@
-﻿using System;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
-namespace Faker.Tests
+namespace Faker.Tests.Base
 {
-    [TestFixture]
-    [SetCulture("en-US")]
-    public class CompanyTests
+    public abstract class CompanyTestsBase
     {
         [Test]
         [Repeat(10000)]
@@ -29,15 +26,13 @@ namespace Faker.Tests
 
         [Test]
         [Repeat(10000)]
-        [SetUICulture("en-US")]
-        public void Should_Generate_Company_Name()
+        public virtual void Should_Generate_Company_Name()
         {
             string name = Company.Name();
 
             Assert.That(name,
-                Is.StringMatching(@"^[\w']+ (and )?[\w]+$")
-                .Or.StringMatching(@"^[\w']+-[\w']+$")
-                .Or.StringMatching(@"^[\w']+, [\w']+ and [\w']+$"));
+                        Is.StringMatching(@"^[\w']+( |-)[\w']+$")
+                          .Or.StringMatching(@"^([\w']+, )?[\w']+ and [\w']+$"));
         }
 
         [Test]
@@ -47,7 +42,7 @@ namespace Faker.Tests
             string url = Company.Logo();
 
             Assert.That(url, Is.StringStarting("http://pigment.github.io/fake-logos/logos/medium/color/")
-                .And.StringMatching("[0-9]+\\.png$"));
+                               .And.StringMatching("[0-9]+\\.png$"));
         }
     }
 }

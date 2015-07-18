@@ -3,6 +3,10 @@ using NUnit.Framework;
 
 namespace Faker.Tests
 {
+    /// <remarks>
+    ///     Until NUnit supports multiple culture testing, we'll test each supported culture manually,
+    ///     by manually changing culture.
+    /// </remarks>
     [TestFixture]
     public class AvatarTests
     {

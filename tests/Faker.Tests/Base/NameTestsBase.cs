@@ -1,18 +1,16 @@
 ﻿using NUnit.Framework;
 
-namespace Faker.Tests
+namespace Faker.Tests.Base
 {
-    [TestFixture]
-    [SetCulture("en-US")]
-    public class NameTests
+    public abstract class NameTestsBase
     {
         [Test]
         [Repeat(10000)]
-        public void Should_Get_FullName()
+        public virtual void Should_Get_FullName()
         {
             string name = Name.FullName();
 
-            Assert.That(name, Is.StringMatching(@"^([\w']+\.? ?){2,4}$"));
+            Assert.That(name, Is.StringMatching(@"^([\w\[\]']+\.? ?){2,7}"));
         }
 
         [Test]
@@ -21,7 +19,8 @@ namespace Faker.Tests
         {
             string name = Name.FullName(NameFormats.Standard);
 
-            Assert.That(name, Is.StringMatching(@"^([\w']+\.? ?){2}$"));
+            Assert.That(name, Is.StringMatching(@"^([\w']+\.? ?){2}$")
+                .Or.StringMatching(@"^([\w\[\]]+\.? ?){4}$"));
         }
 
         [Test]
@@ -32,7 +31,7 @@ namespace Faker.Tests
 
             string prefix = Name.Prefix();
 
-            Assert.That(new[] {prefix}, Is.SubsetOf(possiblePrefixes));
+            Assert.That(new[] { prefix }, Is.SubsetOf(possiblePrefixes));
         }
 
         [Test]
@@ -43,7 +42,7 @@ namespace Faker.Tests
 
             string suffix = Name.Suffix();
 
-            Assert.That(new[] {suffix}, Is.SubsetOf(possibleSuffixes));
+            Assert.That(new[] { suffix }, Is.SubsetOf(possibleSuffixes));
         }
     }
 }

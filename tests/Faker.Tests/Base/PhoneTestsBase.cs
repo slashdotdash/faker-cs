@@ -1,13 +1,12 @@
 ﻿using NUnit.Framework;
 
-namespace Faker.Tests
+namespace Faker.Tests.Base
 {
-    [TestFixture]
-    public class PhoneTests
+    public abstract class PhoneTestsBase
     {
-        [TestCase("01## ### ####", @"^01[0-9]{2} [0-9]{3} [0-9]{4}$")]
-        [TestCase("###-###-####", @"^([0-9]{3}-){2}[0-9]{4}$")]
-        [TestCase("### ### ####", @"^([0-9]{3} ){2}[0-9]{4}$")]
+        [TestCase("01## ### ####", @"^01\d{2} \d{3} \d{4}$")]
+        [TestCase("###-###-####", @"^(\d{3}-){2}\d{4}$")]
+        [TestCase("### ### ####", @"^(\d{3} ){2}\d{4}$")]
         public void Should_Generate_Phone_Number_Based_On_Pattern(string pattern, string regexMatchPattern)
         {
             string number = Phone.Number(pattern);
@@ -21,7 +20,7 @@ namespace Faker.Tests
         {
             string expectedFormat = "^("
                                     + Resources.Phone.CellPhoneFormats.Replace(';', '|')
-                                               .Replace("#", "[0-9]")
+                                               .Replace("#", "\\d")
                                                .Replace("(", @"\(")
                                                .Replace(")", @"\)")
                                                .Replace("+", "\\+") + ")$";
@@ -49,25 +48,12 @@ namespace Faker.Tests
 
         [Test]
         [Repeat(10000)]
-        [SetUICulture("nb-NO")]
-        public void Should_Generate_Norwegian_Phone_Number()
-        {
-            string number = Phone.Number();
-
-            Assert.That(number,
-                        Is.StringMatching(@"^\+47( [0-9]{2}){4}$")
-                          .Or.StringMatching(@"^[0-9]{3} [0-9]{2} [0-9]{3}$")
-                          .Or.StringMatching(@"^([0-9]{2} ?){4}$"));
-        }
-
-        [Test]
-        [Repeat(10000)]
         [SetUICulture("en")]
-        public void Should_Generate_Phone_Number()
+        public virtual void Should_Generate_Phone_Number()
         {
             string number = Phone.Number();
 
-            Assert.That(number, Is.StringMatching(@"^[0-9 x\-(\)\.]+$"));
+            Assert.That(number, Is.StringMatching(@"^[\d x\-(\)\.]+$"));
         }
 
         [Test]

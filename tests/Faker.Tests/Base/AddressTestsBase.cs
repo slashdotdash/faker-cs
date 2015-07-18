@@ -1,16 +1,11 @@
-﻿using System.Diagnostics.CodeAnalysis;
 using NUnit.Framework;
 
-namespace Faker.Tests
+namespace Faker.Tests.Base
 {
-    [TestFixture]
-    [SuppressMessage("ReSharper", "UseStringInterpolation")]
-    public class AddressTests
+    public abstract class AddressTestsBase
     {
-        private const string ADDRESS_REGEX1 = @"^[0-9]{3,5} [A-Z][A-z]+ [A-Z][a-z]+";
-        private const string ADDRESS_REGEX2 = @"^[0-9]{3,5} [OD]'[A-Z][a-z]+ [A-Z][a-z]+";
-        private const string ADDRESS_REGEX3 = @"^[0-9]{3,5} [A-Z][A-z]+";
-        private const string ADDRESS_REGEX4 = @"^[0-9]{3,5} [OD]'[A-Z][a-z]+";
+        private const string ADDRESS_REGEX1 = @"^[\d]{3,5} (\w+)+ \w+";
+        private const string ADDRESS_REGEX2 = @"^[\d]{3,5} \w'\w+ \w+";
 
         [Test]
         [Repeat(10000)]
@@ -25,13 +20,12 @@ namespace Faker.Tests
 
         [Test]
         [Repeat(10000)]
-        [SetUICulture("en-US")]
-        public void Should_Get_City()
+        public virtual void Should_Get_City()
         {
             string city = Address.City();
 
-            Assert.That(city,
-                        Is.StringMatching(@"^([A-Z]('[A-Z])?[a-z]+ ?){1,2}$"));
+            Assert.That(city, Is.StringMatching("^(\\w+ ?){1,2}$")
+                                .Or.StringMatching(@"^(\w'\w+ ?){1,2}"));
         }
 
         [Test]
@@ -41,7 +35,7 @@ namespace Faker.Tests
             string[] existingPrefixies = Resources.Address.CityPrefix.Split(Config.SEPARATOR);
 
             string prefix = Address.CityPrefix();
-            
+
             Assert.That(new[] {prefix}, Is.SubsetOf(existingPrefixies));
         }
 
@@ -67,7 +61,7 @@ namespace Faker.Tests
         }
 
         [Test]
-        [Repeat(1000)]
+        [Repeat(10000)]
         public void Should_Get_Country_Code()
         {
             string[] existingCountryCodes = Resources.Address.CountryCode.Split(Config.SEPARATOR);
@@ -131,34 +125,26 @@ namespace Faker.Tests
 
         [Test]
         [Repeat(10000)]
-        [SetUICulture("en-US")]
-        public void Should_Get_Street_Address()
+        public virtual void Should_Get_Street_Address()
         {
             string address = Address.StreetAddress();
+
             Assert.That(address,
                         Is.StringMatching(ADDRESS_REGEX1 + "$")
-                          .Or.StringMatching(ADDRESS_REGEX2 + "$")
-                          .Or.StringMatching(ADDRESS_REGEX3 + "$")
-                          .Or.StringMatching(ADDRESS_REGEX4 + "$"));
+                          .Or.StringMatching(ADDRESS_REGEX2 + "$"));
         }
 
         [Test]
         [Repeat(10000)]
-        [SetUICulture("en-US")]
-        public void Should_Get_Street_Address_With_Secondary_Address()
+        public virtual void Should_Get_Street_Address_With_Secondary_Address()
         {
-            string secondary = string.Format("({0})", Resources.Address.SecondaryAddress)
-                                     .Replace(';', '|')
-                                     .Replace(".", "\\.")
-                                     .Replace("#", "[0-9]");
+            string secondary = Resources.Address.SecondaryAddress.ToFormat(true);
 
             string address = Address.StreetAddress(true);
 
             Assert.That(address,
-                        Is.StringMatching(string.Format("{0} {1}$", ADDRESS_REGEX1, secondary))
-                          .Or.StringMatching(string.Format("{0} {1}$", ADDRESS_REGEX2, secondary))
-                          .Or.StringMatching(string.Format("{0} {1}$", ADDRESS_REGEX3, secondary))
-                          .Or.StringMatching(string.Format("{0} {1}$", ADDRESS_REGEX4, secondary)));
+                        Is.StringMatching(ADDRESS_REGEX1 + " " + secondary + "$")
+                          .Or.StringMatching(ADDRESS_REGEX2 + " " + secondary + "$"));
         }
 
         [Test]
@@ -176,7 +162,7 @@ namespace Faker.Tests
         [Repeat(10000)]
         public void Should_Get_Zip_Code()
         {
-            string zipcodeRegex = "^(" + Resources.Address.ZipCode.Replace(';', '|').Replace("#", "[0-9]") + ")$";
+            string zipcodeRegex = "^" + Resources.Address.ZipCode.ToFormat(true) + "$";
 
             string zipcode = Address.ZipCode();
 

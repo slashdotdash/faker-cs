@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using NUnit.Framework;
 
-namespace Faker.Tests
+namespace Faker.Tests.Base
 {
-    [TestFixture]
-    [SetCulture("en-US")]
-    public class LoremTests
+    public abstract class LoremTestsBase
     {
         [Test]
         public void Should_Generate_Characters([Range(1, 100)] int charCount)

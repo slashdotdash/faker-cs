@@ -28,10 +28,10 @@ namespace Faker.Tests
         [Repeat(10000)]
         public void Should_Generate_NumberBetween_Zero_And_1000()
         {
-            int num = RandomNumber.Next(1000);
+            int num = RandomNumber.Next(10000);
 
             Assert.That(num, Is.GreaterThanOrEqualTo(0)
-                               .And.LessThan(1000));
+                               .And.LessThan(10000));
         }
     }
 }

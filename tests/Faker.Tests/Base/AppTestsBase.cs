@@ -1,14 +1,12 @@
 ﻿using NUnit.Framework;
 
-namespace Faker.Tests
+namespace Faker.Tests.Base
 {
-    [TestFixture]
-    public class AppTests
+    public abstract class AppTestsBase
     {
         [Test]
-        [Repeat(100)]
-        [SetUICulture("en-US")]
-        public void Should_Generate_Author()
+        [Repeat(10000)]
+        public virtual void Should_Generate_Author()
         {
             string author = App.Author();
 
@@ -20,6 +18,7 @@ namespace Faker.Tests
         }
 
         [Test]
+        [Repeat(10000)]
         public void Should_Generate_Name()
         {
             string[] possibleNames = Resources.App.Name.Split(Config.SEPARATOR);
@@ -33,9 +32,7 @@ namespace Faker.Tests
         [Repeat(100)]
         public void Should_Generate_Version()
         {
-            string versionFormat = Resources.App.VersionFormat.Replace(';', '|')
-                                            .Replace(".", "\\.")
-                                            .Replace("#", "[0-9]");
+            string versionFormat = "^" + Resources.App.VersionFormat.ToFormat(true) + "$";
 
             string version = App.Version();
 
