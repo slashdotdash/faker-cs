@@ -1,6 +1,4 @@
-﻿using Faker.Tests.Base;
-using Faker.Tests.Common;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
 namespace Faker.Tests.de_DE
 {

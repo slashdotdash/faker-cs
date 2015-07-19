@@ -1,5 +1,4 @@
-﻿using Faker.Tests.Base;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
 namespace Faker.Tests.pt_BR
 {
