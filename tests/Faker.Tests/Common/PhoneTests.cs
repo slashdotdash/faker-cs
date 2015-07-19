@@ -1,8 +1,14 @@
 ﻿using NUnit.Framework;
 
-namespace Faker.Tests.Base
+namespace Faker.Tests.Common
 {
-    public abstract class PhoneTestsBase
+    [TestFixture]
+    //[SetUICulture("en")]
+    //[SetUICulture("en-US")]
+    //[SetUICulture("nb-NO")]
+    //[SetUICulture("de-DE")]
+    [SetUICulture("pt-BR")]
+    public class PhoneTests
     {
         [TestCase("01## ### ####", @"^01\d{2} \d{3} \d{4}$")]
         [TestCase("###-###-####", @"^(\d{3}-){2}\d{4}$")]
@@ -12,22 +18,6 @@ namespace Faker.Tests.Base
             string number = Phone.Number(pattern);
 
             Assert.That(number, Is.StringMatching(regexMatchPattern));
-        }
-
-        [Test]
-        [Repeat(10000)]
-        public void Should_Generate_Cell_Phone_Number()
-        {
-            string expectedFormat = "^("
-                                    + Resources.Phone.CellPhoneFormats.Replace(';', '|')
-                                               .Replace("#", "\\d")
-                                               .Replace("(", @"\(")
-                                               .Replace(")", @"\)")
-                                               .Replace("+", "\\+") + ")$";
-
-            string number = Phone.CellNumber();
-
-            Assert.That(number, Is.StringMatching(expectedFormat));
         }
 
         [Test]
@@ -44,16 +34,6 @@ namespace Faker.Tests.Base
             string extension = Phone.Extension(12);
 
             Assert.That(extension, Has.Length.EqualTo(12).And.All.Not.NaN);
-        }
-
-        [Test]
-        [Repeat(10000)]
-        [SetUICulture("en")]
-        public virtual void Should_Generate_Phone_Number()
-        {
-            string number = Phone.Number();
-
-            Assert.That(number, Is.StringMatching(@"^[\d x\-(\)\.]+$"));
         }
 
         [Test]

@@ -61,7 +61,9 @@
     <EmbeddedResource Include="Resources\Internet.en-US.resx" />
     <EmbeddedResource Include="Resources\Internet.nb-NO.resx" />
     <EmbeddedResource Include="Resources\Lorem.de-DE.resx" />
-    <EmbeddedResource Include="Resources\Name.nb-NO.resx" />
+    <EmbeddedResource Include="Resources\Name.nb-NO.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Phone.de-DE.resx" />
     <EmbeddedResource Include="Resources\Phone.en-US.resx" />
     <EmbeddedResource Include="Resources\Phone.nb-NO.resx" />
@@ -97,8 +99,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Lorem.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Name.de-DE.resx" />
-    <EmbeddedResource Include="Resources\Name.pt-BR.resx" />
+    <EmbeddedResource Include="Resources\Name.de-DE.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Name.pt-BR.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Name.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Name.Designer.cs</LastGenOutput>

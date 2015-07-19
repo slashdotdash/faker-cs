@@ -26,14 +26,20 @@ namespace Faker.Extensions
                 s_validVariables = new Dictionary<string, Func<string>>();
 
                 AddVariables(typeof (Address), s_validVariables);
+                AddVariables(typeof (App), s_validVariables);
+                AddVariables(typeof (Avatar), s_validVariables);
+                AddVariables(typeof (Business), s_validVariables);
                 AddVariables(typeof (Company), s_validVariables);
+                AddVariables(typeof (Internet), s_validVariables);
+                AddVariables(typeof (Lorem), s_validVariables);
                 AddVariables(typeof (Name), s_validVariables);
-                s_validVariables.Add("StreetRoot", Resources.Address.StreetRoot.RandomResource);
-                s_validVariables.Add("CityRoot", Resources.Address.CityRoot.RandomResource);
-                s_validVariables.Add("CommonStreetSuffix", Resources.Address.CommonStreetSuffixes.RandomResource);
-                s_validVariables.Add("AreaCode", Resources.Phone.AreaCode.RandomResource);
-                s_validVariables.Add("ExchangeCode", Resources.Phone.ExchangeCode.RandomResource);
-                s_validVariables.Add("Address.StreetPrefix", Resources.Address.StreetPrefix.RandomResource);
+                AddVariables(typeof (Phone), s_validVariables);
+                s_validVariables.Add("StreetRoot",() => Resources.Address.StreetRoot.RandomResource());
+                s_validVariables.Add("CityRoot", () => Resources.Address.CityRoot.RandomResource());
+                s_validVariables.Add("CommonStreetSuffix",() => Resources.Address.CommonStreetSuffixes.RandomResource());
+                s_validVariables.Add("AreaCode", () => Resources.Phone.AreaCode.RandomResource());
+                s_validVariables.Add("ExchangeCode", () => Resources.Phone.ExchangeCode.RandomResource());
+                s_validVariables.Add("Address.StreetPrefix", () => Resources.Address.StreetPrefix.RandomResource());
             }
         }
 

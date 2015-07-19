@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using NUnit.Framework;
 
-namespace Faker.Tests.Base
+namespace Faker.Tests.Common
 {
-    public abstract class LoremTestsBase
+    [TestFixture]
+    public class LoremTests
     {
         [Test]
         public void Should_Generate_Characters([Range(1, 100)] int charCount)
@@ -45,10 +46,12 @@ namespace Faker.Tests.Base
         [Test]
         public void Should_Return_Word_List([Range(10, 100)] int length)
         {
+            string possibleWords = Resources.Lorem.Words.ToFormat();
+
             IEnumerable<string> words = Lorem.Words(length);
 
             Assert.That(words.Count(), Is.EqualTo(length));
-            Assert.That(words, Is.All.StringMatching(@"^[A-z]+$"));
+            Assert.That(words, Is.All.StringMatching("^" + possibleWords + "$"));
         }
 
         [Test]
