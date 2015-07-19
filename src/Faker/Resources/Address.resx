@@ -157,7 +157,7 @@
     <value>{Address.BuildingNumber} {Address.StreetName}</value>
   </data>
   <data name="StreetAddressSecondaryFormat" xml:space="preserve">
-    <value>{Address.BuildingNumber} {Address.StreetName} {Address.SecondaryAddress}</value>
+    <value>{Address.StreetAddress} {Address.SecondaryAddress}</value>
   </data>
   <data name="StreetNameFormat" xml:space="preserve">
     <value>{Name.First} {Address.StreetSuffix};{Name.Last} {Address.StreetSuffix}</value>

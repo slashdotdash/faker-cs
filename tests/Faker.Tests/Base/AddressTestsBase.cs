@@ -24,8 +24,7 @@ namespace Faker.Tests.Base
         {
             string city = Address.City();
 
-            Assert.That(city, Is.StringMatching("^(\\w+ ?){1,2}$")
-                                .Or.StringMatching(@"^(\w'\w+ ?){1,2}"));
+            Assert.That(city, Is.StringMatching(@"^(\w'?\w+ ?){1,2}$"));
         }
 
         [Test]

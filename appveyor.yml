@@ -21,13 +21,6 @@ build:
   publish_nuget_symbols: true
   parallel: true
   verbosity: minimal
-test:
-  categories:
-  - - Culture 'de_DE'
-  - - Culture 'en'
-  - - Culture 'en_US'
-  - - Culture 'nb_NO
-  - - Culture 'pt_BR'
 after_build:
 - 7z a "Faker.NET.Portable-%APPVEYOR_BUILD_VERSION%.zip" "%APPVEYOR_BUILD_FOLDER%\src\Faker\bin\%CONFIGURATION%\*" -x!*CodeAnalysis* -r -mx=9
 - nuget pack -Symbols -Version %APPVEYOR_BUILD_VERSION% Faker.NET.Portable.nuspec

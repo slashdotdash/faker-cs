@@ -178,7 +178,7 @@ namespace Faker.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {Address.BuildingNumber} {Address.StreetName} {Address.SecondaryAddress}.
+        ///   Looks up a localized string similar to {Address.StreetAddress} {Address.SecondaryAddress}.
         /// </summary>
         internal static string StreetAddressSecondaryFormat {
             get {

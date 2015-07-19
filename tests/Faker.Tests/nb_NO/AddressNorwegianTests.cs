@@ -1,4 +1,5 @@
-﻿using Faker.Tests.Base;
+﻿using Faker.Extensions;
+using Faker.Tests.Base;
 using NUnit.Framework;
 
 namespace Faker.Tests.nb_NO
