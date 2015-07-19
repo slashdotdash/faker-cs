@@ -1,9 +1,10 @@
 ﻿using System;
 using NUnit.Framework;
 
-namespace Faker.Tests.Base
+namespace Faker.Tests.Common
 {
-    public abstract class BusinessTestsBase
+    [TestFixture]
+    public class BusinessTests
     {
         [Test]
         public void Should_Generate_Credit_Card_Number()
@@ -22,7 +23,7 @@ namespace Faker.Tests.Base
 
             string actual = Business.CreditCardType();
 
-            Assert.That(new[] { actual }, Is.SubsetOf(possibleTypes));
+            Assert.That(new[] {actual}, Is.SubsetOf(possibleTypes));
         }
 
         [Test]
@@ -32,7 +33,7 @@ namespace Faker.Tests.Base
             DateTime minimumExpected = DateTime.Now.AddDays(365);
 
             DateTime actual = Business.CreditCardExpiryDate();
-            DateTime maximumExpected = DateTime.Now.AddDays(365 * 5);
+            DateTime maximumExpected = DateTime.Now.AddDays(365*5);
 
             Assert.That(actual, Is.GreaterThanOrEqualTo(minimumExpected)
                                   .And.LessThanOrEqualTo(maximumExpected));

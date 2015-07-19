@@ -7,20 +7,27 @@ namespace Faker.Tests.pt_BR
     [SetUICulture("pt-BR")]
     [SetCulture("pt-BR")]
     [Category("Culture 'pt_BR'")]
-    public class AppBrazilianPortugueseTests : AppTestsBase
+    public class AppBrazilianPortugueseTests
     {
         [Test]
-        [Repeat(10000)]
-        public override void Should_Generate_Author()
+        [Repeat(1000)]
+        public void Should_Generate_Author()
         {
+            string firstNameFormat = Resources.Name.First.ToFormat();
+            string lastNameFormat = Resources.Name.Last.ToFormat();
+            string prefixNameFormat = Resources.Name.Prefix.ToFormat();
+            string suffixNameFormat = Resources.Name.Suffix.ToFormat();
+            string suffixCompanyFormat = Resources.Company.Suffix.ToFormat();
+
             string author = App.Author();
 
-            Assert.That(author,
-                        Is.StringMatching(@"^([\w\-]+\.? ){1,5}([\w\-]\.?)+$")
-                        .Or.StringMatching(@"^[\w\-]+$")
-                        .Or.StringMatching(@"^\w+, \w+ and \w+$")
-                        .Or.StringMatching(@"^(\w+ ?){1,3}, (\w+ ){1,3}and (\w+ ?){1,3}$")
-                        .Or.StringMatching(@"^([\w]+ ){1,3}and Sons$"));
+            author.AssertFormats(firstNameFormat.Combine(lastNameFormat),
+                                 prefixNameFormat.Combine(firstNameFormat, lastNameFormat),
+                                 firstNameFormat.Combine(lastNameFormat, suffixNameFormat),
+                                 prefixNameFormat.Combine(firstNameFormat, lastNameFormat, suffixNameFormat),
+                                 lastNameFormat.Combine(suffixCompanyFormat),
+                                 lastNameFormat + "-" + lastNameFormat,
+                                 (lastNameFormat + ",").Combine(lastNameFormat, "and", lastNameFormat));
         }
     }
 }

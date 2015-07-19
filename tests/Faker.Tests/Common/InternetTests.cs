@@ -2,25 +2,26 @@
 using System.Net.Sockets;
 using NUnit.Framework;
 
-namespace Faker.Tests.Base
+namespace Faker.Tests.Common
 {
-    public abstract class InternetTestsBase
+    [TestFixture]
+    public class InternetTests
     {
-        protected const string EMAIL_REGEX =
-           "^((([a-z]|\\d|[!#\\$%&'\\*\\+\\-\\/=\\?\\^_`{\\|}~]|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])+(\\.([a-z]|\\d|[!#\\$%&'\\*\\+\\-\\/=\\?\\^_`{\\|}~]|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])+)*)|((\\x22)((((\\x20|\\x09)*(\\x0d\\x0a))?(\\x20|\\x09)+)?(([\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x7f]|\\x21|[\\x23-\\x5b]|[\\x5d-\\x7e]|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])|(\\\\([\\x01-\\x09\\x0b\\x0c\\x0d-\\x7f]|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF]))))*(((\\x20|\\x09)*(\\x0d\\x0a))?(\\x20|\\x09)+)?(\\x22)))@((([a-z]|\\d|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])|(([a-z]|\\d|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])([a-z]|\\d|-|\\.|_|~|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])*([a-z]|\\d|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])))\\.)+(([a-z]|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])|(([a-z]|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])([a-z]|\\d|-|\\.|_|~|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])*([a-z]|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])))\\.?$";
+        public const string EMAIL_REGEX =
+            "^((([a-z]|\\d|[!#\\$%&'\\*\\+\\-\\/=\\?\\^_`{\\|}~]|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])+(\\.([a-z]|\\d|[!#\\$%&'\\*\\+\\-\\/=\\?\\^_`{\\|}~]|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])+)*)|((\\x22)((((\\x20|\\x09)*(\\x0d\\x0a))?(\\x20|\\x09)+)?(([\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x7f]|\\x21|[\\x23-\\x5b]|[\\x5d-\\x7e]|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])|(\\\\([\\x01-\\x09\\x0b\\x0c\\x0d-\\x7f]|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF]))))*(((\\x20|\\x09)*(\\x0d\\x0a))?(\\x20|\\x09)+)?(\\x22)))@((([a-z]|\\d|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])|(([a-z]|\\d|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])([a-z]|\\d|-|\\.|_|~|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])*([a-z]|\\d|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])))\\.)+(([a-z]|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])|(([a-z]|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])([a-z]|\\d|-|\\.|_|~|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])*([a-z]|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])))\\.?$";
 
         [Test]
-        [Repeat(10000)]
+        [Repeat(1000)]
         public void Should_Create_Email_Address()
         {
             string email = Internet.Email();
 
             Assert.That(email, Is.StringMatching(EMAIL_REGEX)
-                .And.Not.Contains("www"));
+                                 .And.Not.Contains("www"));
         }
 
         [Test]
-        [Repeat(10000)]
+        [Repeat(1000)]
         public void Should_Create_Email_Address_From_Given_Name()
         {
             string email = Internet.Email("Bob Smith");
@@ -30,30 +31,7 @@ namespace Faker.Tests.Base
         }
 
         [Test]
-        [Repeat(10000)]
-        public void Should_Create_Free_Email()
-        {
-            string email = Internet.FreeEmail();
-
-            string freeMails = Resources.Internet.FreeMail.Replace(';', '|').Replace(".", "\\.");
-
-            Assert.That(email, Is.StringMatching(string.Format("@({0})$", freeMails))
-                                 .And.StringMatching(EMAIL_REGEX)
-                                 .And.Not.Contains("www"));
-        }
-
-        [Test]
-        [Repeat(10000)]
-        public void Should_Generate_Slug()
-        {
-            string slug = Internet.Slug();
-
-            Assert.That(slug,
-                Is.StringMatching("^[A-Za-z_\\.\\-]+$"));
-        }
-
-        [Test]
-        [Repeat(10000)]
+        [Repeat(1000)]
         public void Should_Create_User_Name()
         {
             string username = Internet.UserName();
@@ -70,7 +48,7 @@ namespace Faker.Tests.Base
         }
 
         [Test]
-        [Repeat(10000)]
+        [Repeat(1000)]
         public void Should_Generate_Mac_Address()
         {
             string mac = Internet.MacAddress();
@@ -98,7 +76,7 @@ namespace Faker.Tests.Base
         }
 
         [Test]
-        [Repeat(10000)]
+        [Repeat(1000)]
         public void Should_Generate_Password()
         {
             string password = Internet.Password(8, 16);
@@ -108,7 +86,17 @@ namespace Faker.Tests.Base
         }
 
         [Test]
-        [Repeat(10000)]
+        [Repeat(1000)]
+        public void Should_Generate_Slug()
+        {
+            string slug = Internet.Slug();
+
+            Assert.That(slug,
+                        Is.StringMatching("^[A-Za-z_\\.\\-]+$"));
+        }
+
+        [Test]
+        [Repeat(1000)]
         public void Should_Get_A_Random_Url()
         {
             string url = Internet.Url();
@@ -120,7 +108,7 @@ namespace Faker.Tests.Base
         }
 
         [Test]
-        [Repeat(10000)]
+        [Repeat(1000)]
         public void Should_Get_Domain_Name()
         {
             string domain = Internet.DomainName();
@@ -129,16 +117,18 @@ namespace Faker.Tests.Base
         }
 
         [Test]
-        [Repeat(10000)]
+        [Repeat(1000)]
         public void Should_Get_Domain_Suffix()
         {
+            string[] suffixFormat = Resources.Internet.DomainSuffix.Split(Config.SEPARATOR);
+
             string suffix = Internet.DomainSuffix();
 
-            Assert.That(suffix, Is.StringMatching(@"^\w+(\.\w+)?$"));
+            Assert.That(new[] {suffix}, Is.SubsetOf(suffixFormat));
         }
 
         [Test]
-        [Repeat(10000)]
+        [Repeat(1000)]
         public void Should_Get_Domain_Word()
         {
             string word = Internet.DomainWord();
@@ -147,7 +137,7 @@ namespace Faker.Tests.Base
         }
 
         [Test]
-        [Repeat(10000)]
+        [Repeat(1000)]
         public void Should_Get_IP_Version_4_Address()
         {
             string ipAddressString = Internet.IPv4Address();
@@ -158,7 +148,7 @@ namespace Faker.Tests.Base
         }
 
         [Test]
-        [Repeat(10000)]
+        [Repeat(1000)]
         public void Should_Get_IP_Version_6_Address()
         {
             string ipAddressString = Internet.IPv6Address();

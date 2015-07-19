@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 
-namespace Faker.Tests
+namespace Faker.Tests.Common
 {
     [TestFixture]
     public class RandomNumberTests

@@ -1,12 +1,8 @@
 ﻿using System;
 using NUnit.Framework;
 
-namespace Faker.Tests
+namespace Faker.Tests.Common
 {
-    /// <remarks>
-    ///     Until NUnit supports multiple culture testing, we'll test each supported culture manually,
-    ///     by manually changing culture.
-    /// </remarks>
     [TestFixture]
     public class AvatarTests
     {
