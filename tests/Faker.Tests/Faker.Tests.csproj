@@ -59,8 +59,6 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="Base\CompanyTestsBase.cs" />
-    <Compile Include="Base\InternetTestsBase.cs" />
     <Compile Include="Common\LoremTests.cs" />
     <Compile Include="Common\NameTests.cs" />
     <Compile Include="Common\AddressTests.cs" />
@@ -68,7 +66,6 @@
     <Compile Include="Common\CompanyTests.cs" />
     <Compile Include="Common\InternetTests.cs" />
     <Compile Include="de_DE\AppGermanTests.cs" />
-    <Compile Include="Base\BusinessTestsBase.cs" />
     <Compile Include="de_DE\CompanyGermanTests.cs" />
     <Compile Include="de_DE\InternetGermanTests.cs" />
     <Compile Include="de_DE\NameGermanTests.cs" />
@@ -88,8 +85,6 @@
     <Compile Include="en_US\NameAmericanTests.cs" />
     <Compile Include="en_US\PhoneAmericanTests.cs" />
     <Compile Include="nb_NO\AddressNorwegianTests.cs" />
-    <Compile Include="Base\AddressTestsBase.cs" />
-    <Compile Include="Base\AppTestsBase.cs" />
     <Compile Include="Common\AvatarTests.cs" />
     <Compile Include="Extensions\ArrayExtensionsTests.cs" />
     <Compile Include="Extensions\EnumerableExtensionsTests.cs" />
