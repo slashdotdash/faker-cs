@@ -1,4 +1,6 @@
 version: 2.1.0.{build}
+pull_requests:
+  do_not_increment_build_number: true
 branches:
   except:
   - ci/travis
@@ -11,19 +13,23 @@ assembly_info:
   assembly_file_version: '{version}'
   assembly_informational_version: '{version}'
 install:
-- nuget restore Faker.sln
+- cmd: >-
+  nuget install OpenCover -Version 4.6.166 -OutputDirectory packages
+  nuget install coveralls.net -Version 0.6.0 -OutputDirectory packages
 cache: packages -> **\packages.config
 nuget:
   disable_publish_on_pr: true
+before_build:
+- nuget restore Faker.sln
 build:
   project: Faker.sln
-  publish_nuget: true
-  publish_nuget_symbols: true
   parallel: true
   verbosity: minimal
 after_build:
 - 7z a "Faker.NET.Portable-%APPVEYOR_BUILD_VERSION%.zip" "%APPVEYOR_BUILD_FOLDER%\src\Faker\bin\%CONFIGURATION%\*" -x!*CodeAnalysis* -r -mx=9
 - nuget pack -Symbols -Version %APPVEYOR_BUILD_VERSION% Faker.NET.Portable.nuspec
+test_script:
+- ps: '& runtests.ps1'
 artifacts:
 - path: '*.zip'
 - path: '*.nupkg'

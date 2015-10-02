@@ -189,5 +189,9 @@ GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
 
+# Coverage files
+CoverageReport/
+opencoverCoverage.xml
+
 # Visual Studio 2015 directory
 .vs/
