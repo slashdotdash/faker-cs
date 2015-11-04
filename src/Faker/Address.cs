@@ -82,6 +82,14 @@ namespace Faker
             return Resources.Address.UkPostCode.Split(Config.Separator).Random().Trim().Numerify().Letterify();
         }
 
+        public static LatLng LatLng()
+        {
+            Random rnd = new Random();
+            double lat = Math.Round((rnd.NextDouble()*170)- 85, 4); // between -85 to 85
+            double lng = Math.Round((rnd.NextDouble()*360) - 180, 4); // between -180 to 180
+            return new LatLng(lat, lng);
+        }
+
         #region Format Mappings
         private static readonly IEnumerable<Func<string>> _cityFormats = new List<Func<string>>
         {
@@ -102,5 +110,17 @@ namespace Faker
             () => string.Format(Resources.Address.AddressFormat.Split(Config.Separator).Random().Trim(), StreetName())
         };
         #endregion
+    }
+
+    public class LatLng
+    {
+        public double Lat { get; set; }
+        public double Lng { get; set; }
+
+        public LatLng(double lat, double lng)
+        {
+            Lat = lat;
+            Lng = lng;
+        }
     }
 }
