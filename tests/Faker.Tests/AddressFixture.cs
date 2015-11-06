@@ -29,5 +29,16 @@ namespace Faker.Tests
             Assert.IsTrue(Regex.IsMatch(address, @"^[0-9]{3,5} [A-Z][a-z]+ [A-Z][a-z]+ [A-Z][a-z]+\.? [0-9]{3}$"));
         }
 
+        [Test]
+        public void Should_Get_Random_Location()
+        {
+            var latlng = Address.LatLng();
+            Assert.IsTrue(latlng.Lat >= -85);
+            Assert.IsTrue(latlng.Lat <= 85);
+
+            Assert.IsTrue(latlng.Lng >= -180);
+            Assert.IsTrue(latlng.Lng <= 180);
+        }
+
     }
 }
