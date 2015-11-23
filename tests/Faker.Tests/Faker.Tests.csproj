@@ -67,6 +67,7 @@
     <Compile Include="Common\AppTests.cs" />
     <Compile Include="Common\CompanyTests.cs" />
     <Compile Include="Common\InternetTests.cs" />
+    <Compile Include="Common\PlaceholditTests.cs" />
     <Compile Include="de_DE\AppGermanTests.cs" />
     <Compile Include="de_DE\CompanyGermanTests.cs" />
     <Compile Include="de_DE\InternetGermanTests.cs" />

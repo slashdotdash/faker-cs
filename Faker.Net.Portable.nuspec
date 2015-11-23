@@ -11,6 +11,7 @@
         <description>C# port of the Ruby gem (http://faker.rubyforge.org/) and is used to easily generate fake data: names, addresses, phone numbers, etc.</description>
         <releaseNotes>* Implemented Generator for Color related tasks
 * Implemented Generator for Date related tasks
+* Implemented placehold.it image url generation
 * Added missing xml code documentation</releaseNotes>
     </metadata>
     <files>
