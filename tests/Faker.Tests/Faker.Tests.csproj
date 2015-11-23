@@ -59,6 +59,8 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="Common\ColorTests.cs" />
+    <Compile Include="Common\DateTests.cs" />
     <Compile Include="Common\LoremTests.cs" />
     <Compile Include="Common\NameTests.cs" />
     <Compile Include="Common\AddressTests.cs" />

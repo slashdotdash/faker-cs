@@ -117,8 +117,10 @@
     <Compile Include="App.cs" />
     <Compile Include="Avatar.cs" />
     <Compile Include="Business.cs" />
+    <Compile Include="Color.cs" />
     <Compile Include="Company.cs" />
     <Compile Include="Config.cs" />
+    <Compile Include="Date.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Internet.cs" />
     <Compile Include="Lorem.cs" />

@@ -18,14 +18,22 @@ namespace Faker
             return Number(Resources.Phone.CellPhoneFormats.RandomResource());
         }
 
+        /// <summary>
+        ///     Generates a random extension with a length of 4. (US based)
+        /// </summary>
+        /// <returns>a random extension.</returns>
         public static string Extension()
         {
             return Extension(4);
         }
 
+        /// <summary>
+        ///     Generates a random extension with the specified <paramref name="length" />. (US based)
+        /// </summary>
+        /// <returns>a random extension.</returns>
         public static string Extension(int length)
         {
-            return string.Concat(length.Times((i => RandomNumber.Next(0, 10))));
+            return string.Concat(length.Times(i => RandomNumber.Next(0, 10)));
         }
 
         /// <summary>
@@ -48,6 +56,10 @@ namespace Faker
             return pattern.Trim().Numerify(true);
         }
 
+        /// <summary>
+        ///     Generates a random Subscriber number. (US Based).
+        /// </summary>
+        /// <returns>A random subscriber number.</returns>
         public static string SubscriberNumber()
         {
             return Extension(4);
