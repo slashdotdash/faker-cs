@@ -25,7 +25,7 @@ after_build:
 - 7z a "Faker.NET.Portable-%APPVEYOR_BUILD_VERSION%.zip" "%APPVEYOR_BUILD_FOLDER%\src\Faker\bin\%CONFIGURATION%\*" -x!*CodeAnalysis* -r -mx=9
 - nuget pack -Symbols -Version %APPVEYOR_BUILD_VERSION% Faker.NET.Portable.nuspec
 test_script:
-- nuget install OpenCover -Version 4.6,166 -OutputDirectory packages
+- nuget install OpenCover -Version 4.6.166 -OutputDirectory packages
 - packages\OpenCover.4.6.166\tools\OpenCover.Console.exe -register:user -target:nunit-console.exe "-targetargs:tests\Faker.Tests\bin\%CONFIGURATION%\Faker.Tests.dll /framework:net-4 /noshadow" -filter:"+[Faker*]Faker* -[*Tests*]*" -skipautoprops -output:opencovertests.xml -returntargetcode
 - "SET PATH=C:\\Python34;C:\\Python34\\Scripts;%PATH%"
 - pip install codecov
