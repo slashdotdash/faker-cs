@@ -1,4 +1,6 @@
-version: 2.0.2.{build}
+version: 2.1.0.{build}
+pull_requests:
+  do_not_increment_build_number: true
 branches:
   except:
   - ci/travis
@@ -10,20 +12,24 @@ assembly_info:
   assembly_version: '{version}'
   assembly_file_version: '{version}'
   assembly_informational_version: '{version}'
-install:
-- nuget restore Faker.sln
 cache: packages -> **\packages.config
 nuget:
   disable_publish_on_pr: true
+before_build:
+- nuget restore Faker.sln
 build:
   project: Faker.sln
-  publish_nuget: true
-  publish_nuget_symbols: true
   parallel: true
   verbosity: minimal
 after_build:
 - 7z a "Faker.NET.Portable-%APPVEYOR_BUILD_VERSION%.zip" "%APPVEYOR_BUILD_FOLDER%\src\Faker\bin\%CONFIGURATION%\*" -x!*CodeAnalysis* -r -mx=9
 - nuget pack -Symbols -Version %APPVEYOR_BUILD_VERSION% Faker.NET.Portable.nuspec
+test_script:
+- nuget install OpenCover -Version 4.6.166 -OutputDirectory packages
+- packages\OpenCover.4.6.166\tools\OpenCover.Console.exe -register:user -target:nunit-console.exe "-targetargs:tests\Faker.Tests\bin\%CONFIGURATION%\Faker.Tests.dll /framework:net-4.0 /noshadow" -filter:"+[Faker*]Faker* -[*Tests*]* -[Faker*]Faker.Resources.*" -skipautoprops -output:opencovertests.xml -returntargetcode
+- "SET PATH=C:\\Python34;C:\\Python34\\Scripts;%PATH%"
+- pip install codecov
+- codecov -f "opencovertests.xml"
 artifacts:
 - path: '*.zip'
 - path: '*.nupkg'

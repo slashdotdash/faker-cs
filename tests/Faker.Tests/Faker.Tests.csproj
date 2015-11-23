@@ -59,12 +59,15 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="Common\ColorTests.cs" />
+    <Compile Include="Common\DateTests.cs" />
     <Compile Include="Common\LoremTests.cs" />
     <Compile Include="Common\NameTests.cs" />
     <Compile Include="Common\AddressTests.cs" />
     <Compile Include="Common\AppTests.cs" />
     <Compile Include="Common\CompanyTests.cs" />
     <Compile Include="Common\InternetTests.cs" />
+    <Compile Include="Common\PlaceholditTests.cs" />
     <Compile Include="de_DE\AppGermanTests.cs" />
     <Compile Include="de_DE\CompanyGermanTests.cs" />
     <Compile Include="de_DE\InternetGermanTests.cs" />

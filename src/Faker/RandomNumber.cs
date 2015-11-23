@@ -9,6 +9,9 @@ namespace Faker
     /// </summary>
     /// <seealso cref="Random" />
     /// <threadsafety static="true" />
+    /// <remarks>
+    ///     This is just a convience class and is just wrapping <see cref="Random" />.
+    /// </remarks>
     public static class RandomNumber
     {
         private static readonly object s_lockObject = new object();
@@ -53,6 +56,16 @@ namespace Faker
             {
                 return s_rnd.Next(minValue, maxValue);
             }
+        }
+
+        /// <inheritdoc cref="Next(int,int)" />
+        public static long Next(long min, long max)
+        {
+            var buf = new byte[8];
+            NextBytes(buf);
+            var longRand = BitConverter.ToInt64(buf, 0);
+
+            return Math.Abs(longRand % (max - min)) + min;
         }
 
         /// <inheritdoc cref="Random.NextDouble()" />

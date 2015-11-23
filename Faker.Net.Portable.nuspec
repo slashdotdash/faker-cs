@@ -2,18 +2,17 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>Faker.Net.Portable</id>
-        <version>2.0.2</version>
+        <version>2.1.0</version>
         <title>Faker.NET (Portable Edition)</title>
         <authors>AdmiringWorm</authors>
         <licenseUrl>https://raw.githubusercontent.com/AdmiringWorm/Faker.NET.Portable/develop/LICENSE</licenseUrl>
         <projectUrl>https://github.com/AdmiringWorm/Faker.NET.Portable</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>C# port of the Ruby gem (http://faker.rubyforge.org/) and is used to easily generate fake data: names, addresses, phone numbers, etc.</description>
-        <releaseNotes>* Fixed an issue where Norwegian language wouldn't output the correct Street Address.
-* Fixed American phone number generation.
-* Updated Brazilian Portuguese language
-* Updated German Phone numbers
-* Updated American Phone numbers</releaseNotes>
+        <releaseNotes>* Implemented Generator for Color related tasks
+* Implemented Generator for Date related tasks
+* Implemented placehold.it image url generation
+* Added missing xml code documentation</releaseNotes>
     </metadata>
     <files>
         <file src="src\Faker\bin\Release\de-DE\Faker.Portable.resources.dll" target="lib\portable-net4+sl5+wp8+win8+wpa81+netcore45+MonoAndroid+Xamarin.iOS1\de-DE\Faker.Portable.resources.dll" />
