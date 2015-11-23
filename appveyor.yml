@@ -29,7 +29,7 @@ test_script:
 - packages\OpenCover.4.6.166\tools\OpenCover.Console.exe -register:user -target:nunit-console.exe "-targetargs:tests\Faker.Tests\bin\%CONFIGURATION%\Faker.Tests.dll /framework:net-4.0 /noshadow" -filter:"+[Faker*]Faker* -[*Tests*]*" -skipautoprops -output:opencovertests.xml -returntargetcode
 - "SET PATH=C:\\Python34;C:\\Python34\\Scripts;%PATH%"
 - pip install codecov
-- codecov -f ".build\\opencovertests.xml"
+- codecov -f "opencovertests.xml"
 artifacts:
 - path: '*.zip'
 - path: '*.nupkg'
