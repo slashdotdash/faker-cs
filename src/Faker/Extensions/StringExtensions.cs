@@ -5,7 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
-using Faker.JetBrains.Annotations;
+using JetBrains.Annotations;
 
 namespace Faker.Extensions
 {

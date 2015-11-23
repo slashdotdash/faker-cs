@@ -12,5 +12,5 @@ install:
   - nuget restore Faker.sln
   - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
 script:
-  - xbuild /p:Configuration=Release Faker.sln
+  - xbuild /v:m /p:Configuration=Release Faker.sln
   - mono ./testrunner/NUnit.Runners.*/tools/nunit-console.exe ./tests/Faker.Tests/bin/Release/Faker.Tests.dll
