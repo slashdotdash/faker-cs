@@ -73,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddressFixture.cs" />
+    <Compile Include="EventsFixture.cs" />
     <Compile Include="CompanyFixture.cs" />
     <Compile Include="CultureInfoFixture.cs" />
     <Compile Include="Extensions\ArrayExtensionsFixture.cs" />
