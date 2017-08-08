@@ -22,7 +22,7 @@ Supported version:
 
 ## Usage
 
-Add a reference to `Faker.dll` in you project within Visual Studio.
+Add a reference to `Faker.dll` in your project within Visual Studio.
 
 Start using the Faker methods to generate your random test data.
 
