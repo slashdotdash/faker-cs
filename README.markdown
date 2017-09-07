@@ -62,4 +62,4 @@ Last, but not least, you can generate company names, catchphrases and bs!
 
 	Faker.Company.Name();  // "Dickens Group"
 	Faker.Company.CatchPhrase();  // "User-centric neutral internet solution"
-	Faker.Company.BS();  // "transition proactive solutio
+	Faker.Company.BS();  // "transition proactive solution"
