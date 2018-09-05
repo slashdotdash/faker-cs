@@ -1,7 +1,9 @@
 Faker
 =====
 
-C# port of the Ruby Faker gem (http://faker.rubyforge.org/) and is used to easily generate fake data: 
+[![Build status](https://ci.appveyor.com/api/projects/status/ac7c38ah2w6ysf8j/branch/master?svg=true)](https://ci.appveyor.com/project/mrstebo/faker-cs/branch/master)
+
+C# port of the Ruby Faker gem (http://faker.rubyforge.org/) and is used to easily generate fake data:
 names, addresses, phone numbers, etc.
 
 Available as a NuGet package (https://nuget.org/packages/Faker.Net).
