@@ -25,7 +25,7 @@ build:
   verbosity: minimal
 
 after_build:
-  - cmd: nuget pack Faker\Faker.csproj -Version "%GitVersion_NuGetVersion%" -Prop "target=%CONFIGURATION%"
+  - cmd: nuget pack src\Faker\Faker.csproj -Version "%GitVersion_NuGetVersion%" -Prop "target=%CONFIGURATION%"
 
 artifacts:
   - path: '*.nupkg'
