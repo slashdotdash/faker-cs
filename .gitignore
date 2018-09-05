@@ -8,3 +8,4 @@ _UpgradeReport_Files*
 UpgradeLog.XML
 *.ncrunchsolution
 .idea
+packages
