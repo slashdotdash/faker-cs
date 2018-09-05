@@ -1,0 +1,42 @@
+version: '{build}'
+image: Visual Studio 2015
+configuration: Release
+pull_requests:
+  do_not_increment_build_number: true
+
+cache:
+  - packages -> **\packages.config
+
+install:
+  - ps: choco install gitversion.portable -pre -y
+
+assembly_info:
+  patch: true
+
+nuget:
+  disable_publish_on_pr: true
+
+before_build:
+  - ps: nuget restore Faker.sln
+  - ps: gitversion /l console /output buildserver /updateAssemblyInfo /b (get-item env:APPVEYOR_REPO_BRANCH).Value
+
+build:
+  project: Faker.sln
+  verbosity: minimal
+
+after_build:
+  - cmd: nuget pack src\Faker\Faker.csproj -Version "%GitVersion_NuGetVersion%" -Prop "target=%CONFIGURATION%"
+
+artifacts:
+  - path: '*.nupkg'
+    name: NuGet
+
+deploy:
+  - provider: Environment
+    name: PreRelease Nuget Feed
+    on:
+      branch: master
+  - provider: Environment
+    name: Public Nuget Feed
+    on:
+      appveyor_repo_tag: true
